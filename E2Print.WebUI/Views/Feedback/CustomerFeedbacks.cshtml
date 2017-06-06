@@ -1,0 +1,28 @@
+﻿@using E2Print.Domain.Entities;
+
+@model List<E2Print.Domain.Entities.CustomerFeedback>
+
+@{
+    ViewBag.Title = "E2 Print - Customer Feedbacks";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section pageMeta{
+    <meta name="desciption" content="E2 print customer feedbacks" />
+}
+<div class="generalContent">
+    @foreach (CustomerFeedback feedback in Model)
+    {
+        <blockquote class="bq1">
+            <p>@feedback.Comment 
+             @if (!string.IsNullOrEmpty(feedback.CustomerName))
+             { 
+                <br /><b>[@feedback.CustomerName]</b>
+             }
+             @if (!string.IsNullOrEmpty(feedback.Photo))
+             {
+                <br /><img class="feedbackPhoto" src=@feedback.Photo />
+             }
+            </p>
+        </blockquote>
+    }
+</div>

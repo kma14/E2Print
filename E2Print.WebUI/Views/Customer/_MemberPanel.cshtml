@@ -1,0 +1,13 @@
+﻿@model E2Print.Domain.Entities.Customer
+
+<div class="memberPanel">
+    <span class="memberPanel-name">@Model.FirstName @Model.LastName </span>
+    <span class="memberPanel-role">(@Model.Role
+        @if (Model.Role == "Admin")
+        {
+            @Html.ActionLink("CP", "Dashboard", "Admin", null, new { @class = "dark",@style="color:#b6ff00" })
+        }
+    )</span><br />
+    @Html.ActionLink("Sign out", "Logout", "Customer",  null, new { @class = "dark" })
+    <input type="hidden" id="userDiscount" value="@ViewBag.Discount" />
+</div>

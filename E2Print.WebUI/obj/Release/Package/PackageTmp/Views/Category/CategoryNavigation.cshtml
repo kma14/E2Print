@@ -1,0 +1,19 @@
+﻿@using E2Print.Domain.Entities;
+@using E2Print.WebUI.Models;
+
+@model List<E2Print.WebUI.Models.CategoryNavigation>
+    <ul>
+        @foreach (CategoryNavigation category in Model)
+        {
+            <li>
+                <a href="#">@category.Category.Name.Split('-')[0]</a>
+                <ul>
+                    @foreach (Category subCategory in category.SubCategories)
+                    {
+                        <li><a href="/Category/Detail/@subCategory.Id">@subCategory.Name</a></li>
+                    }
+                </ul>
+
+            </li>
+        }
+    </ul>

@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewBag.Title = "ManageRole";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section PageStyles {
+    <link href="~/Content/themes/base/all.css" rel="stylesheet" />
+    <link href="~/Content/jtable.2.4.0/themes/metro/lightgray/jtable.min.css" rel="stylesheet" />
+}
+@section PageScripts{
+    <script src="~/Scripts/jquery-ui-1.11.4.min.js"></script>
+    <script src="~/Content/jtable.2.4.0/jquery.jtable.min.js"></script>
+    <script src="~/Scripts/Admin.js"></script>
+}
+<div class="generalContent">
+    <div class="breadcrumb">
+        <a href="/Admin/DashBoard" class="breadcrumb-other">Control Panel </a>
+        <span class="entypo-right-open breadcrumb-delimiter"></span>
+        <span class=".breadcrumb-current">Manage Roles</span>
+    </div>
+    <div id="RoleTable"></div>
+</div>
+

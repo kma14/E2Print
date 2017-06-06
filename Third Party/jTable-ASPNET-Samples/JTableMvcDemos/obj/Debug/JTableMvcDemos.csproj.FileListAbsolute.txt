@@ -1,0 +1,1 @@
+C:\Users\kevin\Documents\Visual Studio 2013\Projects\E2Print\Third Party\jTable-ASPNET-Samples\JTableMvcDemos\obj\Debug\JTableMvcDemos.csprojResolveAssemblyReference.cache

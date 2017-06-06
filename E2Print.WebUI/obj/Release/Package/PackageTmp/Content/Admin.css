@@ -1,0 +1,32 @@
+﻿.admin-tile {
+    display:inline-block;
+    height:200px;
+    width:200px;
+    margin:25px;
+    border:1px solid black;
+    cursor:pointer;
+}
+
+.admin-tile span{
+    display:inline-block;
+    width:200px;
+    text-align:center;
+    line-height:30px;
+    font-size:1.2em;
+}
+
+.admin-tile img{
+    height:170px;
+    width:170px;
+}
+
+.admin-tile:hover {
+    background-color:#efefef;
+}
+
+.childTable-swtich{
+    cursor:pointer;
+}
+
+
+

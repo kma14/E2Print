@@ -1,0 +1,51 @@
+﻿@using E2Print.Domain.Entities;
+
+@model List<E2Print.Domain.Entities.Category>
+
+@{
+    ViewBag.Title = "ManagePhoto";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section PhotoScripts{
+    <script src="~/Scripts/photo.js"></script>
+}
+
+<div class="generalContent">
+    <div class="breadcrumb">
+        <a href="/Admin/DashBoard" class="breadcrumb-other">Control Panel </a>
+        <span class="entypo-right-open breadcrumb-delimiter"></span>
+        <span class=".breadcrumb-current">Manage Category Photos</span>
+    </div>
+    <div>
+        <select id="category" style="font-size:1.2em;padding:4px;margin:10px 0px;">
+            @foreach (Category category in Model)
+            {
+                <option value=@category.Id>@category.Name</option>
+            }
+        </select>
+        <select id="photoType" style="font-size:1.2em;padding:4px;margin:10px 0px;">
+            <option value="1">category photo</option>
+            <option value="2">category hompage photo</option>
+            <option value="3">promotion photo</option>
+            <option value="4">promotion hoomepage photo</option>
+        </select>
+    </div>
+    <div id="categoryPhotos">
+        
+    </div>
+    <div id="uploadflash">
+        <object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=10,0,0,0"
+                width="600" height="400" id="update" align="middle">
+            <param name="allowFullScreen" value="false" />
+            <param name="allowScriptAccess" value="always" />
+            <param name="movie" value="update.swf" />
+            <param name="quality" value="high" />
+            <param name="bgcolor" value="#ffffff" />
+            <embed src="~/Content/upload.swf" quality="high" bgcolor="#ffffff" width="600" height="400"
+                   name="update" align="middle" allowscriptaccess="always" allowfullscreen="false"
+                   type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" />
+        </object>
+        <div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,63 @@
+﻿
+
+@section Styles {
+    <link href="~/Content/Admin.css" rel="stylesheet" />
+}
+@{
+    ViewBag.Title = "ControlPanel";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="generalContent">
+    <h2>ControlPanel</h2>
+    <a class="admin-tile dark" href="/Customer/ManageUser">
+        <span>Users</span>
+    </a>
+    <a class="admin-tile dark" href="/Role/ManageRole">
+        <span>Roles</span>
+    </a>
+    <a class="admin-tile dark" href="/Category/ManageCategory">
+        <span>Categories</span>
+        <a>
+
+        </a>
+    </a>
+    <a class="admin-tile dark" href="/Product/ManageProduct">
+        <span>Products</span>
+        <a>
+
+        </a>
+    </a>
+    <a class="admin-tile dark" href="/Photo/ManagePhoto">
+        <span>Photos</span>
+        <a>
+
+        </a>
+    </a>
+    <a class="admin-tile dark" href="/Promotion/ManagePromotion">
+        <span>Promotions</span>
+        <a>
+
+        </a>
+    </a>
+    <a class="admin-tile dark">
+        <span>Orders</span>
+        <a>
+
+        </a>
+    </a>
+    <a class="admin-tile dark" href="/Feedback/ManageFeedback">
+        <span>Feedbacks</span>
+        <a>
+
+        </a>
+    </a>
+
+    <a class="admin-tile dark" href="/Settings/LookAndFeel">
+        <span>Look and feel</span>
+        <a>
+
+        </a>
+    </a>
+</div>
+

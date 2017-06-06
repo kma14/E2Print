@@ -1,0 +1,59 @@
+﻿ @using E2Print.Domain.Entities;
+@using E2Print.WebUI.Models;
+
+@model SelectListViewModel<ProductAttribute>
+
+@{
+    ViewBag.Title = "ManageProduct";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section pageStyles {
+    @*<link href="@Url.Content("~/Content/Gridmvc.css")" rel="stylesheet" />
+        <link href="@Url.Content("~/Content/bootstrap.min.css")" rel="stylesheet" />*@
+    <link href="~/Content/themes/base/all.css" rel="stylesheet" />
+    <link href="~/Content/jtable.2.4.0/themes/metro/lightgray/jtable.min.css" rel="stylesheet" />
+}
+@section pageScripts{
+    <script src="~/Scripts/jquery-ui-1.11.4.min.js"></script>
+    <script src="~/Content/jtable.2.4.0/jquery.jtable.min.js"></script>
+    <script src="~/Scripts/Admin.js"></script>
+}
+<div class="generalContent">
+    <div class="breadcrumb">
+        <a href="/Admin/DashBoard" class="breadcrumb-other">Control Panel </a>
+        <span class="entypo-right-open breadcrumb-delimiter"></span>
+        <span class=".breadcrumb-current">Manage Products</span>
+    </div>
+    <input type="hidden" id="prudutAttrs" value="@Json.Encode(Model.Items)" />
+    <div id="tabs">
+        <ul>
+            <li><a href="#productList">Product List</a></li>
+            <li><a href="#productAttributes">Product Attributes</a></li>
+        </ul>
+        <div id="productList">
+            <p id="ProductTable"></p>
+        </div>
+        <div id="productAttributes">
+            <section id="attrName" class="inlineBlock">
+                Attribute Name<br />
+                <ul id="attrNameList">
+                    @foreach (string paName in Model.Keys)
+                    {
+                        <li class="attrnames">@paName <span class="productAttributes-delete fontawesome-remove"></span></li>
+                    }
+                </ul>
+
+                <input type="text" id="newAttrName" /><button id="addAttrName">Add</button>
+            </section>
+            <section id="attrValues" class="inlineBlock">
+                <span id="attrName-lable"></span><br />
+                <ul id="attrValueList">
+
+                </ul>
+                <input type="text" id="newAttrValue" /><button id="addAttrValue">Add</button>
+            </section>
+        </div>
+    </div>
+</div>
+

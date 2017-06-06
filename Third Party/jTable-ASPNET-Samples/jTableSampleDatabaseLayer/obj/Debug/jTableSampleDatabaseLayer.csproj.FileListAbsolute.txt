@@ -1,0 +1,5 @@
+C:\Users\kevin\Documents\Visual Studio 2013\Projects\E2Print\Third Party\jTable-ASPNET-Samples\jTableSampleDatabaseLayer\bin\Debug\jTableSampleDatabaseLayer.dll
+C:\Users\kevin\Documents\Visual Studio 2013\Projects\E2Print\Third Party\jTable-ASPNET-Samples\jTableSampleDatabaseLayer\bin\Debug\jTableSampleDatabaseLayer.pdb
+C:\Users\kevin\Documents\Visual Studio 2013\Projects\E2Print\Third Party\jTable-ASPNET-Samples\jTableSampleDatabaseLayer\obj\Debug\jTableSampleDatabaseLayer.csprojResolveAssemblyReference.cache
+C:\Users\kevin\Documents\Visual Studio 2013\Projects\E2Print\Third Party\jTable-ASPNET-Samples\jTableSampleDatabaseLayer\obj\Debug\jTableSampleDatabaseLayer.dll
+C:\Users\kevin\Documents\Visual Studio 2013\Projects\E2Print\Third Party\jTable-ASPNET-Samples\jTableSampleDatabaseLayer\obj\Debug\jTableSampleDatabaseLayer.pdb

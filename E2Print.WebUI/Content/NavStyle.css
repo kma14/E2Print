@@ -1,0 +1,113 @@
+﻿.navbar {
+    z-index: 90;
+    margin-bottom: 10px;
+    width: 1024px;
+    padding: 0px;
+    background-color: #232323;
+}
+
+    .navbar ul {
+        padding:0px;
+        margin: 0px;
+        display:inline-block;
+    }
+ul.navbar-content li {
+    list-style:none;
+    background-color: #232323;
+    display: inline-block;
+    color: #fff;
+    position:relative;
+    float:left;
+}
+ul.navbar-content  li:hover {
+    background-color: #666;
+}
+ul.navbar-content  li:hover > ul{
+    display:block;
+}
+
+
+ul.navbar-content > li {
+    font-size: 1.1em;
+    line-height: 70px;
+    text-transform: uppercase;
+}
+ul.navbar-content > li ul li {
+    line-height: 50px;
+    min-width:17em;
+}
+
+ul.navbar-content > li ul li ul li{
+    line-height: 50px;
+    min-width:19em;
+}
+
+ul.navbar-content  a{
+    padding:0 30px;
+    height:100%;
+    display:block;
+}
+
+
+
+
+ul.navbar-content li ul {
+    position: absolute; 
+    top: 100%;
+    display: none;
+    z-index:100;
+}
+
+ul.navbar-content li ul li ul{
+    position: absolute; 
+    top: 0%;
+    left:100%;
+    display: none;
+    z-index:100;
+}
+ul.navbar-content ul:after{
+    content:"";
+    clear:both;
+    display: block;
+}
+
+
+/*.navbar {
+    z-index: 10;
+    margin-bottom: 10px;
+    width:1024px;
+    padding:0px;
+}
+    .navbar > .navbar-title {
+        font-family: Impact,Haettenschweiler,"Franklin Gothic Bold",Charcoal,"Helvetica Inserat","Bitstream Vera Sans Bold","Arial Black","sans serif";
+        background-color: #fff;
+        color: #444;
+        font-size: 2em;
+        line-height: 50px;
+        width: 924px;
+        padding: 0px 50px;
+        display:none;
+    }
+    .navbar > .navbar-content {
+        background-color: #232323;
+        width: 964px;
+        margin:0px;
+        padding: 0px 30px;
+    }
+        .navbar > .navbar-content > .navbar-item {
+            display: inline-block;
+            font-size: 1.1em;
+            color: #fff;
+            text-transform: uppercase;
+            padding: 0px 30px;
+            line-height: 70px;
+        }
+
+            .navbar > .navbar-content > .navbar-item:hover {
+                background-color: #666;
+            }
+
+.navbar-category {
+    display:inline-block;
+
+}*/

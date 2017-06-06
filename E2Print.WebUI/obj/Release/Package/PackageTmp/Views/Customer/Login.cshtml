@@ -1,0 +1,36 @@
+﻿@model E2Print.WebUI.Models.LoginViewModel
+
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using (Html.BeginForm("Login", "Customer"))
+{
+    <div class="generalContent">
+        <div class="login">
+            @Html.ValidationSummary()
+            <h2>Login</h2>
+            <hr class="solid" />
+            <div class="dataEntry-group">
+                <div class="column-medium">
+                    <label class="dataEntry-label" for="userName">Login</label>
+                    @Html.EditorFor(m => m.UserName)
+                </div>
+            </div>
+            <div class="dataEntry-group">
+                <div class="column-medium">
+                    <label class="dataEntry-label" for="password">Password</label>
+                    @Html.PasswordFor(m => m.Password)
+                </div>
+            </div>
+            <hr class="solid" />
+            <div class="dataEntry-group">
+                <div class="column-small login-buttons">
+                    <button type="submit">Login</button>
+                    <button type="reset">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+

@@ -1,0 +1,6 @@
+﻿jTable delete function can not post just id back, it post the whole model
+on server side the delete funcion in contorller has to take model as input parameter, which is not right
+===
+Error handling in BL and WebUI duplicate
+====
+Look at JsonResult

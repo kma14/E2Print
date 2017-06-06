@@ -1,0 +1,19 @@
+﻿
+@using E2Print.Domain.Entities;
+@model List<Customer>
+
+@{
+    ViewBag.Title = "List";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>List</h2>
+<ul>
+    @foreach (Customer customer in Model)
+    {
+        <li>@customer.FirstName &nbsp; @customer.LastName</li>
+    }
+
+    
+</ul>
+

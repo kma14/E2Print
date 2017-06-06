@@ -1,0 +1,18 @@
+﻿@using E2Print.Domain.Entities;
+
+@model List<E2Print.Domain.Entities.Promotion>
+
+@{
+    ViewBag.Title = "SpecialOffers";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="generalContent specialOffers">
+    @foreach(Promotion promotion in Model)
+    {
+        var imageUrl = "/Content/Images/Promotions/" + @promotion.ItemId + ".jpg";
+        <a class="" href="/Category/Detail/@promotion.ItemId">
+            <img src="@imageUrl" />
+        </a>
+    }
+</div>

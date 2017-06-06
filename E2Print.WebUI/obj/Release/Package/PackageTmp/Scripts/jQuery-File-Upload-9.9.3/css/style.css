@@ -1,0 +1,10 @@
+﻿
+
+.fileUploadContainer{
+    width:800px;
+}
+.progress-bar {
+    height: 3px;
+    background: green;
+    width:0%;
+}

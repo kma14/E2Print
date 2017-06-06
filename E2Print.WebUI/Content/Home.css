@@ -1,0 +1,451 @@
+﻿.category-group {
+    margin-bottom: 40px;
+}
+
+.category-item {
+    width: 327.3px;
+    height: 205px;
+    margin: 10px;
+    margin-right: 0px;
+    margin-left: 21px;
+    position: relative;
+    overflow: hidden;
+}
+
+.category-item-left {
+    margin-left: 0px;
+}
+
+.category-smallItem {
+    width: 327.3px;
+    height: 205px;
+    margin: 3px;
+    position: relative;
+}
+
+.category-largeItem {
+    width: 668.6px;
+    height: 205px;
+    background-color: #005589;
+    position: relative;
+}
+
+.category-root {
+    color: white;
+    padding: 20px;
+    width: 287.3px;
+    height: 165px;
+    line-height: 1.4;
+}
+
+    .category-root .rootTitle {
+        font-family: Impact,Haettenschweiler,"Franklin Gothic Bold",Charcoal,"Helvetica Inserat","Bitstream Vera Sans Bold","Arial Black","sans serif";
+        font-size: 2.5em;
+        margin: 0px;
+        line-height: 1.2;
+    }
+
+    .category-root .rootSubTitle {
+        font-family: Impact,Haettenschweiler,"Franklin Gothic Bold",Charcoal,"Helvetica Inserat","Bitstream Vera Sans Bold","Arial Black","sans serif";
+        font-size: 1.5em;
+        margin: 0px;
+        line-height: 1.4;
+        margin-bottom: 10px;
+    }
+
+    .category-root .rootContent {
+        line-height: 1.4;
+        margin: 0px;
+    }
+
+.category-item small {
+    font-size: 0.8em;
+    display: none;
+}
+
+.category-item > img {
+    width: 327.3px;
+    height: 205px;
+    margin: 0px;
+}
+
+.category-largeItem > img {
+    width: 668.6px;
+    height: 205px;
+    margin: 0px;
+}
+
+.category-item > .category-title {
+    display: inline-block;
+    position: absolute;
+    top: 60%;
+    font-size: 1.2em;
+    font-weight: normal;
+    padding: 5px 10px;
+    color: #fff;
+    margin: 0px;
+    display: block;
+    transition: height 0.3s ease;
+}
+
+.sectionA .category-title {
+    background-color: rgb(0,85,137);
+    background-color: rgba(0,85,137,0.65);
+}
+
+.sectionA .category-root {
+    background-color: rgb(0,85,137);
+}
+
+.sectionB .category-title {
+    background-color: #671456;
+}
+
+.sectionB .category-root {
+    background-color: #671456;
+}
+
+.sectionC .category-title {
+    background-color: #78b4c3;
+}
+
+.sectionC .category-root {
+    background-color: #78b4c3;
+}
+
+/*.category-item-style1*/
+.category-item-style0 {
+    background-color: #005589;
+}
+/*.category-item-style0:before {
+    border: 10px solid rgba(255, 255, 255, 0.3);
+    content: "";
+    position: absolute;
+    top: -10px;
+    bottom: -10px;
+    left: -10px;
+    right: -10px;
+}*/
+.category-item-style1 {
+    background-color: #78b4c3;
+}
+
+.category-item-style2 {
+    background-color: #ffffff;
+}
+
+.category-item-style3 {
+}
+
+.category-item > .promo-title {
+    height: 20px;
+    position: absolute;
+    top: 7%;
+    background-color: #fff;
+    font-size: 1.2em;
+    font-weight: bold;
+    padding: 5px 10px;
+    text-transform: uppercase;
+    color: #000;
+}
+
+.category-item > .promo-title-mid {
+    background-color: rgb(51,51,51);
+    background-color: rgba(51,51,51,0.85);
+    color: #fff;
+}
+
+.category-item > .promo-intro {
+    height: 25%;
+    position: absolute;
+    bottom: 0%;
+    padding: 15px 10px;
+    line-height: 1.4;
+    color: #fff;
+    background-color: rgb(51,51,51);
+    background-color: rgba(51,51,51,0.85);
+}
+
+    .category-item > .promo-intro > .expireDate {
+        color: #ccc;
+    }
+/* ================ product details ================== */
+.product {
+    background-color: #fff;
+    min-height: 700px;
+    position: relative;
+    padding: 25px;
+    width: 974px;
+}
+
+.product-photo-thumbnails {
+    width: 74px;
+    text-align: center;
+    margin-right: 15px;
+    padding-top: 20px;
+    cursor: pointer;
+}
+
+.thumbnail {
+    display: inline-block;
+    width: 70px;
+    height: 70px;
+    margin: 0px 0px 10px 0px;
+    border: 1px solid #ffffff;
+}
+
+    .thumbnail:hover {
+    }
+
+.thumbnail-selected {
+    border: 1px solid #005589;
+}
+
+.product-photo-big {
+    padding: 0px 0px 10px 0px;
+    margin-right: 15px;
+    width: 560px;
+    height: 500px;
+    text-align: center;
+}
+
+    .product-photo-big > img {
+        width: 500px;
+        height: 500px;
+    }
+
+.product-detail {
+    position: absolute;
+    right: 25px;
+    height: 370px;
+    width: 250px;
+    /*background-color:#f3f3ec;*/
+}
+
+    .product-detail > .product-title {
+        font-size: 2em;
+        color: #000;
+        margin-top: 0px;
+        margin-bottom: 8px;
+    }
+
+    .product-detail > .product-subtitle {
+        color: #555;
+        margin-top: 0px;
+    }
+
+.product-description {
+    line-height: 1.5;
+    padding: 20px;
+    color: #666;
+    font-size: 1.3em;
+    min-height: 300px;
+    background-color: #f3f3ec;
+}
+
+    .product-description p:first-child:first-letter {
+        float: left;
+        color: #666;
+        font-size: 75px;
+        line-height: 60px;
+        padding-top: 0px;
+        padding-right: 8px;
+        padding-left: 3px;
+        font-family: Georgia;
+    }
+
+.price-normal {
+    font-size: 3em;
+    font-weight: normal;
+    text-decoration: line-through;
+    color: #888;
+    margin: 10px 0px;
+}
+
+.price-discount {
+    display: inline-block;
+    font-size: 3em;
+    font-weight: bold;
+    margin: 30px 0px 10px 0px;
+}
+
+.gstTag {
+    display: inline-block;
+    font-size: 0.9em;
+    margin-left: 10px;
+}
+
+/* ============== customer feedback page ================*/
+.bq1 {
+    background: url('http://i47.tinypic.com/a9l0g3.png') top left no-repeat;
+    padding-left: 55px;
+    line-height: 18px;
+    color: #575757;
+    margin-top:60px;
+        width:300px;
+        display:inline-block;
+}
+
+    .bq1 p {
+        padding-right: 35px;
+        line-height: 18px;
+        background: url('http://i48.tinypic.com/eb1yrr.png') bottom right no-repeat;
+        padding-bottom: 15px;
+        color: #333;
+    }
+
+img.feedbackPhoto{
+    width:240px;
+    height:60px;
+}
+
+img.manageFeedback-photo{
+    width:120px;
+    height:30px;
+}
+/* ============== about us page ================*/
+
+ .aboutUs {
+    line-height: 1.5;
+    padding: 30px;
+    min-height: 500px;
+    background-color: #f3f3ec;
+}
+
+    .aboutUs p:first-child:first-letter {
+        float: left;
+        font-size: 75px;
+        line-height: 60px;
+        padding-top: 0px;
+        padding-right: 8px;
+        padding-left: 3px;
+        font-family: Georgia;
+    }
+
+    /* ============== contact us page ================*/
+
+ .contactUs {
+    line-height: 1.5;
+    padding: 30px;
+    min-height: 800px;
+    background-color: #f3f3ec;
+}
+/* ============== special offers page ================*/
+.specialOffers {
+    padding:20px;
+    }
+    .specialOffers a{
+        display:block;
+        width:900px;
+        margin:40px auto;
+    }
+        .specialOffers img {
+            width: 900px;
+            height: 150px;
+        }
+/* ==================login page ====================*/
+.login{
+    width:300px;
+    margin:100px auto;
+}
+
+.login .login-buttons{
+    text-align:right;
+}
+
+/* ==================Settings page ====================*/
+
+.settings{
+    height:50px;
+    width:800px;
+    margin:15px 0px;
+    padding:20px;
+    background-color:#eee;
+}
+
+/* ================== Email & Google map ====================*/
+.email{
+    margin:20px 0px;
+}
+    .email input {
+        padding: 3px;
+        margin: 5px;
+        font-weight: bold;
+        outline: none;
+    }
+.email-content{
+    max-width:600px;
+    outline:none;
+    width:600px;
+    height:180px;
+}
+
+#map{
+    width:606px;
+    height:365px;
+}
+
+/* ================== Product Attribute ====================*/
+
+#productAttributes .inlineBlock{
+    vertical-align:top;
+    margin-right:20px;
+}
+
+#productAttributes select {
+    outline:none;
+    width:250px;
+}
+#productAttributes input {
+    outline:none;
+    width:120px;
+}
+#productAttributes button {
+    outline:none;
+    background-color:#78b4c3;
+    border:0px;
+    border-radius: 0px;
+    box-sizing: content-box;
+    padding:3px 5px;
+    width:32px;
+}
+#productAttributes button:hover {
+    background-color:#9fceda;
+}
+
+ul#attrNameList,ul#attrValueList{
+    width:156px;
+    margin:0px;
+    padding:0px;
+}
+li.attrnames, li.attrValues{
+    list-style:none;
+    display:block;
+    margin:5px 0px;
+    width:156px;
+    padding:5px;
+    background-color:#78b4c3;
+    color:#ffffff;
+    cursor:pointer;
+}
+li.attrnames:hover{
+    background-color:#005589
+}
+li.attrValues:hover{
+    background-color:#9fceda
+}
+
+li.attrnames > span,  li.attrValues> span{
+    display:none;
+}
+li.attrnames > span:hover,li.attrValues > span:hover{
+    color:red;
+}
+
+li.attrnames:hover > span,li.attrValues:hover > span{
+    display:inline-block;
+}
+
+li.currentAttribute{
+    background-color: #005589;
+}

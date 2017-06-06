@@ -1,0 +1,99 @@
+﻿@using E2Print.Domain.Entities;
+
+@model E2Print.WebUI.Models.CategoryAndProductsViewModel
+
+@{
+    ViewBag.Title = Model.Category.Name;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section pageMeta{
+    <meta name="desciption" content="@Model.Category.Description" />
+}
+@section DetailSripts{
+    <script src="~/Scripts/Product.js"></script>
+}
+<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+<link href="~/Content/BreadScrum.css" rel="stylesheet" />
+<div class="container product">
+    <input type="hidden" id="products" value="@Json.Encode(Model.Products)" />
+    <input type="hidden" id="onsaleDiscount" value="@Model.Discount" />
+    <div style="margin-bottom:20px;font-size:1.4em;text-transform:uppercase;">
+        <span style="color:#888;margin-right:10px;">Large format print</span>
+        <span class="entypo-right-open" style="color:#aaa;margin-right:10px;font-weight:bold;font-size:1.2em"></span>
+        <span style="color:#1f232a;font-weight:bold;">@Model.Category.Name</span>
+        @if(Model.OnSale){
+            <span style="color:red;font-weight:bold;">(On Sale @((int)((1 - Model.Discount) * 100))% off!)</span>
+        }
+    </div>
+    <div class="column-auto product-photo-thumbnails">
+        @for (int i = 0; i < Model.Photos.Count();i++ )
+        { 
+            var selectedClass = i==0?"thumbnail-selected":"";
+            <img src=@Model.Photos[i] class="thumbnail @selectedClass " />
+        }
+    </div>
+    <div class="column-auto product-photo-big">
+        <img id="productPhoto" src=@Model.Photos.First() />
+    </div>
+    <div class="column-auto product-detail">
+        <p>
+            <span class="selectLabel">Item No:</span><span class="product-detail-id"></span>
+        </p>
+        <p>
+            <div id="size_dd" class="wrapper-dropdown-3" tabindex="1">
+                <span>Size</span>
+                <ul class="dropdown">
+                    @foreach (var size in Model.Sizes)
+                    {
+                        <li><a href="#">@size<input type="hidden" class="opt-data"/></a></li>
+                    }
+                </ul>
+            </div>
+        </p>
+        <p>
+            <div id="color_dd" class="wrapper-dropdown-3" tabindex="2">
+                <span>Color</span>
+                <ul class="dropdown">
+                    @foreach (var color in Model.Colors)
+                    {
+                        <li><a href="#">@color<input type="hidden" class="opt-data"/></a></li>
+                    }
+                </ul>
+            </div>
+        </p>
+        <p>
+
+            <div id="quantity_dd" class="wrapper-dropdown-3" tabindex="3">
+                <span>Quantity</span>
+                <ul class="dropdown">
+                    @foreach (var pack in Model.Packs)
+                    {
+                        <li><a href="#">@pack<input type="hidden" class="opt-data"/></a></li>
+                    }
+                </ul>
+            </div>
+        </p>
+        <p>
+            <div id="material_dd" class="wrapper-dropdown-3" tabindex="4">
+                <span>Material</span>
+                <ul class="dropdown">
+                    @foreach (var material in Model.Materials)
+                    {
+                        <li><a href="#">@material<input type="hidden" class="opt-data" /></a></li>
+                    }
+                </ul>
+            </div>
+        </p>
+
+        <p class="price-discount">
+            0.00
+        </p><span class="gstTag">excludes GST</span>
+        <p class="price-normal">
+        </p>
+    </div>
+
+    <div style="clear:both;"></div>
+    <div class="product-description">
+        <p>@Model.Category.Description</p>
+    </div>
+</div>

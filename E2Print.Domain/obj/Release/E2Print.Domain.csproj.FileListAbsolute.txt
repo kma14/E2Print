@@ -1,0 +1,6 @@
+C:\Users\kevin\documents\visual studio 2013\Projects\E2Print\E2Print.Domain\bin\Release\E2Print.Domain.dll
+C:\Users\kevin\documents\visual studio 2013\Projects\E2Print\E2Print.Domain\bin\Release\E2Print.Domain.pdb
+C:\Users\kevin\documents\visual studio 2013\Projects\E2Print\E2Print.Domain\bin\Release\Microsoft.Web.Infrastructure.dll
+C:\Users\kevin\documents\visual studio 2013\Projects\E2Print\E2Print.Domain\obj\Release\E2Print.Domain.csprojResolveAssemblyReference.cache
+C:\Users\kevin\documents\visual studio 2013\Projects\E2Print\E2Print.Domain\obj\Release\E2Print.Domain.dll
+C:\Users\kevin\documents\visual studio 2013\Projects\E2Print\E2Print.Domain\obj\Release\E2Print.Domain.pdb

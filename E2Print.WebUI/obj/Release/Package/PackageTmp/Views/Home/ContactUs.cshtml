@@ -1,0 +1,40 @@
+﻿@{
+    ViewBag.Title = "ContactUs";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section pageMeta{
+    <meta name="desciption" content="Banners, flag printing & pull up banners,Business cards & letterheads,Calendars, posters,Book publishing & binding,,Booklets, brochures, catalogs & flyers,Bulk printing,Car stickers,Canvas,Large format Printing,Signage & coreflute sign boards,Invitations in all themes,Pet or Human personalize magazing,Website Design " />
+}
+@section PageScripts{
+    <script src="https://maps.googleapis.com/maps/api/js"></script>
+    <script src="~/Scripts/Email.js"></script>
+}
+<div class="generalContent contactUs">
+
+    <h2>Contact Us</h2>
+    <div id="map"></div>
+    <div style="margin-top:40px;">
+        <div>
+            <b>E2Print Penrose (HQ)</b>:
+            <br />698E Great South Rd <br>Penrose <br>Auckland <br />Ph: (09) 525 5585<br />
+        </div>
+        <div>
+            <b>E2Print Mangere</b>:
+            <br />Unit 29, 203 Kirkbride Rd <br>Mangere <br>Auckland <br />Ph: (09) 930 0560<br />
+        </div>
+    </div>
+    <div style="margin-top:40px;">
+        <b>Openning hours</b>: <br>Mon - Fri 9:30 to 5:30 <br>Sat &amp; Sun (by appointment)
+    </div>
+    <div class="email" style="margin-top:40px;">
+        <b>Send us a message</b><br />
+        Your email<input class="email-userEmail" /> Your phone number <input class="email-userCellphone" /><br />
+        Message<br /><textarea class="email-content"></textarea><br />
+
+        <button class="email-send">Send</button>
+        <button class="email-cancel">Cancel</button>
+        <span class="email-sending" style="display:none;">&nbsp;<b>Sending email ...</b></span>
+    </div>
+</div>
+

@@ -1,0 +1,126 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    @RenderSection("pageMeta", false)
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/Home.css" rel="stylesheet" />
+    <link href="~/Content/HeaderAndFooter.css" rel="stylesheet" />
+    <link href="~/Content/NavStyle.css" rel="stylesheet" />
+    <link rel="shortcut icon" href="~/Content/Images/favicon-32x32.png">
+    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+    <style type="text/css">
+        .field-validation-error {
+            color: #f00;
+        }
+
+        .validation-summary-errors {
+            color: #f00;
+            font-weight: bold;
+        }
+
+        .input-validation-error {
+            border: 2px solid #f00;
+            background-color: #fee;
+        }
+
+        input[type="checkbox"].input-validation-error {
+            outline: 2px solid #f00;
+        }
+    </style>
+    @RenderSection("Styles", false) @*optional section*@
+    @RenderSection("GridStyles", false)
+    @RenderSection("PageStyles", false)
+</head>
+<body>
+    <div class="container header">
+        @*<span style="font-size:6em;color:#ffffff">E2Print</span>*@
+        <img src="/Content/Images/logo2%20heng.png" style="width:270px;height:90px" />
+        @*<span style="font-size:3em;color:#b6ff00"> &nbsp is On the way</span>*@
+        @Html.Action("MemberPanel", "Customer")
+        @*<div style="display:inline-block;width:600px;margin-left:30px;">*@
+        @*<div class="meter animate">
+                <span style="width: 55%"><span></span></span>
+            </div>*@
+        @*</div>*@
+        @*<audio controls src="~/Content/等待-黄绮珊.mp3">
+                Your browser does not support the
+                <code>audio</code> element.
+            </audio>*@
+    </div>
+    <div class="container navbar">
+        @*<div class="navbar-title">E2Print</div>*@
+        <ul class="navbar-content">
+            <li>
+                <a href="/Home/Index" class="navbar-item">Services</a>
+                @Html.Action("CategoryNavigation", "Category")
+            </li>
+            <li><a href="/Home/Equipment" class="navbar-item">Equipments</a></li>
+            <li><a href="/Promotion/SpecialOffers" class="navbar-item">Special Offer</a></li>
+            <li><a href="/Feedback/CustomerFeedbacks" class="navbar-item">Feedback</a></li>
+            <li><a href="/Home/AboutUs" class="navbar-item">About Us</a></li>
+            <li><a href="/Home/ContactUs" class="navbar-item">Contact Us</a></li>
+        </ul>
+        <div style="clear:both;"></div>
+    </div>
+    <div class="container">
+        @RenderBody()
+    </div>
+    <div class="container" style="background-color:#232323;padding:20px; width:984px;margin-bottom:40px;color:white;height:150px">
+        <div class="column-auto" style="margin-right:20px;">
+            <img src="~/Content/Images/weChat.jpg" style="width:100px;height:100px;margin:0px;" />
+        </div>
+        <div class="column-auto" style="margin-right:20px;">
+            <span class="row">
+                <i class="icon zocial-email"></i> info@e2print.co.nz
+            </span>
+            <span class="row">
+                <i class="icon entypo-address"></i> Unit 29, 203 Kirkbride Road, Mangere 2022, Auckland <br /><i class="icon zocial-call"></i> <span>(09) 930 0560</span><br />
+            </span>
+        </div>
+        <div style="clear: both;"></div><br />
+        &copy; 2015 E2Print Limited
+    </div>
+    @*<footer id="footer">
+            <article id="contact">
+                <p class="contact-header">
+                    <span class="contact-header-sub">
+                        <span class="contact-header-subsub">
+                            <span class="contact-header-text">
+                                Get in touch&nbsp;
+                                <i class="icon entypo-down-open-big"></i>
+                                <i class="icon entypo-cancel"></i>
+                            </span>
+                        </span>
+                    </span>
+                </p>
+                <div class="contact-list">
+                    <div class="container">
+                        <div class="column-auto">
+                            <img src="~/Content/Images/weChat.jpg" style="width:100px;height:100px;margin:0px;"/>
+                        </div>
+                        <div class="column-auto">
+                            <span class="row">
+                                <i class="icon zocial-email"></i> info@e2print.co.nz
+                            </span>
+                            <span class="row">
+                                <i class="icon entypo-address"></i> Unit 29, 203 Kirkbride Road, Mangere 2022, Auckland <br /><i class="icon zocial-call"></i> <span>(09) 930 0560</span><br />
+                            </span>
+                        </div>
+                        <div style="clear: both;"></div>
+                    </div>
+                </div>
+            </article>
+        </footer>*@
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/Home.js"></script>
+    <script src="~/Scripts/HeaderAndFooter.js"></script>
+    <script src="~/Scripts/fileupload.js"></script>
+    @RenderSection("GridScripts", false)
+    @RenderSection("DetailSripts", false)
+    @RenderSection("PhotoScripts", false)
+    @RenderSection("PageScripts", false)
+</body>
+</html>

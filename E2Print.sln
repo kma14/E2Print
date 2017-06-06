@@ -1,0 +1,67 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30501.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "E2Print.Domain", "E2Print.Domain\E2Print.Domain.csproj", "{2B3E702C-FCBA-4946-B297-6F1966CE61EA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "E2Print.WebUI", "E2Print.WebUI\E2Print.WebUI.csproj", "{6E2A16BC-65E8-4685-B9BD-A10CB5A49D87}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "E2Print.UnitTests", "E2Print.UnitTests\E2Print.UnitTests.csproj", "{B5B6EECC-8BC5-4870-9070-2C2C52063F2E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "E2Print.DAL", "E2Print.DAL\E2Print.DAL.csproj", "{C44AF081-5207-4EE3-93B5-673A0041B970}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "E2Print.BL", "E2Print.BL\E2Print.BL.csproj", "{3A87879D-0C4C-400A-994A-AB2AFC608B37}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 6
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://ktfs.visualstudio.com/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = E2Print.Domain\\E2Print.Domain.csproj
+		SccProjectName1 = E2Print.Domain
+		SccLocalPath1 = E2Print.Domain
+		SccProjectUniqueName2 = E2Print.WebUI\\E2Print.WebUI.csproj
+		SccProjectName2 = E2Print.WebUI
+		SccLocalPath2 = E2Print.WebUI
+		SccProjectUniqueName3 = E2Print.UnitTests\\E2Print.UnitTests.csproj
+		SccProjectName3 = E2Print.UnitTests
+		SccLocalPath3 = E2Print.UnitTests
+		SccProjectUniqueName4 = E2Print.DAL\\E2Print.DAL.csproj
+		SccProjectName4 = E2Print.DAL
+		SccLocalPath4 = E2Print.DAL
+		SccProjectUniqueName5 = E2Print.BL\\E2Print.BL.csproj
+		SccProjectName5 = E2Print.BL
+		SccLocalPath5 = E2Print.BL
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2B3E702C-FCBA-4946-B297-6F1966CE61EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B3E702C-FCBA-4946-B297-6F1966CE61EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B3E702C-FCBA-4946-B297-6F1966CE61EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B3E702C-FCBA-4946-B297-6F1966CE61EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E2A16BC-65E8-4685-B9BD-A10CB5A49D87}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E2A16BC-65E8-4685-B9BD-A10CB5A49D87}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E2A16BC-65E8-4685-B9BD-A10CB5A49D87}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E2A16BC-65E8-4685-B9BD-A10CB5A49D87}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B5B6EECC-8BC5-4870-9070-2C2C52063F2E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5B6EECC-8BC5-4870-9070-2C2C52063F2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5B6EECC-8BC5-4870-9070-2C2C52063F2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5B6EECC-8BC5-4870-9070-2C2C52063F2E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C44AF081-5207-4EE3-93B5-673A0041B970}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C44AF081-5207-4EE3-93B5-673A0041B970}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C44AF081-5207-4EE3-93B5-673A0041B970}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C44AF081-5207-4EE3-93B5-673A0041B970}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3A87879D-0C4C-400A-994A-AB2AFC608B37}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A87879D-0C4C-400A-994A-AB2AFC608B37}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A87879D-0C4C-400A-994A-AB2AFC608B37}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A87879D-0C4C-400A-994A-AB2AFC608B37}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

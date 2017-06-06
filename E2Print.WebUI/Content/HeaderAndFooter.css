@@ -1,0 +1,198 @@
+﻿
+
+.icon {
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+    line-height: 1;
+    font-size: 1.3em;
+    font-weight: normal;
+    font-style: normal;
+    speak: none;
+    text-decoration: inherit;
+    text-transform: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    width: 1.3em;
+}
+
+#footer {
+    position: fixed;
+    top: 100%;
+    margin-top: -50px;
+    width: 100%;
+    padding-left: 0px;
+    list-style: none;
+}
+
+.contact {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 100;
+    height: 3.4375em;
+    transition: height 0.5s ease-out;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    pointer-events: none;
+}
+
+.contact-header {
+    font-size: 16px;
+    position: relative;
+    z-index: 1;
+    left: 50%;
+    display: inline-block;
+    margin: 0 0 0 -29em;
+    line-height: 2.5em;
+    color: #fff;
+    font-weight: normal;
+    text-transform: uppercase;
+    cursor: pointer;
+    pointer-events: auto;
+}
+
+.contact-header-sub {
+    padding-right: 1.875em;
+    background-position: 100% -5em;
+}
+
+.contact-header-subsub {
+    padding-left: 1.875em;
+    background-position: 0 0;
+}
+
+.contact-header-sub, .contact-header-subsub {
+    display: inline-block;
+    height: 2.5em;
+    background-image: url("Images/contact-header.svg");
+    background-repeat: no-repeat;
+}
+
+
+.contact-list {
+    background-color: #060606;
+    opacity: 0.75; /*for rgba color https://css-tricks.com/rgba-browser-support/ s*/
+    filter: alpha(opacity=75); /* For IE8 and earlier */
+    color: #fff;
+}
+
+    .contact-list > .container {
+        padding-top: 25px;
+        padding-bottom: 25px;
+    }
+
+        .contact-list > .container > .column-auto {
+            height: 100px;
+            margin-left: 30px;
+        }
+
+            .contact-list > .container > .column-auto > .row {
+                height: 33px;
+            }
+
+                .contact-list > .container > .column-auto > .row > .icon {
+                    font-size: 1.7em;
+                    margin-right: 8px;
+                }
+
+/*=========== navigation bar (home page/ detail page) =================*/
+
+
+
+
+
+/*=========== header =================*/
+
+.header {
+    font-family: Impact,Haettenschweiler,"Franklin Gothic Bold",Charcoal,"Helvetica Inserat","Bitstream Vera Sans Bold","Arial Black","sans serif";
+    width:1024px;
+    padding:0px;
+    
+    margin-top:4em;
+    margin-bottom:2em;
+    position:relative;
+}
+
+.memberPanel {
+    position:absolute;
+    right:30px;
+    top:20px;
+    text-align:right;
+    font-size:2em;
+}
+    .memberPanel > .memberPanel-name {
+        color:#000;
+    }
+    .memberPanel > .memberPanel-role {
+        color:#666;
+    }
+    .memberPanel > .memberPanel-signin {
+    }
+
+.meter { 
+	height: 20px;  /* Can be anything */
+	position: relative;
+	background: #555;
+	-moz-border-radius: 25px;
+	-webkit-border-radius: 25px;
+	border-radius: 25px;
+	padding: 10px;
+	box-shadow: inset 0 -1px 1px rgba(255,255,255,0.3);
+}
+
+.meter > span {
+  display: block;
+  height: 100%;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  background-color: rgb(43,194,83);
+  background-image: linear-gradient(
+    center bottom,
+    rgb(43,194,83) 37%,
+    rgb(84,240,84) 69%
+  );
+  box-shadow: 
+    inset 0 2px 9px  rgba(255,255,255,0.3),
+    inset 0 -2px 6px rgba(0,0,0,0.4);
+  position: relative;
+  overflow: hidden;
+}
+
+.meter > span:after,.animate > span > span  {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+  background-image: linear-gradient(
+    -45deg, 
+    rgba(255, 255, 255, .2) 25%, 
+    transparent 25%, 
+    transparent 50%, 
+    rgba(255, 255, 255, .2) 50%, 
+    rgba(255, 255, 255, .2) 75%, 
+    transparent 75%, 
+    transparent
+  );
+  z-index: 1;
+  background-size: 50px 50px;
+  animation: move 2s linear infinite;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  overflow: hidden;
+}
+.animate > span:after {
+  display: none;
+}
+@keyframes move {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 50px 50px;
+  }
+}

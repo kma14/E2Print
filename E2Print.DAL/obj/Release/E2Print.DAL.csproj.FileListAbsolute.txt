@@ -1,0 +1,12 @@
+C:\Users\kevin\documents\visual studio 2013\Projects\E2Print\E2Print.DAL\bin\Release\E2Print.DAL.dll.config
+C:\Users\kevin\documents\visual studio 2013\Projects\E2Print\E2Print.DAL\bin\Release\E2Print.DAL.dll
+C:\Users\kevin\documents\visual studio 2013\Projects\E2Print\E2Print.DAL\bin\Release\E2Print.DAL.pdb
+C:\Users\kevin\documents\visual studio 2013\Projects\E2Print\E2Print.DAL\bin\Release\E2Print.Domain.dll
+C:\Users\kevin\documents\visual studio 2013\Projects\E2Print\E2Print.DAL\bin\Release\EntityFramework.dll
+C:\Users\kevin\documents\visual studio 2013\Projects\E2Print\E2Print.DAL\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\kevin\documents\visual studio 2013\Projects\E2Print\E2Print.DAL\bin\Release\E2Print.Domain.pdb
+C:\Users\kevin\documents\visual studio 2013\Projects\E2Print\E2Print.DAL\bin\Release\EntityFramework.xml
+C:\Users\kevin\documents\visual studio 2013\Projects\E2Print\E2Print.DAL\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\kevin\documents\visual studio 2013\Projects\E2Print\E2Print.DAL\obj\Release\E2Print.DAL.csprojResolveAssemblyReference.cache
+C:\Users\kevin\documents\visual studio 2013\Projects\E2Print\E2Print.DAL\obj\Release\E2Print.DAL.dll
+C:\Users\kevin\documents\visual studio 2013\Projects\E2Print\E2Print.DAL\obj\Release\E2Print.DAL.pdb

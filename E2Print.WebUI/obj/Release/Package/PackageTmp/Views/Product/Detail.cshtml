@@ -1,0 +1,92 @@
+﻿@using E2Print.Domain.Entities;
+
+@model E2Print.Domain.Entities.Category
+
+@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+<link href="~/Content/BreadScrum.css" rel="stylesheet" />
+<div class="container product">
+    <div style="margin-bottom:20px;font-size:1.4em;text-transform:uppercase;">
+        @*<ul id="breadcrumb">
+            <li><a href="#"><span class="icon icon-home"> </span></a></li>
+            <li><a href="#"><span class="icon icon-beaker"> </span> Projects</a></li>
+            <li><a href="#"><span class="icon icon-double-angle-right"></span> Breadcrumb</a></li>
+            <li><a href="#"><span class="icon icon-rocket"> </span> Getting started</a></li>
+            <li><a href="#"><span class="icon icon-arrow-down"> </span> Download</a></li>
+        </ul>*@
+        <span style="color:#888;margin-right:10px;">Large format print</span>
+        <span class="entypo-right-open" style="color:#aaa;margin-right:10px;font-weight:bold;font-size:1.2em"></span>
+        <span style="color:#1f232a;font-weight:bold;">Permanent Vinyl print</span>
+    </div>
+    <div class="column-auto product-photo-thumbnails">
+        <img src="~/Content/Images/LargeFormatPrinting/vinylPrint_big.png" class="thumbnail thumbnail-selected " />
+        <img src="~/Content/Images/LargeFormatPrinting/vinylPrint_big2.png" class="thumbnail" />
+    </div>
+    <div class="column-auto product-photo-big">
+        <img id="productPhoto" src="~/Content/Images/LargeFormatPrinting/vinylPrint_big.png" />
+    </div>
+    <div class="column-auto product-detail">
+        <p>
+            <span class="selectLabel">Item No:</span>
+            0321212
+        </p>
+        <p>
+            <div id="size_dd" class="wrapper-dropdown-3" tabindex="1">
+                <span>Size</span>
+                <ul class="dropdown">
+                    <li><a href="#">One Square meter<input type="hidden" class="opt-data" value="0.0" /></a></li>
+                </ul>
+            </div>
+        </p>
+        <p>
+            <div id="color_dd" class="wrapper-dropdown-3" tabindex="2">
+                <span>Color</span>
+                <ul class="dropdown">
+                    <li><a href="#">Full color<input type="hidden" class="opt-data" value="0.0" /></a></li>
+                </ul>
+            </div>
+        </p>
+        <p>
+
+            <div id="quantity_dd" class="wrapper-dropdown-3" tabindex="3">
+                <span>Quantity</span>
+                <ul class="dropdown">
+                    <li><a href="#">1<input type="hidden" class="opt-data" value="39.0"/></a></li>
+                    <li><a href="#">2<input type="hidden" class="opt-data" value="74.0"></a></li>
+                    <li><a href="#">3<input type="hidden" class="opt-data" value="105.0"></a></li>
+                    <li><a href="#">4<input type="hidden" class="opt-data" value="132.0"></a></li>
+                    <li><a href="#">5<input type="hidden" class="opt-data" value="155.0"></a></li>
+                    <li><a href="#">10<input type="hidden" class="opt-data" value="290.0"></a></li>
+                </ul>
+            </div>
+        </p>
+        <p>
+            <div id="material_dd" class="wrapper-dropdown-3" tabindex="4">
+                <span>Material</span>
+                <ul class="dropdown">
+                    <li><a href="#">1 year vinyl, whtie<input type="hidden" class="opt-data" value="0.0"></a></li>
+                    <li><a href="#">3 years vinyl, white/clear<input type="hidden" class="opt-data" value="10.0"></a></li>
+                    <li><a href="#">3 years vinyl, + clear vinyl laminating<input type="hidden" class="opt-data" value="25.0"></a></li>
+                </ul>
+            </div>
+        </p>
+
+        <p class="price-discount">
+            0
+        </p>
+        <p class="price-normal">
+            0
+        </p>
+    </div>
+
+    <div style="clear:both;"></div>
+    <div class="product-description">
+        Product specification
+        <p>
+            Our Clear, permanent adhesive vinyl is a promotional vinyl film designed for use in a wide range of medium-term promotional and general signage applications where good outdoor durability and value for money is required
+        </p>
+    </div>
+</div>

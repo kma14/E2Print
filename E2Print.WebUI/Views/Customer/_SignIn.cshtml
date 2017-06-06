@@ -1,0 +1,5 @@
+﻿<div class="memberPanel">
+    @Html.ActionLink("Register", "Signup", "Customer", null, new { @class = "dark" })<br />
+    @Html.ActionLink("Sign In", "Login", "Customer", null, new { @class = "dark" })
+    <input type="hidden" id="userDiscount" value="@ViewBag.Discount" />
+</div>
