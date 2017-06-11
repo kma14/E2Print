@@ -25,11 +25,11 @@ namespace E2Print.WebUI.Controllers
         {
             ViewBag.Title = "E2 Print - all kinds of printing";
 
-            HomeViewModel viewModel = new HomeViewModel();
-            viewModel.Categories = categoryRepository.GetAll();
-            viewModel.Promotions = promotionRepository.GetAll().Take(3).ToList();
+            //HomeViewModel viewModel = new HomeViewModel();
+            //viewModel.Categories = categoryRepository.GetAll();
+            //viewModel.Promotions = promotionRepository.GetAll().Take(3).ToList();
 
-            return View(viewModel);
+            return View();
         }
 
         public ActionResult AboutUs()

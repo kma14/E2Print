@@ -12,75 +12,123 @@
     <link rel="shortcut icon" href="~/Content/Images/favicon-32x32.png">
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
     <style type="text/css">
-                /* GLOBAL STYLES -------------------------------------------------- */
-                /* Padding below the footer and lighter body text */
+        /* GLOBAL STYLES -------------------------------------------------- */
+        /* Padding below the footer and lighter body text */
 
-                body {
-                    padding-top: 6rem;
-                    padding-bottom: 3rem;
-                    color: #5a5a5a;
-                }
+        body {
+            color: #5a5a5a;
+        }
+
+        #navbar {
+            height: 120px;
+            background-color: #303030;
+        }
+
+            #navbar img {
+                width: 100%;
+                position: absolute;
+                bottom: 0;
+            }
+
+        #navbar-left {
+            width: 100%;
+            display: block;
+        }
+
+        #navbar-whole {
+            display: none;
+        }
+
+        #navbar-border {
+            background-color: #f79323;
+            height: 15px;
+            margin-bottom: 30px;
+        }
+
+
+        footer {
+            background-color: #ec2029;
+            height: 160px;
+            color: #ffffff;
+            padding-top:30px;
+        }
+
+        /* RESPONSIVE CSS
+                -------------------------------------------------- */
+        /*Extra small devices (portrait phones, less than 576px) */
+        /* No media query since this is the default in Bootstrap*/
+
+        /*Small devices (landscape phones, 576px and up)*/
+        @@media (min-width: 576px) {
+            #navbar {
+                height: 160px;
+            }
+
+            #navbar-border {
+                height: 20px;
+            }
+
+            #navbar-left {
+                display: none;
+            }
+
+            #navbar-whole {
+                display: block;
+            }
+        }
+
+        /*Medium devices (tablets, 768px and up)*/
+        @@media (min-width: 768px) {
+        }
+
+        /*Large devices (desktops, 992px and up)*/
+        @@media (min-width: 992px) {
+        }
+
+        /*Extra large devices (large desktops, 1200px and up)*/
+        @@media (min-width: 1200px) {
+        }
     </style>
-    @RenderSection("Styles", false) 
+    @RenderSection("Styles", false)
     @RenderSection("GridStyles", false)
     @RenderSection("PageStyles", false)
 </head>
 <body>
-    <nav id="navbar" class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse">
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <a class="navbar-brand" href="#">Carousel</a>
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link disabled" href="#">Disabled</a>
-                </li>
-            </ul>
-            <form class="form-inline mt-2 mt-md-0">
-                <input class="form-control mr-sm-2" type="text" placeholder="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            </form>
+    <div id="navbar" class="container-fluid row">
+        <div class="col-1 hidden-md-down"></div>
+        <div class="col-12 col-lg-10">
+            <img id="navbar-left" src="~/Content/Images/navbar_left.png" />
+            <img id="navbar-whole" src="~/Content/Images/navbar.png" />
         </div>
-    </nav>
+        <div class="col-1 hidden-md-down"></div>
+    </div>
+    <div id="navbar-border" class="container-fluid">
+    </div>
     @RenderBody()
-    @*<footer id="footer">
-            <article id="contact">
-                <p class="contact-header">
-                    <span class="contact-header-sub">
-                        <span class="contact-header-subsub">
-                            <span class="contact-header-text">
-                                Get in touch&nbsp;
-                                <i class="icon entypo-down-open-big"></i>
-                                <i class="icon entypo-cancel"></i>
-                            </span>
-                        </span>
-                    </span>
-                </p>
-                <div class="contact-list">
-                    <div class="container">
-                        <div class="column-auto">
-                            <img src="~/Content/Images/weChat.jpg" style="width:100px;height:100px;margin:0px;"/>
-                        </div>
-                        <div class="column-auto">
-                            <span class="row">
-                                <i class="icon zocial-email"></i> info@e2print.co.nz
-                            </span>
-                            <span class="row">
-                                <i class="icon entypo-address"></i> Unit 29, 203 Kirkbride Road, Mangere 2022, Auckland <br /><i class="icon zocial-call"></i> <span>(09) 930 0560</span><br />
-                            </span>
-                        </div>
-                        <div style="clear: both;"></div>
-                    </div>
+
+    <div id="deviderTwo" class="container-fluid">
+        <img src="~/Content/Images/17-02.jpg" />
+    </div>
+    <footer>
+        <div class="container text">
+            <div class="row">
+                <div class="col">
+                    Openning hours:<br/>
+                    Mon - Fri 9:30 to 5:30  Sat & Sun (by appointment)
                 </div>
-            </article>
-        </footer>*@
+                <div class="col">
+                    698E Great South Rd Penrose Auckland
+                </div>
+                <div class="col">
+                    0800-511-888
+                </div>
+                <div class="col">
+                    (09) 525 5585
+                </div>
+                <div class="col">info@e2print.co.nz</div>
+            </div>
+        </div>
+    </footer>
     <script src="~/Scripts/jquery-1.10.2.min.js"></script>
     <script src="~/Scripts/fileupload.js"></script>
     <script src="~/Scripts/modernizr-2.6.2.js"></script>
