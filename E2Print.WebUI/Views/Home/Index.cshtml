@@ -7,95 +7,160 @@
 }
 @section pageStyles{
     <style type="text/css">
-        #deviderOne,#deviderTwo {
-            text-align: center;
-            height: 15px;
-            background-color:#ec2029;
-            margin-top:20px;
-        }
-        #deviderTwo {
-            background-color: #303030;
-            margin: 0;
-            -webkit-box-shadow: 0px 6px 10px 0px rgba(50, 50, 50, 0.75);
-            -moz-box-shadow: 0px 6px 10px 0px rgba(50, 50, 50, 0.75);
-            box-shadow: 0px 6px 10px 0px rgba(50, 50, 50, 0.75);
-        }
-        #deviderOne img,#deviderTwo img{height:100%;
-                        vertical-align: top;
-        }
-
         #aboutWapper {
-            padding:20px 0;
+            padding: 20px 0;
             background-color: #e7e7e7;
         }
 
-        /* RESPONSIVE CSS
-                -------------------------------------------------- */
-        /*Extra small devices (portrait phones, less than 576px) */
-        /* No media query since this is the default in Bootstrap*/
+        ul {
+            margin: 0;
+            margin-top: 5px;
+            margin-left: -10px;
+            padding: 0;
+        }
 
-        /*Small devices (landscape phones, 576px and up)*/
-        @@media (min-width: 576px) {
+        li {
+            list-style: none;
+            color: black;
+        }
 
-            #deviderOne, #deviderTwo{
-                height: 25px;
+            li a, li a:hover {
+                text-decoration: none;
+                color: black;
+                font-size: 0.8rem;
             }
-        }
 
-        /*Medium devices (tablets, 768px and up)*/
-        @@media (min-width: 768px) {
-        }
-
-        /*Large devices (desktops, 992px and up)*/
-        @@media (min-width: 992px) {
-        }
-
-        /*Extra large devices (large desktops, 1200px and up)*/
-        @@media (min-width: 1200px) {
-        }
+            
+#map{
+    width:100%;
+    height:365px;
+    border:1px solid #dddddd;
+    margin-bottom:10px;
+}
     </style>
 }
 <div class="container">
-
     <!-- Three columns of text below the carousel -->
     <div class="row">
         <div class="col-6 col-lg">
-            <img src="~/Content/Images/02-01.jpg" class="titleImage" width="100%" />
-            <img src="~/Content/Images/07-01.jpg" class="hidden-xs-down" width="100%" />
-            <h2>Heading</h2>
-            <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
-            <p><a class="btn btn-secondary" href="#" role="button">View details »</a></p>
+            <div class="row">
+                <div class="col">
+                    <img src="~/Content/Images/02-01.jpg" class="titleImage" width="100%" />
+                    <img src="~/Content/Images/07-01.jpg" class="hidden-xs-down" width="100%" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-2">
+                    <img src="~/Content/Images/12-01.jpg" style="width: 14px;" />
+                </div>
+                <div class="col-10">
+                    <ul>
+                        <li><a href="/Category/Detail/2028">Calendars</a></li>
+                        <li><a href="/Category/Detail/2038">Car Magnet</a></li>
+                        <li><a href="/Category/Detail/2048">Car Number Plate Frame</a></li>
+                        <li><a href="/Category/Detail/2054">Car Wrap</a></li>
+                        <li><a href="/Category/Detail/2044">Clothes &amp; Caps Print</a></li>
+                        <li><a href="/Category/Detail/2036">Custome Sticker</a></li>
+                        <li><a href="/Category/Detail/2035">Magazine in all Theme</a></li>
+                        <li><a href="/Category/Detail/2043">USB Flash Drives</a></li>
+                        <li><a href="/Category/Detail/2037">Window Vision</a></li>
+                    </ul>
+                </div>
+            </div>
         </div>
         <div class="col-6 col-lg">
-            <img src="~/Content/Images/03-01.jpg" class="titleImage" width="100%" />
-            <img src="~/Content/Images/08-01.jpg" class="hidden-xs-down" width="100%" />
-            <h2>Heading</h2>
-            <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
-            <p><a class="btn btn-secondary" href="#" role="button">View details »</a></p>
+            <div class="row">
+                <div class="col">
+                    <img src="~/Content/Images/03-01.jpg" class="titleImage" width="100%" />
+                    <img src="~/Content/Images/08-01.jpg" class="hidden-xs-down" width="100%" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-2">
+                    <img src="~/Content/Images/13-01.jpg" style="width: 14px;" />
+                </div>
+                <div class="col-10">
+                    <ul>
+                        <li><a href="/Category/Detail/2025">Application form</a></li>
+                        <li><a href="/Category/Detail/2026">Booklets</a></li>
+                        <li><a href="/Category/Detail/2033">Brochure</a></li>
+                        <li><a href="/Category/Detail/2027">Business Cards</a></li>
+                        <li><a href="/Category/Detail/2031">Envelopes - Printed</a></li>
+                        <li><a href="/Category/Detail/2029">Flyers</a></li>
+                        <li><a href="/Category/Detail/2039">Invitation in all Theme</a></li>
+                        <li><a href="/Category/Detail/2030">Magnets - printed</a></li>
+                        <li><a href="/Category/Detail/2032">Notepads</a></li>
+                        <li><a href="/Category/Detail/2034">Sticky label</a></li>
+                    </ul>
+                </div>
+            </div>
         </div>
         <div class="col-6 col-lg">
-            <img src="~/Content/Images/04-01.jpg" class="titleImage" width="100%" />
-            <img src="~/Content/Images/09-01.jpg" class="hidden-xs-down" width="100%" />
-            <h2>Heading</h2>
-            <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
-            <p><a class="btn btn-secondary" href="#" role="button">View details »</a></p>
+            <div class="row">
+                <div class="col">
+                    <img src="~/Content/Images/04-01.jpg" class="titleImage" width="100%" />
+                    <img src="~/Content/Images/09-01.jpg" class="hidden-xs-down" width="100%" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-2">
+                    <img src="~/Content/Images/14-01.jpg" style="width: 14px;" />
+                </div>
+                <div class="col-10">
+                    <ul>
+                        <li><a href="/Category/Detail/2049">3D Letters / CNC Router</a></li>
+                        <li><a href="/Category/Detail/2046">ACM Board / Outdoor Sign</a></li>
+                        <li><a href="/Category/Detail/2053">Acrylic Range</a></li>
+                        <li><a href="/Category/Detail/2016">Canvas Prints</a></li>
+                        <li><a href="/Category/Detail/2020">Corflute Signs</a></li>
+                        <li><a href="/Category/Detail/2021">Flag</a></li>
+                        <li><a href="/Category/Detail/2047">Foam Board / PVC Rigid Board</a></li>
+                        <li><a href="/Category/Detail/2022">Foot Path Sign</a></li>
+                        <li><a href="/Category/Detail/2045">Mesh Banner / Fence Wrap</a></li>
+                        <li><a href="/Category/Detail/2019">Permanent Vinyl print</a></li>
+                        @*<li><a href="/Category/Detail/2024">Posters</a></li>
+                            <li><a href="/Category/Detail/2023">Roll up Banner</a></li>*@
+                    </ul>
+                </div>
+            </div>
         </div>
         <div class="col-6 col-lg">
-            <img src="~/Content/Images/05-01.jpg" class="titleImage" width="100%" />
-            <img src="~/Content/Images/10-01.jpg" class="hidden-xs-down" width="100%" />
-            <h2>Heading</h2>
-            <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
-            <p><a class="btn btn-secondary" href="#" role="button">View details »</a></p>
+            <div class="row">
+                <div class="col">
+                    <img src="~/Content/Images/05-01.jpg" class="titleImage" width="100%" />
+                    <img src="~/Content/Images/10-01.jpg" class="hidden-xs-down" width="100%" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-2">
+                    <img src="~/Content/Images/15-01.jpg" style="width: 14px;" />
+                </div>
+                <div class="col-10">
+                    <ul>
+                        <li><a href="/Home/Equipment">HP Latex 330</a></li>
+                        <li><a href="/Home/Equipment">Roland Versa Express RF-640</a></li>
+                        <li><a href="/Home/Equipment">Canon C9065 Pro</a></li>
+                        <li><a href="/Home/Equipment">Perfect Binding Machine</a></li>
+                    </ul>
+                </div>
+            </div>
         </div>
         <div class="col-6 col-lg">
-            <img src="~/Content/Images/06-01.jpg" class="titleImage" width="100%" />
-            <img src="~/Content/Images/11-01.jpg" class="hidden-xs-down" width="100%" />
-            <h2>Heading</h2>
-            <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
-            <p><a class="btn btn-secondary" href="#" role="button">View details »</a></p>
+            <div class="row">
+                <div class="col">
+                    <img src="~/Content/Images/06-01.jpg" class="titleImage" width="100%" />
+                    <img src="~/Content/Images/11-01.jpg" class="hidden-xs-down" width="100%" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-2">
+                    <img src="~/Content/Images/16-01.jpg" style="width: 14px;" />
+                </div>
+                <div class="col-10">
+                </div>
+            </div>
         </div>
     </div>
-
 </div>
 
 <div id="deviderOne" class="container-fluid">
@@ -103,27 +168,55 @@
 </div>
 <div id="aboutWapper">
     <div id="about" class="container">
-        <h2>About Us</h2>
-        <p>
-            <b>E2Print</b> is a proudly New Zealand owned company that specializes in the provision of total print solutions for organizations of all sizes and across all sectors.
-            We offer a personalized service to meet our client’s needs and expectations. We’re open and happy to talk about budgeting and timeline options, and understand your needs as a business.
-            We work to preserve and reflect the nature of your business in our products. Whether it’s something ambitious in a wide print format, or something as small as a flyer, we can help you promote your brand and grab the attention of the customers you want!
-        </p>
-        <div style="display:inline-block;width:400px; vertical-align:top;">
-            <b>We do:</b>  <br>** Banners, flag printing &amp; pull up banners  <br>** Book publishing &amp; binding  <br>** Booklets, brochures, catalogs &amp; flyers  <br>** Bulk printing  <br>** Business cards &amp; letterheads  <br>** Calendars, posters  <br>** Car stickers <br>** Canvas  <br>** Fine Art  <br>** Large format Printing <br>** Signage &amp; coreflute sign boards  <br>** Docket books &amp; invoice books  <br>** Invitations in all themes <br>** Pet or Human personalize magazing <br>** Website Design <br>
-            <br />
-        </div>
-        <div style="display:inline-block; vertical-align:top;">
-            <b>Why choose us?</b> <br>- 100% Money back Guarantee if we cannot make you satisfy <br>- No job is too small  <br>- Our service &amp; product are competitive, you paid what you got!  <br>
-            <br />
-        </div>
-        <div>
-            <br>Everything at E2Print is done in-store, which means that we can pass the time and money saving on to our customers! We import our own paper, have our own designers, and own high-tech printing machinery.
-            Get in touch today to discuss what we can do for you! <br>
-        </div>
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="row">
+                    <div class="col">
+                        <h2>About Us</h2>
+                        <p>
+                            <b>E2Print</b> is a proudly New Zealand owned company that specializes in the provision of total print solutions for organizations of all sizes and across all sectors.
+                            We offer a personalized service to meet our client’s needs and expectations. We’re open and happy to talk about budgeting and timeline options, and understand your needs as a business.
+                            We work to preserve and reflect the nature of your business in our products. Whether it’s something ambitious in a wide print format, or something as small as a flyer, we can help you promote your brand and grab the attention of the customers you want!
+                        </p>
+                    </div>
+                </div>
 
+                <div class="row">
+                    <div class="col-lg-6">
+                        <b>We do:</b>  <br>** Banners, flag printing &amp; pull up banners  <br>** Book publishing &amp; binding  <br>** Booklets, brochures, catalogs &amp; flyers  <br>** Bulk printing  <br>** Business cards &amp; letterheads  <br>** Calendars, posters  <br>** Car stickers <br>** Canvas  <br>** Fine Art  <br>** Large format Printing <br>** Signage &amp; coreflute sign boards  <br>** Docket books &amp; invoice books  <br>** Invitations in all themes <br>** Pet or Human personalize magazing <br>** Website Design <br>
+                    </div>
+                    <div class="col-lg-6">
+                        <b>Why choose us?</b> <br>- 100% Money back Guarantee if we cannot make you satisfy <br>- No job is too small  <br>- Our service &amp; product are competitive, you paid what you got!  <br>
+                        <br />
+                        <br>Everything at E2Print is done in-store, which means that we can pass the time and money saving on to our customers! We import our own paper, have our own designers, and own high-tech printing machinery.
+                        Get in touch today to discuss what we can do for you! <br>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <h2>Contact Us</h2>
+                <div id="map"></div>
+                <b>E2Print Penrose (HQ)</b>:
+                <br />698E Great South Rd <br>Penrose <br>Auckland <br />Ph: (09) 525 5585<br />
+                <b>Openning hours</b>: <br>Mon - Fri 9:30 to 5:30 <br>Sat &amp; Sun (by appointment)
+            </div>
+            <div class="col-lg-3">
+                <b>Send us a message</b><br />
+                Your email<input class="email-userEmail" style="width:100%;"/><br/>
+                Your phone number <input class="email-userCellphone" style="width:100%;"/><br />
+                Message<br /><textarea class="email-content" style="width:100%;"></textarea><br />
+
+                <button class="email-send">Send</button>
+                <button class="email-cancel">Cancel</button>
+                <span class="email-sending" style="display:none;">&nbsp;<b>Sending email ...</b></span>
+            </div>
+        </div>
     </div>
 </div>
 
 @section pageScripts{
+    <script src="~/Scripts/Email.js"></script>
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAuD3x08N6lgwrgm6c1HY5GmWcwGZHN11M&callback=initMap">
+</script>
 }

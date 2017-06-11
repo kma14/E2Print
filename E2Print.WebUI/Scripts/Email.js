@@ -12,6 +12,7 @@ $(document).on('click', 'button.email-send', function () {
     $('button.email-send').prop('disabled', true);
     $('button.email-cancel').prop('disabled', true);
 
+    debugger;
     $.post('/Home/SendEmail', { emailContent: emailContent, userEmail: userEmail, userCellphone: userCellphone }, function (data) {
         alert(data.Message);
         if (data.Result == 'succeed') {
@@ -41,15 +42,14 @@ $(document).on('click', 'button.email-cancel', function () {
 //            lng: newLng
 //        });
 //}
+function initMap() {
+    var uluru = { lat: -36.937575, lng: 174.810542 };
 
-(function initializeGoogleMap() {
-    var mapCanvas = document.getElementById('map');
-    var mapOptions = {
-        center: new google.maps.LatLng(-36.937575, 174.810542),
+    var map = new google.maps.Map(document.getElementById('map'), {
         zoom: 11,
+        center: uluru,
         mapTypeId: google.maps.MapTypeId.ROADMAP
-    }
-    var map = new google.maps.Map(mapCanvas, mapOptions)
+    });
 
     var marker = new google.maps.Marker({
         position: new google.maps.LatLng(-36.973213, 174.787805),
@@ -63,4 +63,27 @@ $(document).on('click', 'button.email-cancel', function () {
         draggable: false,
         map: map
     });
-})(window, document, jQuery);
+}
+
+//(function initializeGoogleMap() {
+//    var mapCanvas = document.getElementById('map');
+//    var mapOptions = {
+//        center: new google.maps.LatLng(-36.937575, 174.810542),
+//        zoom: 11,
+//        mapTypeId: google.maps.MapTypeId.ROADMAP
+//    }
+//    var map = new google.maps.Map(mapCanvas, mapOptions);
+
+//    var marker = new google.maps.Marker({
+//        position: new google.maps.LatLng(-36.973213, 174.787805),
+//        icon: "../Content/Images/MapMarker.png",
+//        draggable: false,
+//        map: map
+//    });
+//    var marker2 = new google.maps.Marker({
+//        position: new google.maps.LatLng(-36.904366, 174.809929),
+//        icon: "../Content/Images/MapMarker.png",
+//        draggable: false,
+//        map: map
+//    });
+//})(window, document, jQuery);

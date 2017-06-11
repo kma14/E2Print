@@ -6,7 +6,7 @@
     $(document).on('click', '.thumbnail', function () {
         $('.thumbnail').css('border', '1px solid #fff');  //this cancels the css hover effect
         $(this).css({
-            'border': '1px solid #005589'
+            'border': '1px solid #f79323'
         });
         var newSrc = $(this).attr('src');
         $('#productPhoto').fadeOut(500, function () {
@@ -77,8 +77,8 @@ DropDown.prototype = {
 
 function CalculateTotal() {
     var total = 0;
-    var onsaleDiscount = $('#onsaleDiscount').val();
-    var userDiscount = $('#userDiscount').val();
+    //var onsaleDiscount = $('#onsaleDiscount').val();
+    //var userDiscount = $('#userDiscount').val();
     var products = $.parseJSON($('#products').val());
 
     $.each(products, function (index, product) {
@@ -93,6 +93,6 @@ function CalculateTotal() {
         }
     });
     $('.price-normal').text('$'+total.toFixed(2));
-    $('.price-discount').text('$' + (total * onsaleDiscount * userDiscount).toFixed(2));
+    //$('.price-discount').text('$' + (total * onsaleDiscount * userDiscount).toFixed(2));
 }
 
