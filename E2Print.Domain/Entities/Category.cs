@@ -12,5 +12,6 @@ namespace E2Print.Domain.Entities
         public string Name { get; set; }
         public string Description { get; set; }
         public int? ParentId { get; set; }
+        public List<Category> SubCategories { get; set; }
     }
 }

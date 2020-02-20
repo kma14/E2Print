@@ -17,7 +17,7 @@ namespace E2Print.BL.Interfaces
 
         Category Create(Category category);
 
-        void Delete(Category category);
+        void Delete(int categoryId);
 
         void Update(Category category);
         List<string> GetAttributeList(List<Product> products, Func<Product, string> keySelector);

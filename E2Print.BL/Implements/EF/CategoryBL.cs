@@ -25,9 +25,15 @@ namespace E2Print.BL.Implements.EF
         }
 
 
+        //currently only support 2 level categories
         public List<Domain.Entities.Category> GetRootCategories()
-        {
-            return ModelMapping.MapCategory(e2printEntities.Categories.Where(c => c.ParentId == null)).ToList();
+        { 
+            var rootCategories = ModelMapping.MapCategory(e2printEntities.Categories.Where(c => c.ParentId == null)).ToList();
+            foreach(Domain.Entities.Category cat in rootCategories)
+            {
+                cat.SubCategories = GetChildrenCategories(cat.Id);
+            }
+            return rootCategories;
         }
 
         public List<Domain.Entities.Category> GetChildrenCategories(int categoryId)
@@ -48,9 +54,9 @@ namespace E2Print.BL.Implements.EF
             return category;
         }
 
-        public void Delete(Domain.Entities.Category category)
+        public void Delete(int categoryId)
         {
-            DAL.Category dalCategory = e2printEntities.Categories.Where(c => c.Id == category.Id).FirstOrDefault();
+            DAL.Category dalCategory = e2printEntities.Categories.FirstOrDefault(c => c.Id == categoryId);
             e2printEntities.Categories.Remove(dalCategory);
             e2printEntities.SaveChanges();
         }

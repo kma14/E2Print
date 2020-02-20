@@ -20,6 +20,11 @@ namespace E2Print.WebUI
             //    url: "Category/{CategoryId}",
             //    defaults: new { controller = "Category", action = "Detail" }
             //);
+            routes.MapRoute(
+                name: "Admin",
+                url: "Admin/{action}/{id}",
+                defaults: new { controller = "Admin", action = "DashBoard", id = UrlParameter.Optional }
+            );
 
             routes.MapRoute(
                 name: "Default",

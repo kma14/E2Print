@@ -92,6 +92,12 @@
     <Compile Include="Role.cs">
       <DependentUpon>E2PrintModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Tag.cs">
+      <DependentUpon>E2PrintModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TagLink.cs">
+      <DependentUpon>E2PrintModel.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

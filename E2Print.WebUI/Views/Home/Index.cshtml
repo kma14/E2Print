@@ -1,103 +1,500 @@
-﻿@using E2Print.Domain.Entities;
-
-@model E2Print.WebUI.Models.HomeViewModel
-
-@section pageMeta{
-    <meta name="desciption" content="Banners, flag printing & pull up banners,Business cards & letterheads,Calendars, posters,Book publishing & binding,,Booklets, brochures, catalogs & flyers,Bulk printing,Car stickers,Canvas,Large format Printing,Signage & coreflute sign boards,Invitations in all themes,Pet or Human personalize magazing,Website Design " />
+﻿@{
+    ViewBag.Title = "Home Page";
 }
-@section pageStyles{
-    <link href="~/Content/WOWSlider/engine1/style.css" rel="stylesheet" />
-}
-<div class="container" style="margin:30px 0px;z-index:0;">
-    <!-- Start WOWSlider.com BODY section --> <!-- add to the <body> of your page -->
-    <div id="wowslider-container1">
-        <div class="ws_images">
-            <ul>
-                <li><img src="~/Content/WOWSlider/data1/images/slider1.jpg" alt="" title="" id="wows1_0" /></li>
-                <li><img src="~/Content/WOWSlider/data1/images/slider2.jpg" alt="slider bootstrap" title="" id="wows1_1" /></li>
-                <li><img src="~/Content/WOWSlider/data1/images/slider3.jpg" alt="" title="" id="wows1_2" /></li>
-            </ul>
-        </div>
-        <div class="ws_bullets">
-            <div>
-                <a href="#" title=""><span><img src="~/Content/WOWSlider/data1/tooltips/slider1.jpg" alt="" />1</span></a>
-                <a href="#" title=""><span><img src="~/Content/WOWSlider/data1/tooltips/slider2.jpg" alt="" />2</span></a>
-                <a href="#" title=""><span><img src="~/Content/WOWSlider/data1/tooltips/slider3.jpg" alt="" />3</span></a>
+
+<header class="header" id="pageTop">
+
+    <!-- Menu Zord -->
+    <nav class="nav-menuzord nav-menuzord-transparent navbar-sticky">
+        <div class="container clearfix">
+            <div id="menuzord" class="menuzord">
+                <a href="/Home" class="menuzord-logo-brand"></a>
+
+                <div class="nav-item dropdown nav-item-left mr-0">
+                    <a href="javascript:void(0)" class="btn btn-xs btn-primary d-none d-lg-inline-block" data-toggle="dropdown" role="button" aria-haspopup="true"
+                       aria-expanded="false">
+                        <i class="fa fa-search mr-0" aria-hidden="true"></i>
+                    </a>
+
+                    <div class="dropdown-menu dropdown-menu-right rounded-0">
+                        <form class="" action="index.html" method="post">
+                            <div class="input-group input-group-sm">
+                                <input type="text" class="form-control form-control-sm rounded-0" required="" placeholder="Search....">
+                                <div class="input-group-append">
+                                    <button class="input-group-text border-0 rounded-0 btn bg-primary" type="submit">
+                                        <span class="text-white text-uppercase font-weight-bold">Search</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <ul class="menuzord-menu menuzord-right">
+                    <li class=" active ">
+                        <a class="" href="javascript:void(0)">Home</a>
+                    </li>
+
+                    <li class="">
+                        <a href="javascript:void(0)">Products</a>
+                        <div class="megamenu drop-up">
+                            <div class="megamenu-row">
+                                @{int columnCount = 0;}
+                                @foreach (E2Print.Domain.Entities.Category cat in (List<E2Print.Domain.Entities.Category>)ViewData["Categories"])
+                                {
+                                    if (columnCount == 0 || columnCount == 4)
+                                    {
+                                        <div class="col3">
+                                            <ul class="list-unstyled">
+                                                <li>@cat.Name</li>
+                                                @foreach (E2Print.Domain.Entities.Category subCat in cat.SubCategories)
+                                                {
+                                                    <li><a href="/Category/Detail/@subCat.Id">@subCat.Name</a></li>
+                                                }
+                                            </ul>
+                                        </div>
+                                    }
+                                    else
+                                    {
+                                        <div class="col2">
+                                            <ul class="list-unstyled">
+                                                <li>@cat.Name</li>
+                                                @foreach (E2Print.Domain.Entities.Category subCat in cat.SubCategories)
+                                                {
+                                                    <li><a href="/Category/Detail/@subCat.Id">@subCat.Name</a></li>
+                                                }
+                                            </ul>
+                                        </div>
+                                    }
+                                    columnCount++;
+                                }
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="">
+                        <a href="/Home/AboutUs">About Us</a>
+                    </li>
+
+                    <li class="">
+                        <a href="/Home/ContactUs">Contact Us</a>
+                    </li>
+
+                    <li class="py-4">
+                        <form class="d-lg-none" action="index.html" method="post">
+                            <div class="input-group input-group-sm">
+                                <input type="text" class="form-control form-control-sm rounded-0" required="" placeholder="Search....">
+                                <div class="input-group-append">
+                                    <button class="input-group-text border-0 rounded-0 btn bg-primary" type="submit">
+                                        <span class="text-white text-uppercase font-weight-bold">Search</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </li>
+                </ul>
             </div>
         </div>
-        <div class="ws_script" style="position:absolute;left:-99%"><a href="http://wowslider.com">jquery carousel slider</a> by WOWSlider.com v8.2</div>
-        <div class="ws_shadow"></div>
-    </div>
-    <!-- End WOWSlider.com BODY section -->
-</div>
-<div class="container category-group">
-    @for (int i = 0; i < 3; i++)
-    {
-        var specialStyle = i == 0 ? "category-item-left" : "";
-        var midStyle = i==1?"promo-title-mid":"";
-        
-        var imageUrl = "/Content/Images/PromotionHomePage/" + @Model.Promotions[i].ItemId + ".jpg";
-        <a class="column-auto category-item category-item-style0  @specialStyle" href="/Category/Detail/@Model.Promotions[i].ItemId">
-            <img src="@imageUrl" />
-            @*<div class="promo-title @midStyle">
-                @Model.Promotions[i].Title 
-            </div>*@
-            @*<div class="promo-intro">
-                @Model.Promotions[i].Description <span class="expireDate">( before @Model.Promotions[i].EndDate.ToLongDateString())</span>
-            </div>*@
-        </a>
-    }
-    <div style="clear:both"></div>
-</div>
-@foreach (Category category in Model.Categories)
-{
-    if(category.ParentId == null)
-    {
-        int itemCount = 0;
-        var subCategories = Model.Categories.Where(c => c.ParentId.HasValue && c.ParentId.Value == category.Id).OrderBy(c=>c.Name).ToList();
-        if (category.Id == 1001)
-        {
-            var index = subCategories.FindIndex(c => c.Id == 2019);
-            Category largeItem = subCategories[index];
-            subCategories[index] = subCategories[0];
-            subCategories[0] = largeItem;
-        }
-        
-        <div class="container category-group @category.Name.Split('-')[2].ToCamelCase()">
-            <a class="column-auto category-item category-root category-item-left">
-                <p class="rootTitle">@category.Name.Split('-')[0]</p>
-                <p class="rootSubTitle">@category.Name.Split('-')[1]</p>
-                <p class="rootContent">@category.Description</p>
-            </a>
+    </nav>
+</header>
 
-            @foreach (Category subcategory in subCategories)
-            {
-                var specialStyle = "";
-                if (subcategory.Id == 2019)
-                {
-                    specialStyle = "category-largeItem";
-                    itemCount++;
-                }
-                if (++itemCount % 3 == 0)
-                {
-                    specialStyle += " category-item-left";
-                }
-                var imageUrl = "/Content/Images/ItemHomePage/" + @subcategory.Id + ".jpg";
-                <a href="/Category/Detail/@subcategory.Id" class="column-auto category-item @specialStyle category-item-style1">
-                    <img src="@imageUrl" />
-                    <h3 class="category-title">
-                        @subcategory.Name<br />
-                        <small>@subcategory.Description</small>
-                    </h3>
-                </a>
-            }
-            <div style="clear:both"></div>
+<div class="main-wrapper home-main">
+    <!-- ====================================
+    ———	BANNER SECTION
+    ===================================== -->
+    <div id="rev_slider_12_1_wrapper" class="rev_slider_wrapper fullwidthbanner-container" data-alias="star-test"
+         data-source="gallery"
+         style="margin:0px auto;background:rgba(0,0,0,0.15);padding:0px;margin-top:0px;margin-bottom:0px;background-repeat:no-repeat;background-size:cover;background-position:center center;">
+        <!-- START REVOLUTION SLIDER 5.4.8.1 fullwidth mode -->
+        <div id="rev_slider_12_1" class="rev_slider fullwidthabanner" style="display:none;" data-version="5.4.8.1">
+            <ul>
+                <!-- SLIDE  -->
+                <li data-index="rs-33" data-transition="slideoverdown" data-slotamount="default" data-hideafterloop="0"
+                    data-hideslideonmobile="off" data-easein="default" data-easeout="default" data-masterspeed="default"
+                    data-thumb="assets/img/home/slider/slider-01.jpg" data-delay="6000" data-rotate="0" data-saveperformance="off"
+                    data-title="Slide" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6=""
+                    data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
+                    <!-- MAIN IMAGE -->
+                    <img src="assets/img/home/slider/slider-01.jpg" alt="" data-bgposition="center center" data-bgfit="cover"
+                         data-bgrepeat="no-repeat" class="rev-slidebg" data-no-retina style="width: 100% !important">
+                </li>
+                <!-- SLIDE  -->
+                <li data-index="rs-54" data-transition="slideoverdown" data-slotamount="default" data-hideafterloop="0"
+                    data-hideslideonmobile="off" data-easein="default" data-easeout="default" data-masterspeed="default"
+                    data-thumb="assets/img/home/slider/slider-02.jpg" data-delay="6000" data-rotate="0" data-saveperformance="off"
+                    data-title="Slide" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6=""
+                    data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
+                    <!-- MAIN IMAGE -->
+                    <img src="assets/img/home/slider/slider-02.jpg" alt="" data-bgposition="center center" data-bgfit="cover"
+                         data-bgrepeat="no-repeat" class="rev-slidebg" data-no-retina style="width: 100% !important">
+                </li>
+                <!-- SLIDE  -->
+                <li data-index="rs-56" data-transition="slideoverdown" data-slotamount="default" data-hideafterloop="0"
+                    data-hideslideonmobile="off" data-easein="default" data-easeout="default" data-masterspeed="default"
+                    data-thumb="assets/img/home/slider/slider-03.jpg" data-delay="6000" data-rotate="0" data-saveperformance="off"
+                    data-title="Slide" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6=""
+                    data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
+                    <!-- MAIN IMAGE -->
+                    <img src="assets/img/home/slider/slider-03.jpg" alt="" data-bgposition="center center" data-bgfit="cover"
+                         data-bgrepeat="no-repeat" class="rev-slidebg" data-no-retina style="width: 100% !important">
+                </li>
+                <!-- SLIDE  -->
+                <li data-index="rs-57" data-transition="slideoverdown" data-slotamount="default" data-hideafterloop="0"
+                    data-hideslideonmobile="off" data-easein="default" data-easeout="default" data-masterspeed="default"
+                    data-thumb="assets/img/home/slider/slider-04.jpg" data-delay="6000" data-rotate="0" data-saveperformance="off"
+                    data-title="Slide" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6=""
+                    data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
+                    <!-- MAIN IMAGE -->
+                    <img src="assets/img/home/slider/slider-04.jpg" alt="" data-bgposition="center center"
+                         data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-no-retina style="width: 100% !important">
+                </li>
+            </ul>
+            <div class="tp-bannertimer tp-bottom" style="visibility: hidden !important;"></div>
         </div>
-    }
-}
-@section pageScripts{
-    <script type="text/javascript" src="~/Content/WOWSlider/engine1/jquery.js"></script>
+    </div>
 
-<script type="text/javascript" src="~/Content/WOWSlider/engine1/wowslider.js"></script>
-<script type="text/javascript" src="~/Content/WOWSlider/engine1/script.js"></script>
-}
+    <!-- ====================================
+    ———	TOP DEALS SECTION
+    ===================================== -->
+    <section class="bg-smoke py-8 py-lg-9">
+        <div class="container">
+            <div class="text-center section-title">
+                <h2 class="text-uppercase font-weight-bold position-relative">
+                    <span class="bg-smoke">
+                        Our top deals
+                    </span>
+                </h2>
+                <p class="text-capitalize text-center">The majority of friends, through the pass by, don't miss, Our products have everything that one expects to find!</p>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-md-6 col-lg-4">
+                    <div class="card card-hover mb-5 mb-lg-0">
+                        <a href="single-package-left-sidebar.html" class="position-relative">
+                            <img class="card-img-top" src="assets/img/home/deal/deal-01.jpg" alt="Business card">
+                            <div class="card-img-overlay card-hover-overlay rounded-top d-flex flex-column">
+                                <div class="card-img-overlay card-hover-overlay rounded-top d-flex flex-column">
+                                    <div class="badge badge-primary badge-rounded-circle">
+                                        <span class="d-block" style="font-size:1.3em">
+                                            Free <br /> holder<br /> stand
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="card-body">
+                            <h5>
+                                <a href="single-package-left-sidebar.html" class="card-title text-uppercase">
+                                    BUSINESS CARDS
+                                </a>
+                            </h5>
+                            <p class="mb-5">Business card is a little card that which including the name, title, contact information, photo etc. It can be used for introducting sb or company to others.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <p class="mb-0 text-capitalize">Start from</p>
+                                    <h3 class="text-primary">$14.63</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="card card-hover mb-5 mb-lg-0">
+                        <a href="single-package-left-sidebar.html" class="position-relative">
+                            <img class="card-img-top" src="assets/img/home/deal/deal-02.jpg" alt="Brochure">
+
+                            <div class="card-img-overlay card-hover-overlay rounded-top d-flex flex-column">
+                                <div class="badge badge-primary badge-rounded-circle">
+                                    <span class="d-block">
+                                        5%<br>off
+                                    </span>
+                                </div>
+                            </div>
+                        </a>
+
+                        <div class="card-body">
+                            <h5 class="">
+                                <a href="single-package-left-sidebar.html" class="card-title text-uppercase">BROCHURE</a>
+                            </h5>
+                            <p class="mb-5">We offers high-quality menu-related products for restaurants, hotels, clubs and other businesses. Our offerings include a wide range of items to suit every style and budget.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <p class="mb-0 text-capitalize">Start from</p>
+                                    <h3 class="text-primary">$50.27</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="card card-hover">
+                        <a href="single-package-left-sidebar.html" class="position-relative">
+                            <img class="card-img-top" src="assets/img/home/deal/deal-03.jpg" alt="Corflute signs">
+
+                            <div class="card-img-overlay card-hover-overlay rounded-top d-flex flex-column">
+                                <div class="badge badge-primary badge-rounded-circle">
+                                    <span class="d-block">
+                                        5%<br>off
+                                    </span>
+                                </div>
+                            </div>
+                        </a>
+
+                        <div class="card-body">
+                            <h5>
+                                <a href="single-package-left-sidebar.html" class="card-title text-uppercase">CORFLUTE SIGNS</a>
+                            </h5>
+                            <p class="mb-5">Corflute signs are great low cost signs suitable for use indoors and out. Great for sale signs, workplace signs or just a low cost mounted print.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <p class="mb-0 text-capitalize">Start from</p>
+                                    <h3 class="text-primary">$13.64</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            @*<div class="text-center mt-7">
+                <a href="packages-grid.html" class="btn btn-sm btn-outline-secondary text-uppercase">View all</a>
+            </div>*@
+        </div>
+    </section>
+
+
+    <!-- ====================================
+    ———	COUNTER SECTION
+    ===================================== -->
+    <section class="counter-up dzsparallaxer auto-init use-loading counterup-paralax">
+        <div class="divimage dzsparallaxer--target" style="height: 700px;" data-src="assets/img/home/promotion/promotion-2.jpg">
+        </div>
+        <div class="container paralax-container">
+            <div class="row align-items-center text-center" id="counter">
+                <div class="col-6 col-md-3 mb-5 mb-md-0">
+                    <div>
+                        <img src="~/assets/img/home/4steps-01.png" style="width:50%;left:-25%" />
+                    </div>
+                    <h2 class="counter-value mb-2">&nbsp;</h2>
+                    <span style="color:white;">Obtain client’s requirement, provide proposal and quotation.also have an onsite assessment if is required</span>
+                </div>
+
+                <div class="col-6 col-md-3 mb-5 mb-md-0">
+                    <div>
+                        <img src="~/assets/img/home/4steps-02.png" style="width:50%;left:-25%" />
+                    </div>
+                    <h2 class="counter-value mb-2">&nbsp;</h2>
+                    <span style="color:white;">Customised project proposal by our professional designer and finalisation of the quotation</span>>
+</div>
+
+                <div class="col-6 col-md-3">
+                    <div>
+                        <img src="~/assets/img/home/4steps-03.png" style="width:50%;left:-25%" />
+                    </div>
+                    <h2 class="counter-value mb-2">&nbsp;</h2>
+                    <span style="color:white;">Installation by the people with site safety license</span>
+</div>
+
+                <div class="col-6 col-md-3">
+                    <div>
+                        <img src="~/assets/img/home/4steps-04.png" style="width:50%;left:-25%" />
+                    </div>
+                    <h2 class="counter-value mb-2" >&nbsp;</h2>
+                    <span style="color:white;">You will have a total care customer experience with professional post service</span>
+</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====================================
+    ———	PACKAGES SECTION
+    ===================================== -->
+    <section class="py-10">
+        <div class="container">
+            <div class="text-center section-title">
+                <h2 class="text-uppercase font-weight-bold position-relative">
+                    <span class="bg-white">
+                        Our Products / Services
+                    </span>
+                </h2>
+                <p class="text-capitalize text-center">Your one stop business solution</p>
+            </div>
+
+            <div id="filters" class="button-group">
+                <button class="button " data-filter=".customized">Customized</button>
+                <button class="button" data-filter=".expo">Expo Display</button>
+                <button class="button" data-filter=".small">Small format</button>
+                <button class="button" data-filter=".wide">Wide format</button>
+            </div>
+
+            <div class="row grid">
+                <div class="col-md-6 col-lg-4 element-item customized">
+                    <div class="media media-hoverable justify-content-center mb-2 mb-md-4 mb-lg-6">
+                        <a href="single-package-fullwidth.html" class="media-content">
+                            <img class="media-img" src="assets/img/home/packages/custom-1.jpg" alt="Generic placeholder image">
+                            <div class="media-object">
+                                <h3 class="text-uppercase mb-0 transparent-content">Calendar</h3>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4 element-item customized">
+                    <div class="media media-hoverable justify-content-center mb-2 mb-md-4 mb-lg-6">
+                        <a href="single-package-fullwidth.html" class="media-content">
+                            <img class="media-img" src="assets/img/home/packages/custom-2.jpg" alt="Generic placeholder image">
+                            <div class="media-object">
+                                <h3 class="text-uppercase mb-0 transparent-content">Car Magnet</h3>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4 element-item customized">
+                    <div class="media media-hoverable justify-content-center mb-2 mb-md-4 mb-lg-6">
+                        <a href="single-package-fullwidth.html" class="media-content">
+                            <img class="media-img" src="assets/img/home/packages/custom-3.jpg" alt="Generic placeholder image">
+                            <div class="media-object">
+                                <h3 class="text-uppercase mb-0 transparent-content">Car Wrap</h3>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4 element-item customized">
+                    <div class="media media-hoverable justify-content-center mb-2 mb-md-4 mb-lg-6">
+                        <a href="single-package-fullwidth.html" class="media-content">
+                            <img class="media-img" src="assets/img/home/packages/custom-4.jpg" alt="Generic placeholder image">
+                            <div class="media-object">
+                                <h3 class="text-uppercase mb-0 transparent-content">Clothes Print</h3>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4 element-item customized">
+                    <div class="media media-hoverable justify-content-center mb-2 mb-md-4 mb-lg-6">
+                        <a href="single-package-fullwidth.html" class="media-content">
+                            <img class="media-img" src="assets/img/home/packages/custom-5.jpg" alt="Generic placeholder image">
+                            <div class="media-object">
+                                <h3 class="text-uppercase mb-0 transparent-content">Magazine</h3>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4 element-item customized">
+                    <div class="media media-hoverable justify-content-center mb-2 mb-md-4 mb-lg-6">
+                        <a href="single-package-fullwidth.html" class="media-content">
+                            <img class="media-img" src="assets/img/home/packages/custom-6.jpg" alt="Generic placeholder image">
+                            <div class="media-object">
+                                <h3 class="text-uppercase mb-0 transparent-content">Window Sign</h3>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4 element-item expo">
+                    <div class="media media-hoverable justify-content-center mb-2 mb-md-4 mb-lg-6">
+                        <a href="single-package-fullwidth.html" class="media-content">
+                            <img class="media-img" src="assets/img/home/packages/expo-1.jpg" alt="Generic placeholder image">
+                            <div class="media-object">
+                                <h3 class="text-uppercase mb-0 transparent-content">Event canopy</h3>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4 element-item expo">
+                    <div class="media media-hoverable justify-content-center mb-2 mb-md-4 mb-lg-6">
+                        <a href="single-package-fullwidth.html" class="media-content">
+                            <img class="media-img" src="assets/img/home/packages/expo-2.jpg" alt="Generic placeholder image">
+                            <div class="media-object">
+                                <h3 class="text-uppercase mb-0 transparent-content">Tent With canopy sidewalls</h3>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4 element-item expo">
+                    <div class="media media-hoverable justify-content-center mb-2 mb-md-4 mb-lg-6">
+                        <a href="single-package-fullwidth.html" class="media-content">
+                            <img class="media-img" src="assets/img/home/packages/expo-3.jpg" alt="Generic placeholder image">
+                            <div class="media-object">
+                                <h3 class="text-uppercase mb-0 transparent-content">Flag</h3>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4 element-item small">
+                    <div class="media media-hoverable justify-content-center mb-2 mb-md-4 mb-lg-6">
+                        <a href="single-package-fullwidth.html" class="media-content">
+                            <img class="media-img" src="assets/img/home/packages/small-1.jpg" alt="Generic placeholder image">
+                            <div class="media-object">
+                                <h3 class="text-uppercase mb-0 transparent-content">Envelope</h3>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4 element-item small">
+                    <div class="media media-hoverable justify-content-center mb-2 mb-md-4 mb-lg-6">
+                        <a href="single-package-fullwidth.html" class="media-content">
+                            <img class="media-img" src="assets/img/home/packages/small-2.jpg" alt="Generic placeholder image">
+                            <div class="media-object">
+                                <h3 class="text-uppercase mb-0 transparent-content">Notepad</h3>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4 element-item small">
+                    <div class="media media-hoverable justify-content-center mb-2 mb-md-4 mb-lg-6">
+                        <a href="single-package-fullwidth.html" class="media-content">
+                            <img class="media-img" src="assets/img/home/packages/small-3.jpg" alt="Generic placeholder image">
+                            <div class="media-object">
+                                <h3 class="text-uppercase mb-0 transparent-content">Sticky label</h3>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4 element-item wide">
+                    <div class="media media-hoverable justify-content-center mb-2 mb-md-4 mb-lg-6">
+                        <a href="single-package-fullwidth.html" class="media-content">
+                            <img class="media-img" src="assets/img/home/packages/wide-1.jpg" alt="Generic placeholder image">
+                            <div class="media-object">
+                                <h3 class="text-uppercase mb-0 transparent-content">3D letter</h3>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4 element-item wide">
+                    <div class="media media-hoverable justify-content-center mb-2 mb-md-4 mb-lg-6">
+                        <a href="single-package-fullwidth.html" class="media-content">
+                            <img class="media-img" src="assets/img/home/packages/wide-2.jpg" alt="Generic placeholder image">
+                            <div class="media-object">
+                                <h3 class="text-uppercase mb-0 transparent-content">Canvas print</h3>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4 element-item wide">
+                    <div class="media media-hoverable justify-content-center mb-2 mb-md-4 mb-lg-6">
+                        <a href="single-package-fullwidth.html" class="media-content">
+                            <img class="media-img" src="assets/img/home/packages/wide-3.jpg" alt="Generic placeholder image">
+                            <div class="media-object">
+                                <h3 class="text-uppercase mb-0 transparent-content">Roll up Banner</h3>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

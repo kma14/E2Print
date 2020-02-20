@@ -85,7 +85,7 @@ namespace E2Print.WebUI.Controllers
                 if (result.Succeeded)
                 {
                     FormsAuthentication.SetAuthCookie(login, false);
-                    return RedirectToAction("Index", "Home");
+                    return RedirectToAction("DashBoard", "Admin");
                 }
                 else
                 {

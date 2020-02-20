@@ -48,7 +48,7 @@ namespace E2Print.BL.Implements.EF
             return userRole;
         }
 
-        public static E2Print.Domain.Entities.Product MapProduct(E2Print.DAL.Product dalProduct)
+        public static E2Print.Domain.Entities.Product MapProduct(E2Print.DAL.Product dalProduct,bool lazyLoading=false)
         {
             CategoryBL categoryRepository = new  CategoryBL();
             E2Print.Domain.Entities.Product product = new Domain.Entities.Product();
@@ -60,24 +60,32 @@ namespace E2Print.BL.Implements.EF
             product.Material = dalProduct.Material;
             product.BuyingQty = dalProduct.BuyingQty.Value;
             product.Price = dalProduct.Price;
-            if (dalProduct.CategoryId != null)
+            if(dalProduct.CategoryId == null)
+            {
+                product.Category = null;
+            }
+            else 
+            if (!lazyLoading && dalProduct.CategoryId != null)
             {
                 product.Category = categoryRepository.GetById(dalProduct.CategoryId.Value);
             }
             else
             {
-                product.Category = new Category();
+                product.Category = new Category()
+                {
+                    Id= dalProduct.CategoryId.Value
+                };
             }
             return product;
         }
 
-        public static IEnumerable<E2Print.Domain.Entities.Product> MapProduct(IEnumerable<E2Print.DAL.Product> dalProducts)
+        public static IEnumerable<E2Print.Domain.Entities.Product> MapProduct(IEnumerable<E2Print.DAL.Product> dalProducts, bool lazyLoading = false)
         {
             List<E2Print.Domain.Entities.Product> domainProducts = new List<E2Print.Domain.Entities.Product>();
 
             foreach (var dalProduct in dalProducts)
             {
-                E2Print.Domain.Entities.Product domainProduct = MapProduct(dalProduct);
+                Product domainProduct = MapProduct(dalProduct, lazyLoading);
                 domainProducts.Add(domainProduct);
             }
             return domainProducts;

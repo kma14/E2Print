@@ -89,6 +89,34 @@ namespace E2Print.WebUI.Controllers
         }
 
         [HttpPost]
+        public ActionResult Create(ProductViewModel model)
+        {
+            try
+            {
+                if (!ModelState.IsValid)
+                {
+                    return RedirectToAction("NewProduct", "Admin", model);
+                }
+                Category category = categoryRepository.GetById(model.CategoryId);
+                Product newProduct = new Product();
+                newProduct.Name = model.Name;
+                newProduct.Description = model.Description;
+                newProduct.Color = model.Color;
+                newProduct.Size = model.Size;
+                newProduct.Material = model.Material;
+                newProduct.BuyingQty = model.BuyingQty;
+                newProduct.Price = model.Price;
+                newProduct.Category = category;
+                model.Id = productRepository.Create(newProduct).Id;
+                return RedirectToAction("ProductSaved", "Admin", model);
+            }
+            catch (Exception ex)
+            {
+                return RedirectToAction("NewProduct", "Admin", model);
+            }
+        }
+
+        [HttpPost]
         public JsonResult UpdateProduct(ProductViewModel model)
         {
             try
@@ -122,11 +150,40 @@ namespace E2Print.WebUI.Controllers
         }
 
         [HttpPost]
-        public JsonResult DeleteProduct(ProductViewModel model)
+        public ActionResult Update(ProductViewModel model)
         {
             try
             {
-                productRepository.Delete(model.Id);
+                if (!ModelState.IsValid)
+                {
+                    return RedirectToAction("EditProduct", "Admin", model);
+                }
+                Category newCategory = categoryRepository.GetById(int.Parse(Request.Form["CategoryId"]));
+                Product productToEdit = new Product();
+                productToEdit.Id = model.Id;
+                productToEdit.Name = model.Name;
+                productToEdit.Description = model.Description;
+                productToEdit.Color = model.Color;
+                productToEdit.Size = model.Size;
+                productToEdit.Material = model.Material;
+                productToEdit.BuyingQty = model.BuyingQty;
+                productToEdit.Price = model.Price;
+                productToEdit.Category = newCategory;
+                productRepository.Update(productToEdit);
+                return RedirectToAction("ProductSaved", "Admin", model);
+            }
+            catch (Exception ex)
+            {
+                return RedirectToAction("EditProduct", "Admin", model);
+            }
+        }
+
+        [HttpPost]
+        public JsonResult DeleteProduct(int productId)
+        {
+            try
+            {
+                productRepository.Delete(productId);
                 return Json(new { Result = "OK" });
             }
             catch (Exception ex)

@@ -89,6 +89,49 @@
     <Property Name="RoleName" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="Discount" Type="decimal" Precision="18" Scale="2" Nullable="false" />
   </EntityType>
+  <EntityType Name="Tag">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+    <Property Name="Type" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="Description" Type="varchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TagLink">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="TagId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ProductId" Type="int" Nullable="false" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_TagLink_Product">
+    <End Role="Product" Type="Self.Product" Multiplicity="1" />
+    <End Role="TagLink" Type="Self.TagLink" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="TagLink">
+        <PropertyRef Name="ProductId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TagLink_Tag">
+    <End Role="Tag" Type="Self.Tag" Multiplicity="1" />
+    <End Role="TagLink" Type="Self.TagLink" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tag">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="TagLink">
+        <PropertyRef Name="TagId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <EntityContainer Name="E2printModelStoreContainer">
     <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Customer" EntityType="Self.Customer" Schema="dbo" store:Type="Tables" />
@@ -98,5 +141,15 @@
     <EntitySet Name="ProductAttribute" EntityType="Self.ProductAttribute" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Promotion" EntityType="Self.Promotion" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tag" EntityType="Self.Tag" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TagLink" EntityType="Self.TagLink" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_TagLink_Product" Association="Self.FK_TagLink_Product">
+      <End Role="Product" EntitySet="Product" />
+      <End Role="TagLink" EntitySet="TagLink" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TagLink_Tag" Association="Self.FK_TagLink_Tag">
+      <End Role="Tag" EntitySet="Tag" />
+      <End Role="TagLink" EntitySet="TagLink" />
+    </AssociationSet>
   </EntityContainer>
 </Schema>

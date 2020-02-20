@@ -1,0 +1,126 @@
+﻿
+@{
+    ViewBag.Title = "AllProducts";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+@model  List<E2Print.Domain.Entities.Product>
+
+@section styles{
+    <style>
+        div#allProducts {
+        }
+    </style>
+}
+
+<!-- Page-Title -->
+@*<div class="row">
+        <div class="col-sm-12">
+            <div class="page-title-box">
+                <h4 class="page-title">Datatable</h4>
+                <ol class="breadcrumb float-right">
+                    <li class="breadcrumb-item"><a href="#">Minton</a></li>
+                    <li class="breadcrumb-item"><a href="#">Tables</a></li>
+                    <li class="breadcrumb-item active">Datatable</li>
+                </ol>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>*@
+
+<!-- start page title -->
+<div class="row">
+    <div class="col-12">
+        <div class="page-title-box">
+            <div class="page-title-right">
+                <ol class="breadcrumb m-0">
+                    <li class="breadcrumb-item"><a href="/Admin">Admin</a></li>
+                    <li class="breadcrumb-item active">Products</li>
+                </ol>
+            </div>
+            <h4 class="page-title">Products</h4>
+        </div>
+    </div>
+</div>
+<!-- end page title -->
+
+<div class="row" id="allProducts">
+    <div class="col-12">
+        <div class="card-box table-responsive">
+            <table id="datatable" class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>PrductId</th>
+                        <th>Category</th>
+                        <th>Size</th>
+                        <th>Color</th>
+                        <th>Material</th>
+                        <th>BuyingQty</th>
+                        <th>Price</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var product in Model)
+                    {
+                    <tr>
+                        <td>@(product.Id)</td>
+                        <td>@(product.Category?.Name)</td>
+                        <td>@product.Size</td>
+                        <td>@product.Color</td>
+                        <td>@product.Material</td>
+                        <td>@product.BuyingQty</td>
+                        <td>@product.Price.ToString("C")</td>
+                        <td><a href="" class="deleteProduct" data-url="@Url.Action("DeleteProduct", "Product")" data-productid="@(product.Id)">Delete</a></td>
+                        <td>@Html.ActionLink("Edit","EditProduct","Admin",new { productId = product.Id },null)</td>
+                    </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div> <!-- end row -->
+
+
+
+@section scripts
+{
+    <!-- Required datatable js -->
+    <script src="~/Backend/plugins/datatables/jquery.dataTables.min.js"></script>
+    <script src="~/Backend/plugins/datatables/dataTables.bootstrap4.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#datatable').DataTable();
+
+            //Buttons examples
+            var table = $('#datatable-buttons').DataTable({
+                lengthChange: false,
+                buttons: ['copy', 'excel', 'pdf']
+            });
+
+            table.buttons().container()
+                .appendTo('#datatable-buttons_wrapper .col-md-6:eq(0)');
+        });
+
+        $(document).on('click', 'a.deleteProduct', function (e) {
+            e.preventDefault();
+            var result = confirm("Deleting product"+$(this).data('productid')+". This can NOT be undone.");
+            if (result) {
+                var productId = $(this).data('productid');
+                var url = $(this).data('url');
+                var li = $(this).closest('tr');
+                var postData = {
+                    productId: productId
+                };
+                $.post(url, postData, function (e) {
+                    if (e.Result === 'OK') {
+                        li.remove();
+                        alert('Product '+productId+' deleted');
+                    }
+                });
+            }
+        });
+
+    </script>
+}

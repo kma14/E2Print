@@ -25,6 +25,16 @@
     <EntitySet Name="Promotions" EntityType="E2printModel.Promotion" />
     <EntitySet Name="CustomerFeedbacks" EntityType="E2printModel.CustomerFeedback" />
     <EntitySet Name="ProductAttributes" EntityType="E2printModel.ProductAttribute" />
+    <EntitySet Name="Tags" EntityType="E2printModel.Tag" />
+    <EntitySet Name="TagLinks" EntityType="E2printModel.TagLink" />
+    <AssociationSet Name="FK_TagLink_Product" Association="E2printModel.FK_TagLink_Product">
+      <End Role="Product" EntitySet="Products" />
+      <End Role="TagLink" EntitySet="TagLinks" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TagLink_Tag" Association="E2printModel.FK_TagLink_Tag">
+      <End Role="Tag" EntitySet="Tags" />
+      <End Role="TagLink" EntitySet="TagLinks" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType Name="Role">
     <Key>
@@ -47,6 +57,7 @@
     <Property Name="BuyingQty" Type="Int32" />
     <Property Name="Price" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
     <Property Name="CategoryId" Type="Int32" />
+    <NavigationProperty Name="TagLinks" Relationship="E2printModel.FK_TagLink_Product" FromRole="Product" ToRole="TagLink" />
   </EntityType>
   <EntityType Name="Category">
     <Key>
@@ -99,4 +110,50 @@
     <Property Name="AttributeValue" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
     <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
   </EntityType>
+  <EntityType Name="Tag">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Type" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="Description" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="TagLinks" Relationship="E2printModel.FK_TagLink_Tag" FromRole="Tag" ToRole="TagLink" />
+  </EntityType>
+  <EntityType Name="TagLink">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="TagId" Type="Guid" Nullable="false" />
+    <Property Name="ProductId" Type="Int32" Nullable="false" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Product" Relationship="E2printModel.FK_TagLink_Product" FromRole="TagLink" ToRole="Product" />
+    <NavigationProperty Name="Tag" Relationship="E2printModel.FK_TagLink_Tag" FromRole="TagLink" ToRole="Tag" />
+  </EntityType>
+  <Association Name="FK_TagLink_Product">
+    <End Type="E2printModel.Product" Role="Product" Multiplicity="1" />
+    <End Type="E2printModel.TagLink" Role="TagLink" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="TagLink">
+        <PropertyRef Name="ProductId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TagLink_Tag">
+    <End Type="E2printModel.Tag" Role="Tag" Multiplicity="1" />
+    <End Type="E2printModel.TagLink" Role="TagLink" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tag">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="TagLink">
+        <PropertyRef Name="TagId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

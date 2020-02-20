@@ -2,39 +2,250 @@
     ViewBag.Title = "ContactUs";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+    <header class="header" id="pageTop">
+        <!-- Menu Zord -->
+        <nav class="nav-menuzord navbar-sticky">
+            <div class="container clearfix">
+                <div id="menuzord" class="menuzord">
+                    <a href="/Home" class="menuzord-brand">
+                        <img src="~/assets/img/logo1.png" style="height:54px;width:auto">
+                    </a>
 
-@section pageMeta{
-    <meta name="desciption" content="Banners, flag printing & pull up banners,Business cards & letterheads,Calendars, posters,Book publishing & binding,,Booklets, brochures, catalogs & flyers,Bulk printing,Car stickers,Canvas,Large format Printing,Signage & coreflute sign boards,Invitations in all themes,Pet or Human personalize magazing,Website Design " />
-}
-@section PageScripts{
-    <script src="https://maps.googleapis.com/maps/api/js"></script>
-    <script src="~/Scripts/Email.js"></script>
-}
-<div class="generalContent contactUs">
+                    <div class="nav-item dropdown nav-item-left mr-0">
+                        <a href="javascript:void(0)" class="btn btn-xs btn-primary d-none d-lg-inline-block" data-toggle="dropdown"
+                           role="button" aria-haspopup="true" aria-expanded="false">
+                            <i class="fa fa-search mr-0" aria-hidden="true"></i>
+                        </a>
 
-    <h2>Contact Us</h2>
-    <div id="map"></div>
-    <div style="margin-top:40px;">
-        <div>
-            <b>E2Print Penrose (HQ)</b>:
-            <br />698E Great South Rd <br>Penrose <br>Auckland <br />Ph: (09) 525 5585<br />
+                        <div class="dropdown-menu dropdown-menu-right rounded-0">
+                            <form class="" action="index.html" method="post">
+                                <div class="input-group input-group-sm">
+                                    <input type="text" class="form-control form-control-sm rounded-0" required="" placeholder="Search....">
+                                    <div class="input-group-append">
+                                        <button class="input-group-text border-0 rounded-0 btn bg-primary" type="submit">
+                                            <span class="text-white text-uppercase font-weight-bold">Search</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <ul class="menuzord-menu menuzord-right">
+                        <li class="">
+                            <a class="" href="javascript:void(0)">Home</a>
+                        </li>
+
+                        <li class="">
+                            <a href="javascript:void(0)">Products</a>
+                            <div class="megamenu drop-up">
+                                <div class="megamenu-row">
+                                    <div class="col2">
+                                        <ul class="list-unstyled">
+                                            <li>Expo Display</li>
+                                            <li class="">
+                                                <a href="/Category/Detail/2029">Custom Printed Event Canopy</a>
+                                            </li>
+                                            <li class="">
+                                                <a href="">Custom Printed Tent with Canopy + Sidewalls</a>
+                                            </li>
+                                            <li class="">
+                                                <a href="">Straight Tension Fabric Display</a>
+                                            </li>
+                                            <li class="">
+                                                <a href="">Flag</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="col3">
+                                        <ul class="list-unstyled">
+                                            <li>Customized Print</li>
+                                            <li class=""><a href="">Calendars</a></li>
+                                            <li class=""><a href="">Car Magnet</a></li>
+                                            <li class=""><a href="">Car Number Plate Frame</a></li>
+                                            <li class=""><a href="">Car Wrap</a></li>
+                                            <li class=""><a href="">Clothes & Caps Print</a></li>
+                                            <li class=""><a href="">Custome Sticker</a></li>
+                                            <li class=""><a href="">Magazine in all Theme</a></li>
+                                            <li class=""><a href="">USB Flash Drives</a></li>
+                                            <li class=""><a href="">Window Vision</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col3">
+                                        <ul class="list-unstyled">
+                                            <li>Small Format Print</li>
+                                            <li class=""><a href="">Booklets</a></li>
+                                            <li class=""><a href="">Brochure</a></li>
+                                            <li class=""><a href="">Business Cards</a></li>
+                                            <li class=""><a href="">Envelopes - Printed</a></li>
+                                            <li class=""><a href="">Flyers</a></li>
+                                            <li class=""><a href="">Invitation in all Theme</a></li>
+                                            <li class=""><a href="">Magnets - printed</a></li>
+                                            <li class=""><a href="">Notepads</a></li>
+                                            <li class=""><a href="">Sticky label</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col2">
+                                        <ul class="list-unstyled">
+                                            <li>Wide Format Print</li>
+                                            <li class=""><a href="">3D Letters / CNC Router</a></li>
+                                            <li class=""><a href="">ACM Board / Outdoor Sign</a></li>
+                                            <li class=""><a href="">Acrylic Range</a></li>
+                                            <li class=""><a href="">Canvas Prints</a></li>
+                                            <li class=""><a href="">Corflute Signs</a></li>
+                                            <li class=""><a href="">Foam Board / PVC Rigid Board</a></li>
+                                            <li class=""><a href="">Foot Path Sign</a></li>
+                                            <li class=""><a href="">&nbsp;</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col2">
+                                        <ul class="list-unstyled">
+                                            <li>&nbsp;</li>
+                                            <li class=""><a href="">Mesh Banner / Fence Wrap</a></li>
+                                            <li class=""><a href="">Permanent Vinyl print</a></li>
+                                            <li class=""><a href="">Posters</a></li>
+                                            <li class=""><a href="">Roll up Banner</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="">
+                            <a href="/Home/AboutUs">About Us</a>
+                        </li>
+
+                        <li class="active">
+                            <a href="/Home/ContactUs">Contact Us</a>
+                        </li>
+
+                        <li class="py-4">
+                            <form class="d-lg-none" action="index.html" method="post">
+                                <div class="input-group input-group-sm">
+                                    <input type="text" class="form-control form-control-sm rounded-0" required="" placeholder="Search....">
+                                    <div class="input-group-append">
+                                        <button class="input-group-text border-0 rounded-0 btn bg-primary" type="submit">
+                                            <span class="text-white text-uppercase font-weight-bold">Search</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+<div class="main-wrapper contact-us">
+
+    <!-- ====================================
+    ———	PAGE TITLE
+    ===================================== -->
+    <section class="page-title">
+        <div class="page-title-img bg-img bg-overlay-darken" style="background-image: url(assets/img/pages/page-title-bg5.jpg);">
+            <div class="container">
+                <div class="row align-items-center justify-content-center" style="height: 200px;">
+                    <div class="col-lg-6">
+                        <div class="page-title-content">
+                            <div class="title-border">
+                                <h2 class="text-uppercase text-white font-weight-bold">contact us</h2>
+                            </div>
+                            <p class="text-white mb-0"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div>
-            <b>E2Print Mangere</b>:
-            <br />Unit 29, 203 Kirkbride Rd <br>Mangere <br>Auckland <br />Ph: (09) 930 0560<br />
+    </section>
+
+    <!-- ====================================
+    ———	CONTACT INFO SECTION
+    ===================================== -->
+    <section class="py-9 pt-md-10">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-lg-5 col-xl-4">
+                    <div class="contact-info">
+                        <h2 class="text-uppercase font-weight-bold">get in touch</h2>
+                        <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor </p>
+                    </div>
+
+                    <div class="media mb-4">
+                        <a href="" class="icon-contact-default bg-primary text-white mr-5">
+                            <i class="fa fa-map-marker" aria-hidden="true"></i>
+                        </a>
+
+                        <div class="media-body">
+                            <h4 class="text-uppercase font-weight-medium">Address</h4>
+                            <p class="mb-0">16/14 Paris Road, Eiffel Tower, Art Louvre Museum Paris,  Fracce.</p>
+                        </div>
+                    </div>
+
+                    <div class="media mb-4">
+                        <a href="" class="icon-contact-default bg-primary text-white mr-5">
+                            <i class="fa fa-phone" aria-hidden="true"></i>
+                        </a>
+
+                        <div class="media-body">
+                            <h4 class="text-uppercase font-weight-medium">Phone number</h4>
+                            <div class="">
+                                <a href="tel:+55654545122" class="text-gray-color hover-text-primary">+55 654 545 122</a>
+                            </div>
+
+                            <div class="">
+                                <a href="tel:+55654545123" class="text-gray-color hover-text-primary">+55 654 545 123</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="media mb-6 mb-md-0">
+                        <a href="" class="icon-contact-default bg-primary text-white mr-5">
+                            <i class="fa fa-envelope" aria-hidden="true"></i>
+                        </a>
+
+                        <div class="media-body">
+                            <h4 class="text-uppercase font-weight-medium">Email us</h4>
+                            <div class="">
+                                <a href="mailto:info@example.com" class="text-gray-color hover-text-primary">info@example.com</a>
+                            </div>
+
+                            <div class="">
+                                <a href="mailto:info@startravel.com" class="text-gray-color hover-text-primary">info@startravel.com</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-7 col-xl-8">
+                    <form action="" method="POST" role="form" class="form">
+                        <div class="form-group">
+                            <input type="text" class="form-control border-0 bg-smoke" required="" placeholder="Your Name">
+                        </div>
+
+                        <div class="form-group">
+                            <input type="email" class="form-control border-0 bg-smoke" placeholder="Your Email">
+                        </div>
+
+                        <div class="form-group">
+                            <input type="number" class="form-control border-0 bg-smoke" placeholder="Your Phone">
+                        </div>
+
+                        <div class="form-group">
+                            <textarea class="form-control border-0 bg-smoke" rows="6" placeholder="Your Message"></textarea>
+                        </div>
+
+                        <div class="d-flex justify-content-end">
+                            <button type="submit" class="btn btn-primary text-uppercase">send message</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
-    </div>
-    <div style="margin-top:40px;">
-        <b>Openning hours</b>: <br>Mon - Fri 9:30 to 5:30 <br>Sat &amp; Sun (by appointment)
-    </div>
-    <div class="email" style="margin-top:40px;">
-        <b>Send us a message</b><br />
-        Your email<input class="email-userEmail" /> Your phone number <input class="email-userCellphone" /><br />
-        Message<br /><textarea class="email-content"></textarea><br />
+    </section>
 
-        <button class="email-send">Send</button>
-        <button class="email-cancel">Cancel</button>
-        <span class="email-sending" style="display:none;">&nbsp;<b>Sending email ...</b></span>
-    </div>
-</div>
+    <section>
+        <div class="" id="map" style="width:100%; height:555px;"></div>
+    </section>
 
+
+</div><!-- element wrapper ends -->

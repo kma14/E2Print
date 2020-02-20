@@ -120,6 +120,7 @@ namespace E2Print.WebUI.Controllers
                 return Json(new { Result = "ERROR", Message = ex.Message });
             }
         }
+
         [HttpPost]
         public JsonResult UpdateCategory(Category category)
         {
@@ -142,18 +143,18 @@ namespace E2Print.WebUI.Controllers
             }
         }
         [HttpPost]
-        public JsonResult DeleteCategory(Category category)
+        public JsonResult DeleteCategory(int categoryId)
         {
             try
             {
                 
-                var products = productRepository.GetAll().Where(c => c.Category.Id == category.Id);
+                var products = productRepository.GetAll().Where(c => c.Category.Id == categoryId);
                 foreach(Product product in products){
                     product.Category=null;
                     productRepository.Update(product);
                 }
 
-                categoryRepository.Delete(category);
+                categoryRepository.Delete(categoryId);
                 return Json(new { Result = "OK" });
             }
             catch (Exception ex)
@@ -161,26 +162,104 @@ namespace E2Print.WebUI.Controllers
                 return Json(new { Result = "ERROR", Message = ex.Message });
             }
         }
-        public ActionResult ManageCategory()
+
+
+        [Authorize(Roles = "Admin")]
+        public ActionResult Categories()
         {
-            return View();
+            var cats = categoryRepository.GetRootCategories();
+            ViewData["Categories"] = cats;
+            var categories = categoryRepository.GetAll();
+
+            List<CategoryViewModel> model = categories.Select(c => new CategoryViewModel
+            {
+                Id=c.Id,
+                Name=c.Name,
+                Description=c.Description,
+                ParentId = c.ParentId,
+                ParentCategory = c.ParentId==null?null: categories.FirstOrDefault(cate=>cate.Id==c.ParentId)
+            }).OrderBy(c=>c.ParentId).ToList();
+            return View(model);
         }
 
+        [Authorize(Roles = "Admin")]
+        public ActionResult NewCategory()
+        {
+            var cats = categoryRepository.GetRootCategories();
+            ViewData["Categories"] = cats;
+            CategoryViewModel model = new CategoryViewModel();
+            return View(model);
+        }
+
+        [HttpPost]
+        public ActionResult Create(CategoryViewModel model)
+        {
+            try
+            {
+                Category newCategory = new Category();
+                newCategory.ParentId = model.ParentId==null?0: model.ParentId.Value;
+                newCategory.Name = model.Name;
+                newCategory.Description = model.Description;
+                model.Id = categoryRepository.Create(newCategory).Id;
+                return RedirectToAction("Categories", "Category", model);
+            }
+            catch (Exception ex)
+            {
+                return RedirectToAction("NewCategory", "Category", model);
+            }
+        }
+
+        [Authorize(Roles = "Admin")]
+        public ActionResult EditCategory(int categoryId)
+        {
+            var cats = categoryRepository.GetRootCategories();
+            ViewData["Categories"] = cats;
+            var category = categoryRepository.GetById(categoryId);
+            CategoryViewModel model = new CategoryViewModel()
+            {
+                Id = category.Id,
+                ParentId = category.ParentId,
+                Name = category.Name,
+                Description = category.Description
+            };
+            return View(model);
+        }
+
+
+        [HttpPost]
+        public ActionResult Update(CategoryViewModel model)
+        {
+            try
+            {
+                Category categoryToUpdate = new Category();
+                categoryToUpdate.Id = model.Id;
+                categoryToUpdate.ParentId = model .ParentId== null?0: model.ParentId.Value;
+                categoryToUpdate.Name = model.Name;
+                categoryToUpdate.Description = model.Description;
+                categoryRepository.Update(categoryToUpdate);
+                ViewData["CurrentCategory"] = categoryToUpdate.Id;
+                return RedirectToAction("Categories", "Category", model);
+            }
+            catch (Exception ex)
+            {
+                return RedirectToAction("EditCategory", "Category", model);
+            }
+        }
 
         public ActionResult Detail(int id)
         {
             Category category = categoryRepository.GetById(id);
-            Regex reg = new Regex(@"^.*"+id+"_[0-9]{1}$");
+            Regex reg = new Regex(@"^.*" + id + "_[0-9]{1}$");
             string path = Server.MapPath("~/Content/Images/Items/");
-            var photos = Directory.GetFiles(path).Where(f => reg.IsMatch(Path.GetFileNameWithoutExtension(f))).Select(c => "/Content/Images/Items/"+Path.GetFileName(c));
+            var photos = Directory.GetFiles(path).Where(f => reg.IsMatch(Path.GetFileNameWithoutExtension(f))).Select(c => "/Content/Images/Items/" + Path.GetFileName(c));
             List<Product> products = productRepository.GetByCategoryId(id);
-            bool onsale = promotionRepository.GetAll().Where(c=>c.ItemId == id).Count()>0;
+            bool onsale = promotionRepository.GetAll().Where(c => c.ItemId == id).Count() > 0;
             CategoryAndProductsViewModel viewModel = new CategoryAndProductsViewModel
             {
                 Category = category,
-                OnSale =onsale,
-                Discount = onsale?promotionRepository.GetAll().Where(c=>c.ItemId == id).First().DiscountAmount.Value:1,
-                Products = products, 
+                OnSale = onsale,
+                Discount = onsale ? promotionRepository.GetAll().Where(c => c.ItemId == id).First().DiscountAmount.Value : 1,
+                Products = products,
                 Photos = photos.Count() > 0 ? photos.ToList() : new List<string> { "" },
                 Sizes = products.GroupBy(c => c.Size).Select(grp => grp.Key).ToList<string>(),
                 Colors = products.GroupBy(c => c.Color).Select(grp => grp.Key).ToList<string>(),
@@ -189,6 +268,7 @@ namespace E2Print.WebUI.Controllers
             };
 
             return View(viewModel);
+            return View();
         }
 
         [HttpPost]

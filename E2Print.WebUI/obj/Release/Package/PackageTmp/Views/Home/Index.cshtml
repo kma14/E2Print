@@ -1,103 +1,718 @@
-﻿@using E2Print.Domain.Entities;
-
-@model E2Print.WebUI.Models.HomeViewModel
-
-@section pageMeta{
-    <meta name="desciption" content="Banners, flag printing & pull up banners,Business cards & letterheads,Calendars, posters,Book publishing & binding,,Booklets, brochures, catalogs & flyers,Bulk printing,Car stickers,Canvas,Large format Printing,Signage & coreflute sign boards,Invitations in all themes,Pet or Human personalize magazing,Website Design " />
+﻿@{
+    ViewBag.Title = "Home Page";
 }
-@section pageStyles{
-    <link href="~/Content/WOWSlider/engine1/style.css" rel="stylesheet" />
-}
-<div class="container" style="margin:30px 0px;z-index:0;">
-    <!-- Start WOWSlider.com BODY section --> <!-- add to the <body> of your page -->
-    <div id="wowslider-container1">
-        <div class="ws_images">
-            <ul>
-                <li><img src="~/Content/WOWSlider/data1/images/slider1.jpg" alt="" title="" id="wows1_0" /></li>
-                <li><img src="~/Content/WOWSlider/data1/images/slider2.jpg" alt="slider bootstrap" title="" id="wows1_1" /></li>
-                <li><img src="~/Content/WOWSlider/data1/images/slider3.jpg" alt="" title="" id="wows1_2" /></li>
-            </ul>
-        </div>
-        <div class="ws_bullets">
-            <div>
-                <a href="#" title=""><span><img src="~/Content/WOWSlider/data1/tooltips/slider1.jpg" alt="" />1</span></a>
-                <a href="#" title=""><span><img src="~/Content/WOWSlider/data1/tooltips/slider2.jpg" alt="" />2</span></a>
-                <a href="#" title=""><span><img src="~/Content/WOWSlider/data1/tooltips/slider3.jpg" alt="" />3</span></a>
+
+<header class="header" id="pageTop">
+
+    <!-- Menu Zord -->
+    <nav class="nav-menuzord nav-menuzord-transparent navbar-sticky">
+        <div class="container clearfix">
+            <div id="menuzord" class="menuzord">
+                <a href="/Home" class="menuzord-logo-brand"></a>
+
+                <div class="nav-item dropdown nav-item-left mr-0">
+                    <a href="javascript:void(0)" class="btn btn-xs btn-primary d-none d-lg-inline-block" data-toggle="dropdown" role="button" aria-haspopup="true"
+                       aria-expanded="false">
+                        <i class="fa fa-search mr-0" aria-hidden="true"></i>
+                    </a>
+
+                    <div class="dropdown-menu dropdown-menu-right rounded-0">
+                        <form class="" action="index.html" method="post">
+                            <div class="input-group input-group-sm">
+                                <input type="text" class="form-control form-control-sm rounded-0" required="" placeholder="Search....">
+                                <div class="input-group-append">
+                                    <button class="input-group-text border-0 rounded-0 btn bg-primary" type="submit">
+                                        <span class="text-white text-uppercase font-weight-bold">Search</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <ul class="menuzord-menu menuzord-right">
+                    <li class=" active ">
+                        <a class="" href="javascript:void(0)">Home</a>
+                    </li>
+
+                    <li class="">
+                        <a href="javascript:void(0)">Products</a>
+                        <div class="megamenu drop-up">
+                            <div class="megamenu-row">
+                                <div class="col2">
+                                    <ul class="list-unstyled">
+                                        <li>Expo Display</li>
+                                        <li class=""><a href="/Category/Detail/2029">Custom Printed Event Canopy</a></li>
+                                        <li class=""><a href="">Custom Printed Tent with Canopy + Sidewalls</a></li>
+                                        <li class=""><a href="">Straight Tension Fabric Display</a></li>
+                                        <li class=""><a href="">Flag</a></li>
+                                    </ul>
+                                </div>
+                                <div class="col3">
+                                    <ul class="list-unstyled">
+                                        <li>Customized Print</li>
+                                        <li class=""><a href="">Calendars</a></li>
+                                        <li class=""><a href="">Car Magnet</a></li>
+                                        <li class=""><a href="">Car Number Plate Frame</a></li>
+                                        <li class=""><a href="">Car Wrap</a></li>
+                                        <li class=""><a href="">Clothes & Caps Print</a></li>
+                                        <li class=""><a href="">Custome Sticker</a></li>
+                                        <li class=""><a href="">Magazine in all Theme</a></li>
+                                        <li class=""><a href="">USB Flash Drives</a></li>
+                                        <li class=""><a href="">Window Vision</a></li>
+                                    </ul>
+                                </div>
+                                <div class="col3">
+                                    <ul class="list-unstyled">
+                                        <li>Small Format Print</li>
+                                        <li class=""><a href="">Booklets</a></li>
+                                        <li class=""><a href="">Brochure</a></li>
+                                        <li class=""><a href="">Business Cards</a></li>
+                                        <li class=""><a href="">Envelopes - Printed</a></li>
+                                        <li class=""><a href="">Flyers</a></li>
+                                        <li class=""><a href="">Invitation in all Theme</a></li>
+                                        <li class=""><a href="">Magnets - printed</a></li>
+                                        <li class=""><a href="">Notepads</a></li>
+                                        <li class=""><a href="">Sticky label</a></li>
+                                    </ul>
+                                </div>
+                                <div class="col2">
+                                    <ul class="list-unstyled">
+                                        <li>Wide Format Print</li>
+                                        <li class=""><a href="">3D Letters / CNC Router</a></li>
+                                        <li class=""><a href="">ACM Board / Outdoor Sign</a></li>
+                                        <li class=""><a href="">Acrylic Range</a></li>
+                                        <li class=""><a href="">Canvas Prints</a></li>
+                                        <li class=""><a href="">Corflute Signs</a></li>
+                                        <li class=""><a href="">Foam Board / PVC Rigid Board</a></li>
+                                        <li class=""><a href="">Foot Path Sign</a></li>
+                                        <li class=""><a href="">&nbsp;</a></li>
+                                    </ul>
+                                </div>
+                                <div class="col2">
+                                    <ul class="list-unstyled">
+                                        <li>&nbsp;</li>
+                                        <li class=""><a href="">Mesh Banner / Fence Wrap</a></li>
+                                        <li class=""><a href="">Permanent Vinyl print</a></li>
+                                        <li class=""><a href="">Posters</a></li>
+                                        <li class=""><a href="">Roll up Banner</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="">
+                        <a href="/Home/AboutUs">About Us</a>
+                    </li>
+
+                    <li class="">
+                        <a href="/Home/ContactUs">Contact Us</a>
+                    </li>
+
+                    <li class="py-4">
+                        <form class="d-lg-none" action="index.html" method="post">
+                            <div class="input-group input-group-sm">
+                                <input type="text" class="form-control form-control-sm rounded-0" required="" placeholder="Search....">
+                                <div class="input-group-append">
+                                    <button class="input-group-text border-0 rounded-0 btn bg-primary" type="submit">
+                                        <span class="text-white text-uppercase font-weight-bold">Search</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </li>
+                </ul>
             </div>
         </div>
-        <div class="ws_script" style="position:absolute;left:-99%"><a href="http://wowslider.com">jquery carousel slider</a> by WOWSlider.com v8.2</div>
-        <div class="ws_shadow"></div>
-    </div>
-    <!-- End WOWSlider.com BODY section -->
-</div>
-<div class="container category-group">
-    @for (int i = 0; i < 3; i++)
-    {
-        var specialStyle = i == 0 ? "category-item-left" : "";
-        var midStyle = i==1?"promo-title-mid":"";
-        
-        var imageUrl = "/Content/Images/PromotionHomePage/" + @Model.Promotions[i].ItemId + ".jpg";
-        <a class="column-auto category-item category-item-style0  @specialStyle" href="/Category/Detail/@Model.Promotions[i].ItemId">
-            <img src="@imageUrl" />
-            @*<div class="promo-title @midStyle">
-                @Model.Promotions[i].Title 
-            </div>*@
-            @*<div class="promo-intro">
-                @Model.Promotions[i].Description <span class="expireDate">( before @Model.Promotions[i].EndDate.ToLongDateString())</span>
-            </div>*@
-        </a>
-    }
-    <div style="clear:both"></div>
-</div>
-@foreach (Category category in Model.Categories)
-{
-    if(category.ParentId == null)
-    {
-        int itemCount = 0;
-        var subCategories = Model.Categories.Where(c => c.ParentId.HasValue && c.ParentId.Value == category.Id).OrderBy(c=>c.Name).ToList();
-        if (category.Id == 1001)
-        {
-            var index = subCategories.FindIndex(c => c.Id == 2019);
-            Category largeItem = subCategories[index];
-            subCategories[index] = subCategories[0];
-            subCategories[0] = largeItem;
-        }
-        
-        <div class="container category-group @category.Name.Split('-')[2].ToCamelCase()">
-            <a class="column-auto category-item category-root category-item-left">
-                <p class="rootTitle">@category.Name.Split('-')[0]</p>
-                <p class="rootSubTitle">@category.Name.Split('-')[1]</p>
-                <p class="rootContent">@category.Description</p>
-            </a>
+    </nav>
+</header>
 
-            @foreach (Category subcategory in subCategories)
-            {
-                var specialStyle = "";
-                if (subcategory.Id == 2019)
-                {
-                    specialStyle = "category-largeItem";
-                    itemCount++;
-                }
-                if (++itemCount % 3 == 0)
-                {
-                    specialStyle += " category-item-left";
-                }
-                var imageUrl = "/Content/Images/ItemHomePage/" + @subcategory.Id + ".jpg";
-                <a href="/Category/Detail/@subcategory.Id" class="column-auto category-item @specialStyle category-item-style1">
-                    <img src="@imageUrl" />
-                    <h3 class="category-title">
-                        @subcategory.Name<br />
-                        <small>@subcategory.Description</small>
-                    </h3>
-                </a>
-            }
-            <div style="clear:both"></div>
+<div class="main-wrapper home-main">
+    <!-- ====================================
+    ———	BANNER SECTION
+    ===================================== -->
+    <div id="rev_slider_12_1_wrapper" class="rev_slider_wrapper fullwidthbanner-container" data-alias="star-test"
+         data-source="gallery"
+         style="margin:0px auto;background:rgba(0,0,0,0.15);padding:0px;margin-top:0px;margin-bottom:0px;background-repeat:no-repeat;background-size:cover;background-position:center center;">
+        <!-- START REVOLUTION SLIDER 5.4.8.1 fullwidth mode -->
+        <div id="rev_slider_12_1" class="rev_slider fullwidthabanner" style="display:none;" data-version="5.4.8.1">
+            <ul>
+                <!-- SLIDE  -->
+                <li data-index="rs-33" data-transition="slideoverdown" data-slotamount="default" data-hideafterloop="0"
+                    data-hideslideonmobile="off" data-easein="default" data-easeout="default" data-masterspeed="default"
+                    data-thumb="assets/img/home/slider/slider-01.jpg" data-delay="6000" data-rotate="0" data-saveperformance="off"
+                    data-title="Slide" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6=""
+                    data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
+                    <!-- MAIN IMAGE -->
+                    <img src="assets/img/home/slider/slider-01.jpg" alt="" data-bgposition="center center" data-bgfit="cover"
+                         data-bgrepeat="no-repeat" class="rev-slidebg" data-no-retina style="width: 100% !important">
+                    <!-- LAYERS -->
+                    <!-- LAYER NR. 1 -->
+                    <div class="tp-caption tp-shape tp-shapewrapper  tp-resizeme" id="slide-33-layer-22"
+                         data-x="['left','left','left','left']" data-hoffset="['0','0','0','0']" data-y="['top','top','top','top']"
+                         data-voffset="['0','0','0','0']" data-width="full" data-height="full" data-whitespace="wrap"
+                         data-type="shape" data-basealign="slide" data-responsive_offset="on"
+                         data-frames='[{"delay":10,"speed":300,"frame":"0","from":"opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
+                         data-textAlign="['inherit','inherit','inherit','inherit']" data-paddingtop="[0,0,0,0]"
+                         data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]"
+                         style="z-index: 5;background-color:rgba(0,0,0,0.15);"></div>
+
+                    <!-- LAYER NR. 2 -->
+                    <div class="tp-caption   tp-resizeme" id="slide-33-layer-6" data-x="['left','left','left','left']"
+                         data-hoffset="['0','100','50','70']" data-y="['middle','middle','middle','middle']"
+                         data-voffset="['-100','-100','-100','-100']" data-fontsize="['30','30','22','20']" data-width="none"
+                         data-height="none" data-whitespace="wrap" data-type="text" data-responsive_offset="on"
+                         data-frames='[{"delay":650,"speed":1000,"frame":"0","from":"y:-50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"+4340","speed":300,"frame":"999","to":"y:-50px;opacity:0;","ease":"Power3.easeInOut"}]'
+                         data-textAlign="['inherit','inherit','inherit','inherit']" data-paddingtop="[0,0,0,0]"
+                         data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]"
+                         style="z-index: 6; white-space: wrap; font-size: 30px; line-height: 35px; font-weight: 400; color: #ffffff; letter-spacing: 0px;font-family:Montserrat;text-transform:uppercase;">
+                        Discover The Most Amazing
+                    </div>
+
+                    <!-- LAYER NR. 3 -->
+                    <div class="tp-caption   tp-resizeme" id="slide-33-layer-7" data-x="['left','left','left','left']"
+                         data-hoffset="['0','100','50','70']" data-y="['middle','middle','middle','middle']"
+                         data-voffset="['-40','-40','-55','-50']" data-fontsize="['65','65','40','30']" data-width="none"
+                         data-height="none" data-whitespace="wrap" data-type="text" data-responsive_offset="on"
+                         data-frames='[{"delay":650,"speed":1000,"frame":"0","from":"y:-50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"+4340","speed":300,"frame":"999","to":"y:-50px;opacity:0;","ease":"Power3.easeInOut"}]'
+                         data-textAlign="['inherit','inherit','inherit','inherit']" data-paddingtop="[0,0,0,0]"
+                         data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]"
+                         style="z-index: 7; white-space: wrap; font-size: 65px; line-height: 70px; font-weight: 700; color: #ffffff; letter-spacing: 0px;font-family:montserrat;text-transform:uppercase;">
+                        Travel Template
+                    </div>
+
+                    <!-- LAYER NR. 4 -->
+                    <div class="tp-caption   tp-resizeme" id="slide-33-layer-10" data-x="['left','left','left','center']"
+                         data-hoffset="['0','100','50','0']" data-y="['middle','middle','middle','middle']"
+                         data-voffset="['35','30','10','29']" data-fontsize="['14','14','13','14']" data-width="none"
+                         data-height="none" data-whitespace="wrap" data-visibility="['on','on','on','off']" data-type="text"
+                         data-responsive_offset="on"
+                         data-frames='[{"delay":1050,"speed":1000,"frame":"0","from":"y:-50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"+3940","speed":300,"frame":"999","to":"y:-50px;opacity:0;","ease":"Power3.easeInOut"}]'
+                         data-textAlign="['inherit','inherit','inherit','inherit']" data-paddingtop="[0,0,0,0]"
+                         data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]"
+                         style="z-index: 8; white-space: wrap; font-size: 14px; line-height: 21px; font-weight: 400; color: #ffffff; letter-spacing: 0px;font-family:montserrat;">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore <br> Ut
+                        enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex consequat.
+                    </div>
+
+                    <!-- LAYER NR. 5 -->
+                    <a href="https://wrapbootstrap.com/theme/star-travel-tour-booking-theme-admin-WB05T4R0J" target="_blank" class="tp-caption rev-btn " id="slide-33-layer-11" data-x="['left','left','left','left']"
+                       data-hoffset="['0','100','50','70']" data-y="['middle','middle','middle','middle']"
+                       data-voffset="['120','120','100','30']" data-width="132" data-height="none" data-whitespace="wrap"
+                       data-type="button" data-responsive_offset="on" data-responsive="on"
+                       data-frames='[{"delay":1450,"speed":1000,"frame":"0","from":"y:-50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"+3540","speed":300,"frame":"999","to":"y:-50px;opacity:0;","ease":"Power3.easeInOut"}]'
+                       data-textAlign="['center','center','center','center']" data-paddingtop="[14,14,14,14]"
+                       data-paddingright="[0,0,0,0]" data-paddingbottom="[14,14,14,14]" data-paddingleft="[0,0,0,0]"
+                       style="z-index: 9; min-width: 132px; max-width: 132px; white-space: nowrap; font-size: 14px; line-height: 17px; font-weight: 500; color: #ffffff; letter-spacing: 0;font-family:Montserrat;text-transform:uppercase;background-color:rgb(255,137,30);border-radius:3px 3px 3px 3px;outline:none;box-shadow:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;cursor:pointer;">
+                        Check Now
+                    </a>
+                </li>
+                <!-- SLIDE  -->
+                <li data-index="rs-54" data-transition="slideoverdown" data-slotamount="default" data-hideafterloop="0"
+                    data-hideslideonmobile="off" data-easein="default" data-easeout="default" data-masterspeed="default"
+                    data-thumb="assets/img/home/slider/slider-02.jpg" data-delay="6000" data-rotate="0" data-saveperformance="off"
+                    data-title="Slide" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6=""
+                    data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
+                    <!-- MAIN IMAGE -->
+                    <img src="assets/img/home/slider/slider-02.jpg" alt="" data-bgposition="center center" data-bgfit="cover"
+                         data-bgrepeat="no-repeat" class="rev-slidebg" data-no-retina style="width: 100% !important">
+                    <!-- LAYERS -->
+                    <!-- LAYER NR. 6 -->
+                    <div class="tp-caption tp-shape tp-shapewrapper  tp-resizeme" id="slide-54-layer-12"
+                         data-x="['left','left','left','left']" data-hoffset="['0','0','0','0']" data-y="['top','top','top','top']"
+                         data-voffset="['0','0','0','0']" data-width="full" data-height="full" data-whitespace="wrap"
+                         data-type="shape" data-basealign="slide" data-responsive_offset="on"
+                         data-frames='[{"delay":10,"speed":300,"frame":"0","from":"opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
+                         data-textAlign="['inherit','inherit','inherit','inherit']" data-paddingtop="[0,0,0,0]"
+                         data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]"
+                         style="z-index: 5;background-color:rgba(0,0,0,0.15);"></div>
+
+                    <!-- LAYER NR. 7 -->
+                    <div class="tp-caption   tp-resizeme" id="slide-54-layer-6" data-x="['center','center','center','center']"
+                         data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']"
+                         data-voffset="['-100','-100','-100','-100']" data-fontsize="['30','30','22','20']" data-width="none"
+                         data-height="none" data-whitespace="wrap" data-type="text" data-responsive_offset="on"
+                         data-frames='[{"delay":650,"speed":1000,"frame":"0","from":"y:-50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"+4330","speed":300,"frame":"999","to":"y:-50px;opacity:0;","ease":"Power3.easeInOut"}]'
+                         data-textAlign="['inherit','inherit','inherit','inherit']" data-paddingtop="[0,0,0,0]"
+                         data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]"
+                         style="z-index: 6; white-space: nowrap; font-size: 30px; line-height: 35px; font-weight: 400; color: #ffffff; letter-spacing: 0px;font-family:Montserrat;text-transform:uppercase;">
+                        Product Category
+                    </div>
+
+                    <!-- LAYER NR. 8 -->
+                    <div class="tp-caption   tp-resizeme" id="slide-54-layer-7" data-x="['center','center','center','center']"
+                         data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']"
+                         data-voffset="['-40','-40','-55','-50']" data-fontsize="['65','65','40','30']" data-width="none"
+                         data-height="none" data-whitespace="wrap" data-type="text" data-responsive_offset="on"
+                         data-frames='[{"delay":650,"speed":1000,"frame":"0","from":"y:-50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"+4330","speed":300,"frame":"999","to":"y:-50px;opacity:0;","ease":"Power3.easeInOut"}]'
+                         data-textAlign="['inherit','inherit','inherit','inherit']" data-paddingtop="[0,0,0,0]"
+                         data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]"
+                         style="z-index: 7; white-space: nowrap; font-size: 65px; line-height: 70px; font-weight: 700; color: #ffffff; letter-spacing: 0px;font-family:montserrat;text-transform:uppercase;">
+                        Product Category
+                    </div>
+
+                    <!-- LAYER NR. 9 -->
+                    <div class="tp-caption   tp-resizeme" id="slide-54-layer-10" data-x="['center','center','center','center']"
+                         data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']"
+                         data-voffset="['35','30','10','29']" data-fontsize="['14','14','13','14']" data-width="none"
+                         data-height="none" data-whitespace="wrap" data-visibility="['on','on','on','off']" data-type="text"
+                         data-responsive_offset="on"
+                         data-frames='[{"delay":1050,"speed":1000,"frame":"0","from":"y:-50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"+3930","speed":300,"frame":"999","to":"y:-50px;opacity:0;","ease":"Power3.easeInOut"}]'
+                         data-textAlign="['center','center','center','inherit']" data-paddingtop="[0,0,0,0]"
+                         data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]"
+                         style="z-index: 8; white-space: nowrap; font-size: 14px; line-height: 21px; font-weight: 400; color: #ffffff; letter-spacing: 0px;font-family:montserrat;">
+                        Maecenas nec sodales justo. Vivamus auctor pulvinar mattis. Ut at elementum nunc. Quisque ante, non <br>
+                        luctus enim pulvinar sed. Fusce quis congue odio.
+                    </div>
+
+                    <!-- LAYER NR. 10 -->
+                    <a href="https://wrapbootstrap.com/theme/star-travel-tour-booking-theme-admin-WB05T4R0J" target="_blank" class="tp-caption rev-btn " id="slide-54-layer-11" data-x="['center','center','center','center']"
+                       data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']"
+                       data-voffset="['120','120','100','30']" data-width="132" data-height="none" data-whitespace="wrap"
+                       data-type="button" data-responsive_offset="on" data-responsive="on"
+                       data-frames='[{"delay":1450,"speed":1000,"frame":"0","from":"y:-50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"+3530","speed":300,"frame":"999","to":"y:-50px;opacity:0;","ease":"Power3.easeInOut"}]'
+                       data-textAlign="['center','center','center','center']" data-paddingtop="[14,14,14,14]"
+                       data-paddingright="[0,0,0,0]" data-paddingbottom="[14,14,14,14]" data-paddingleft="[0,0,0,0]"
+                       style="z-index: 9; min-width: 132px; max-width: 132px; white-space: nowrap; font-size: 14px; line-height: 17px; font-weight: 500; color: #ffffff; letter-spacing: 0;font-family:Montserrat;text-transform:uppercase;background-color:rgb(255,137,30);border-radius:3px 3px 3px 3px;outline:none;box-shadow:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;cursor:pointer;">
+                        Check Now
+                    </a>
+                </li>
+                <!-- SLIDE  -->
+                <li data-index="rs-56" data-transition="slideoverdown" data-slotamount="default" data-hideafterloop="0"
+                    data-hideslideonmobile="off" data-easein="default" data-easeout="default" data-masterspeed="default"
+                    data-thumb="assets/img/home/slider/slider-03.jpg" data-delay="6000" data-rotate="0" data-saveperformance="off"
+                    data-title="Slide" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6=""
+                    data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
+                    <!-- MAIN IMAGE -->
+                    <img src="assets/img/home/slider/slider-03.jpg" alt="" data-bgposition="center center" data-bgfit="cover"
+                         data-bgrepeat="no-repeat" class="rev-slidebg" data-no-retina style="width: 100% !important">
+                    <!-- LAYERS -->
+                    <!-- LAYER NR. 11 -->
+                    <div class="tp-caption tp-shape tp-shapewrapper  tp-resizeme" id="slide-56-layer-12"
+                         data-x="['left','left','left','left']" data-hoffset="['0','0','0','0']" data-y="['top','top','top','top']"
+                         data-voffset="['0','0','0','0']" data-width="full" data-height="full" data-whitespace="wrap"
+                         data-type="shape" data-basealign="slide" data-responsive_offset="on"
+                         data-frames='[{"delay":10,"speed":300,"frame":"0","from":"opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
+                         data-textAlign="['inherit','inherit','inherit','inherit']" data-paddingtop="[0,0,0,0]"
+                         data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]"
+                         style="z-index: 5;background-color:rgba(0,0,0,0.15);"></div>
+
+                    <!-- LAYER NR. 12 -->
+                    <div class="tp-caption   tp-resizeme" id="slide-56-layer-6" data-x="['left','left','left','left']"
+                         data-hoffset="['0','100','50','70']" data-y="['middle','middle','middle','middle']"
+                         data-voffset="['-100','-100','-100','-100']" data-fontsize="['30','30','22','20']" data-width="none"
+                         data-height="none" data-whitespace="wrap" data-type="text" data-responsive_offset="on"
+                         data-frames='[{"delay":650,"speed":1000,"frame":"0","from":"y:-50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"y:-50px;opacity:0;","ease":"Power3.easeInOut"}]'
+                         data-textAlign="['inherit','inherit','inherit','inherit']" data-paddingtop="[0,0,0,0]"
+                         data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]"
+                         style="z-index: 6; white-space: nowrap; font-size: 30px; line-height: 35px; font-weight: 400; color: #ffffff; letter-spacing: 0px;font-family:Montserrat;text-transform:uppercase;">
+                        Enjoy Ultimate Freedom
+                    </div>
+
+                    <!-- LAYER NR. 13 -->
+                    <div class="tp-caption   tp-resizeme" id="slide-56-layer-7" data-x="['left','left','left','left']"
+                         data-hoffset="['0','100','50','70']" data-y="['middle','middle','middle','middle']"
+                         data-voffset="['-40','-40','-55','-50']" data-fontsize="['65','65','40','30']" data-width="none"
+                         data-height="none" data-whitespace="wrap" data-type="text" data-responsive_offset="on"
+                         data-frames='[{"delay":650,"speed":1000,"frame":"0","from":"y:-50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"y:-50px;opacity:0;","ease":"Power3.easeInOut"}]'
+                         data-textAlign="['inherit','inherit','inherit','inherit']" data-paddingtop="[0,0,0,0]"
+                         data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]"
+                         style="z-index: 7; white-space: nowrap; font-size: 65px; line-height: 70px; font-weight: 700; color: #ffffff; letter-spacing: 0px;font-family:montserrat;text-transform:uppercase;">
+                        Bootstrap Theme
+                    </div>
+
+                    <!-- LAYER NR. 14 -->
+                    <div class="tp-caption   tp-resizeme" id="slide-56-layer-10" data-x="['left','left','left','center']"
+                         data-hoffset="['0','100','50','0']" data-y="['middle','middle','middle','middle']"
+                         data-voffset="['35','30','10','29']" data-fontsize="['14','14','13','14']" data-width="none"
+                         data-height="none" data-whitespace="wrap" data-visibility="['on','on','on','off']" data-type="text"
+                         data-responsive_offset="on"
+                         data-frames='[{"delay":1050,"speed":1000,"frame":"0","from":"y:-50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"y:-50px;opacity:0;","ease":"Power3.easeInOut"}]'
+                         data-textAlign="['inherit','inherit','inherit','inherit']" data-paddingtop="[0,0,0,0]"
+                         data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]"
+                         style="z-index: 8; white-space: nowrap; font-size: 14px; line-height: 21px; font-weight: 400; color: #ffffff; letter-spacing: 0px;font-family:montserrat;">
+                        Aenean congue nisi elit, vitae viverra leo luctus et. erat id mi scelerisque, vitae gravida. <br> Nunc sed
+                        maximus ante. Nulla dictum turpis vitae vehicula auctor.
+                    </div>
+
+                    <!-- LAYER NR. 15 -->
+                    <a href="https://wrapbootstrap.com/theme/star-travel-tour-booking-theme-admin-WB05T4R0J" target="_blank" class="tp-caption rev-btn " id="slide-56-layer-11" data-x="['left','left','left','left']"
+                       data-hoffset="['0','100','50','70']" data-y="['middle','middle','middle','middle']"
+                       data-voffset="['120','120','100','30']" data-width="132" data-height="none" data-whitespace="wrap"
+                       data-type="button" data-responsive_offset="on" data-responsive="on"
+                       data-frames='[{"delay":1450,"speed":1000,"frame":"0","from":"y:-50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"y:-50px;opacity:0;","ease":"Power3.easeInOut"}]'
+                       data-textAlign="['center','center','center','center']" data-paddingtop="[14,14,14,14]"
+                       data-paddingright="[0,0,0,0]" data-paddingbottom="[14,14,14,14]" data-paddingleft="[0,0,0,0]"
+                       style="z-index: 9; min-width: 132px; max-width: 132px; white-space: nowrap; font-size: 14px; line-height: 17px; font-weight: 500; color: #ffffff; letter-spacing: 0;font-family:Montserrat;text-transform:uppercase;background-color:rgb(255,137,30);border-radius:3px 3px 3px 3px;outline:none;box-shadow:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;cursor:pointer;">
+                        Check Now
+                    </a>
+                </li>
+                <!-- SLIDE  -->
+                <li data-index="rs-57" data-transition="slideoverdown" data-slotamount="default" data-hideafterloop="0"
+                    data-hideslideonmobile="off" data-easein="default" data-easeout="default" data-masterspeed="default"
+                    data-thumb="assets/img/home/slider/slider-04.jpg" data-delay="6000" data-rotate="0" data-saveperformance="off"
+                    data-title="Slide" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6=""
+                    data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
+                    <!-- MAIN IMAGE -->
+                    <img src="assets/img/home/slider/slider-04.jpg" alt="" data-bgposition="center center"
+                         data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-no-retina style="width: 100% !important">
+                    <!-- LAYERS -->
+                    <!-- LAYER NR. 16 -->
+                    <div class="tp-caption tp-shape tp-shapewrapper  tp-resizeme" id="slide-57-layer-12"
+                         data-x="['left','left','left','left']" data-hoffset="['0','0','0','0']" data-y="['top','top','top','top']"
+                         data-voffset="['0','0','0','0']" data-width="full" data-height="full" data-whitespace="wrap"
+                         data-type="shape" data-basealign="slide" data-responsive_offset="on"
+                         data-frames='[{"delay":10,"speed":300,"frame":"0","from":"opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
+                         data-textAlign="['inherit','inherit','inherit','inherit']" data-paddingtop="[0,0,0,0]"
+                         data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]"
+                         style="z-index: 5;background-color:rgba(0,0,0,0.15);"></div>
+
+                    <!-- LAYER NR. 17 -->
+                    <div class="tp-caption   tp-resizeme" id="slide-57-layer-6" data-x="['center','center','center','center']"
+                         data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']"
+                         data-voffset="['-100','-100','-100','-100']" data-fontsize="['30','30','22','20']" data-width="none"
+                         data-height="none" data-whitespace="wrap" data-type="text" data-responsive_offset="on"
+                         data-frames='[{"delay":650,"speed":1000,"frame":"0","from":"y:-50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"+4050","speed":300,"frame":"999","to":"y:-50px;opacity:0;","ease":"Power3.easeInOut"}]'
+                         data-textAlign="['inherit','inherit','inherit','inherit']" data-paddingtop="[0,0,0,0]"
+                         data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]"
+                         style="z-index: 6; white-space: nowrap; font-size: 30px; line-height: 35px; font-weight: 400; color: #ffffff; letter-spacing: 0px;font-family:Montserrat;text-transform:uppercase;">
+                        Go Where You Wanna Go
+                    </div>
+
+                    <!-- LAYER NR. 18 -->
+                    <div class="tp-caption   tp-resizeme" id="slide-57-layer-7" data-x="['center','center','center','center']"
+                         data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']"
+                         data-voffset="['-40','-40','-55','-50']" data-fontsize="['65','65','40','30']" data-width="none"
+                         data-height="none" data-whitespace="wrap" data-type="text" data-responsive_offset="on"
+                         data-frames='[{"delay":650,"speed":1000,"frame":"0","from":"y:-50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"+4050","speed":300,"frame":"999","to":"y:-50px;opacity:0;","ease":"Power3.easeInOut"}]'
+                         data-textAlign="['inherit','inherit','inherit','inherit']" data-paddingtop="[0,0,0,0]"
+                         data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]"
+                         style="z-index: 7; white-space: nowrap; font-size: 65px; line-height: 70px; font-weight: 700; color: #ffffff; letter-spacing: 0px;font-family:montserrat;text-transform:uppercase;">
+                        24/7 Quick Support
+                    </div>
+
+                    <!-- LAYER NR. 19 -->
+                    <div class="tp-caption   tp-resizeme" id="slide-57-layer-10" data-x="['center','center','center','center']"
+                         data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']"
+                         data-voffset="['35','30','10','29']" data-fontsize="['14','14','13','14']" data-width="none"
+                         data-height="none" data-whitespace="wrap" data-visibility="['on','on','on','off']" data-type="text"
+                         data-responsive_offset="on"
+                         data-frames='[{"delay":1050,"speed":1000,"frame":"0","from":"y:-50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"+3650","speed":300,"frame":"999","to":"y:-50px;opacity:0;","ease":"Power3.easeInOut"}]'
+                         data-textAlign="['center','center','center','inherit']" data-paddingtop="[0,0,0,0]"
+                         data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]"
+                         style="z-index: 8; white-space: nowrap; font-size: 14px; line-height: 21px; font-weight: 400; color: #ffffff; letter-spacing: 0px;font-family:montserrat;">
+                        Maecenas et leo nec nunc rutrum tempor. Mauris pharetra porttitor odio eget convallis. Praesent <br> Aliquam
+                        sagittis efficitur risus,interdum euismod urna. Pellentesque vel augue augue.
+                    </div>
+
+                    <!-- LAYER NR. 20 -->
+                    <a href="https://wrapbootstrap.com/theme/star-travel-tour-booking-theme-admin-WB05T4R0J" target="_blank" class="tp-caption rev-btn" id="slide-57-layer-11" data-x="['center','center','center','center']"
+                       data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']"
+                       data-voffset="['120','120','100','30']" data-width="132" data-height="none" data-whitespace="wrap"
+                       data-type="button" data-responsive_offset="on" data-responsive="on"
+                       data-frames='[{"delay":1450,"speed":1000,"frame":"0","from":"y:-50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"+3250","speed":300,"frame":"999","to":"y:-50px;opacity:0;","ease":"Power3.easeInOut"}]'
+                       data-textAlign="['center','center','center','center']" data-paddingtop="[14,14,14,14]"
+                       data-paddingright="[0,0,0,0]" data-paddingbottom="[14,14,14,14]" data-paddingleft="[0,0,0,0]"
+                       style="z-index: 9; min-width: 132px; max-width: 132px; white-space: nowrap; font-size: 14px; line-height: 17px; font-weight: 500; color: #ffffff; letter-spacing: 0;font-family:Montserrat;text-transform:uppercase;background-color:rgb(255,137,30);border-radius:3px 3px 3px 3px;outline:none;box-shadow:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;cursor:pointer;">
+                        Check Now
+                    </a>
+                </li>
+            </ul>
+            <div class="tp-bannertimer tp-bottom" style="visibility: hidden !important;"></div>
         </div>
-    }
-}
-@section pageScripts{
-    <script type="text/javascript" src="~/Content/WOWSlider/engine1/jquery.js"></script>
+    </div>
 
-<script type="text/javascript" src="~/Content/WOWSlider/engine1/wowslider.js"></script>
-<script type="text/javascript" src="~/Content/WOWSlider/engine1/script.js"></script>
-}
+    <!-- ====================================
+    ———	TOP DEALS SECTION
+    ===================================== -->
+    <section class="bg-smoke py-8 py-lg-9">
+        <div class="container">
+            <div class="text-center section-title">
+                <h2 class="text-uppercase font-weight-bold position-relative">
+                    <span class="bg-smoke">
+                        Our top deals
+                    </span>
+                </h2>
+                <p class="text-capitalize text-center">Quisque lacus augue, blandit non est a, dictum malesuada odio.</p>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-md-6 col-lg-4">
+                    <div class="card card-hover mb-5 mb-lg-0">
+                        <a href="single-package-left-sidebar.html" class="position-relative">
+                            <img class="card-img-top" src="assets/img/home/deal/deal-01.jpg" alt="Card image cap">
+
+                            <div class="card-img-overlay card-hover-overlay rounded-top d-flex flex-column">
+                                <div class="badge badge-primary badge-rounded-circle">
+                                    <span class="d-block">
+                                        50%<br>off
+                                    </span>
+                                </div>
+                            </div>
+                        </a>
+
+                        <div class="card-body">
+                            <h5>
+                                <a href="single-package-left-sidebar.html" class="card-title text-uppercase">Suspendisse Blandit</a>
+                            </h5>
+                            <p class="mb-5">Integer purus ex, dictum nec elementum eu, tristique vel lectus. Donec rutrum lectus et pharetra egestas.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <p class="mb-0 text-capitalize">Start from</p>
+                                    <h3 class="text-primary">$299</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="card card-hover mb-5 mb-lg-0">
+                        <a href="single-package-left-sidebar.html" class="position-relative">
+                            <img class="card-img-top" src="assets/img/home/deal/deal-02.jpg" alt="Card image cap">
+
+                            <div class="card-img-overlay card-hover-overlay rounded-top d-flex flex-column">
+                                <div class="badge badge-primary badge-rounded-circle">
+                                    <span class="d-block">
+                                        Free<br>gift
+                                    </span>
+                                </div>
+                            </div>
+                        </a>
+
+                        <div class="card-body">
+                            <h5 class="">
+                                <a href="single-package-left-sidebar.html" class="card-title text-uppercase">Suspendisse Eros Erat</a>
+                            </h5>
+                            <p class="mb-5">Proin convallis magna vel libero accumsan sollicitudin. Quisque dapibus vitae turpis eu magna sagittis.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <p class="mb-0 text-capitalize">Start from</p>
+                                    <h3 class="text-primary">$499</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="card card-hover">
+                        <a href="single-package-left-sidebar.html" class="position-relative">
+                            <img class="card-img-top" src="assets/img/home/deal/deal-03.jpg" alt="Card image cap">
+
+                            <div class="card-img-overlay card-hover-overlay rounded-top d-flex flex-column">
+                                <div class="badge badge-primary badge-rounded-circle">
+                                    <span class="d-block">
+                                        25%<br>off
+                                    </span>
+                                </div>
+                            </div>
+                        </a>
+
+                        <div class="card-body">
+                            <h5>
+                                <a href="single-package-left-sidebar.html" class="card-title text-uppercase">Quisque Placerat Nunc</a>
+                            </h5>
+                            <p class="mb-5">Vivamus eu mattis nibh. Quisque eget ipsum at odio fringilla consequat vel id erat. Suspendisse non feugiat mi.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <p class="mb-0 text-capitalize">Start from</p>
+                                    <h3 class="text-primary">$299</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-7">
+                <a href="packages-grid.html" class="btn btn-sm btn-outline-secondary text-uppercase">View all</a>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ====================================
+    ———	COUNTER SECTION
+    ===================================== -->
+    <section class="counter-up dzsparallaxer auto-init use-loading counterup-paralax">
+        <div class="divimage dzsparallaxer--target" style="height: 700px;" data-src="assets/img/home/promotion/promotion-2.jpg">
+        </div>
+
+        <div class="container paralax-container">
+            <div class="row align-items-center text-center" id="counter">
+                <div class="col-6 col-md-3 mb-5 mb-md-0">
+                    <div class="icon icon-lg rounded-circle mx-auto bg-primary mb-3">
+                        <i class="fa fa-map-marker text-white" aria-hidden="true"></i>
+                    </div>
+                    <h1 class="counter-value mb-2" data-count="179">0</h1>
+                    <h6 class="">Destinations</h6>
+                </div>
+
+                <div class="col-6 col-md-3 mb-5 mb-md-0">
+                    <div class="icon icon-lg rounded-circle mx-auto bg-primary mb-3">
+                        <i class="fa fa-gift text-white" aria-hidden="true"></i>
+                    </div>
+                    <h1 class="counter-value mb-2" data-count="48">0</h1>
+                    <h6 class="">Tour pack</h6>
+                </div>
+
+                <div class="col-6 col-md-3">
+                    <div class="icon icon-lg rounded-circle mx-auto bg-primary mb-3">
+                        <i class="fa fa-smile-o text-white" aria-hidden="true"></i>
+                    </div>
+                    <h1 class="counter-value mb-2" data-count="4562">0</h1>
+                    <h6 class="">Happy clients</h6>
+                </div>
+
+                <div class="col-6 col-md-3">
+                    <div class="icon icon-lg rounded-circle mx-auto bg-primary mb-3">
+                        <i class="fa fa-life-ring text-white" aria-hidden="true"></i>
+                    </div>
+                    <h1 class="counter-value mb-2" data-count="24">0</h1>
+                    <h6 class="">Hours support</h6>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====================================
+    ———	PACKAGES SECTION
+    ===================================== -->
+    <section class="py-10">
+        <div class="container">
+            <div class="text-center section-title">
+                <h2 class="text-uppercase font-weight-bold position-relative">
+                    <span class="bg-white">
+                        Our Products / Services
+                    </span>
+                </h2>
+                <p class="text-capitalize text-center">Ut facilisis facilisis metus quis semper</p>
+            </div>
+
+            <div id="filters" class="button-group">
+                <button class="button is-checked" data-filter="*">Expo Display</button>
+                <button class="button" data-filter=".asia">Small format</button>
+                <button class="button" data-filter=".america">Wide format</button>
+                <button class="button" data-filter=".africa">Customized</button>
+            </div>
+
+            <div class="row grid">
+                <div class="col-md-6 col-lg-4 element-item america">
+                    <div class="media media-hoverable justify-content-center mb-2 mb-md-4 mb-lg-6">
+                        <a href="single-package-fullwidth.html" class="media-content">
+                            <img class="media-img" src="assets/img/home/packages/packages-1.jpg" alt="Generic placeholder image">
+                            <div class="media-object">
+                                <h3 class="text-uppercase mb-0">Vestibulum Tour</h3>
+                            </div>
+                            <div class="media-img-overlay">
+                                <div class="overlay-content">
+                                    <h3 class="">from <span class="text-primary">$399</span></h3>
+                                    <p class="text-white mb-0">
+                                        <span class="mr-1"><i class="fa fa-calendar" aria-hidden="true"></i></span> 27 Jan, 2019
+                                    </p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4 element-item africa">
+                    <div class="media media-hoverable justify-content-center mb-2 mb-md-4 mb-lg-6">
+                        <a href="single-package-fullwidth.html" class="media-content">
+                            <img class="media-img" src="assets/img/home/packages/packages-2.jpg" alt="Generic placeholder image">
+                            <div class="media-object">
+                                <h3 class="text-uppercase mb-0">Maecenas Tour</h3>
+                            </div>
+                            <div class="media-img-overlay">
+                                <div class="overlay-content">
+                                    <h3 class="">from <span class="text-primary">$599</span></h3>
+                                    <p class="text-white mb-0">
+                                        <span class="mr-1"><i class="fa fa-calendar" aria-hidden="true"></i></span> 09 Feb, 2019
+                                    </p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4 element-item asia america">
+                    <div class="media media-hoverable justify-content-center mb-2 mb-md-4 mb-lg-6">
+                        <a href="single-package-fullwidth.html" class="media-content">
+                            <img class="media-img" src="assets/img/home/packages/packages-3.jpg" alt="Generic placeholder image">
+                            <div class="media-object">
+                                <h3 class="text-uppercase mb-0">Lobortis Tour</h3>
+                            </div>
+                            <div class="media-img-overlay">
+                                <div class="overlay-content">
+                                    <h3 class="">from <span class="text-primary">$299</span></h3>
+                                    <p class="text-white mb-0">
+                                        <span class="mr-1"><i class="fa fa-calendar" aria-hidden="true"></i></span> 14 Feb, 2019
+                                    </p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4 element-item asia africa">
+                    <div class="media media-hoverable justify-content-center mb-2 mb-md-4 mb-lg-0">
+                        <a href="single-package-fullwidth.html" class="media-content">
+                            <img class="media-img" src="assets/img/home/packages/packages-4.jpg" alt="Generic placeholder image">
+                            <div class="media-object">
+                                <h3 class="text-uppercase mb-0">Leo Lacus Tour</h3>
+                            </div>
+                            <div class="media-img-overlay">
+                                <div class="overlay-content">
+                                    <h3 class="">from <span class="text-primary">$399</span></h3>
+                                    <p class="text-white mb-0">
+                                        <span class="mr-1"><i class="fa fa-calendar" aria-hidden="true"></i></span> 11 Jan, 2019
+                                    </p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4 element-item america">
+                    <div class="media media-hoverable justify-content-center mb-2 mb-md-0">
+                        <a href="single-package-fullwidth.html" class="media-content">
+                            <img class="media-img" src="assets/img/home/packages/packages-5.jpg" alt="Generic placeholder image">
+                            <div class="media-object">
+                                <h3 class="text-uppercase mb-0">Nullam Tour</h3>
+                            </div>
+                            <div class="media-img-overlay">
+                                <div class="overlay-content">
+                                    <h3 class="">from <span class="text-primary">$199</span></h3>
+                                    <p class="text-white mb-0">
+                                        <span class="mr-1"><i class="fa fa-calendar" aria-hidden="true"></i></span> 2 Feb, 2019
+                                    </p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4 element-item asia africa">
+                    <div class="media media-hoverable justify-content-center">
+                        <a href="single-package-fullwidth.html" class="media-content">
+                            <img class="media-img" src="assets/img/home/packages/packages-6.jpg" alt="Generic placeholder image">
+                            <div class="media-object">
+                                <h3 class="text-uppercase mb-0">Hendrerit Tour</h3>
+                            </div>
+                            <div class="media-img-overlay">
+                                <div class="overlay-content">
+                                    <h3 class="">from <span class="text-primary">$799</span></h3>
+                                    <p class="text-white mb-0">
+                                        <span class="mr-1"><i class="fa fa-calendar" aria-hidden="true"></i></span> 26 Feb, 2019
+                                    </p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

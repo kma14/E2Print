@@ -15,7 +15,14 @@ namespace E2Print.BL.Implements.EF
         E2printEntities e2PrintEntities = new E2printEntities();
         public List<Domain.Entities.Product> GetAll()
         {
-            return ModelMapping.MapProduct(e2PrintEntities.Products).ToList();
+            var products = ModelMapping.MapProduct(e2PrintEntities.Products, true).Where(c=>c.Category!=null).ToList();
+            var categories = e2PrintEntities.Categories.ToList();
+            foreach(Domain.Entities.Product p in products)
+            {
+                p.Category.Name = categories.FirstOrDefault(c => c.Id == p.Category.Id)?.Name;
+            }
+
+            return products;
         }
 
         public Domain.Entities.Product GetById()
@@ -112,6 +119,11 @@ namespace E2Print.BL.Implements.EF
         public int GetProductCount()
         {
             return e2PrintEntities.Products.Count();
+        }
+
+        public Domain.Entities.Product GetById(int productId)
+        {
+            return ModelMapping.MapProduct(e2PrintEntities.Products.FirstOrDefault(c => c.Id == productId));
         }
     }
 }

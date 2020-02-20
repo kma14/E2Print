@@ -10,3 +10,25 @@ C:\ZHUA\E2Print\E2Print.Domain\bin\Debug\Microsoft.Web.Infrastructure.dll
 C:\ZHUA\E2Print\E2Print.Domain\obj\Debug\E2Print.Domain.csprojResolveAssemblyReference.cache
 C:\ZHUA\E2Print\E2Print.Domain\obj\Debug\E2Print.Domain.dll
 C:\ZHUA\E2Print\E2Print.Domain\obj\Debug\E2Print.Domain.pdb
+C:\Users\Kevin.Ma\Documents\E2Print\E2Print.Domain\bin\Debug\E2Print.Domain.dll
+C:\Users\Kevin.Ma\Documents\E2Print\E2Print.Domain\bin\Debug\E2Print.Domain.pdb
+C:\Users\Kevin.Ma\Documents\E2Print\E2Print.Domain\bin\Debug\Microsoft.Web.Infrastructure.dll
+C:\Users\Kevin.Ma\Documents\E2Print\E2Print.Domain\obj\Debug\E2Print.Domain.csproj.CopyComplete
+C:\Users\Kevin.Ma\Documents\E2Print\E2Print.Domain\obj\Debug\E2Print.Domain.dll
+C:\Users\Kevin.Ma\Documents\E2Print\E2Print.Domain\obj\Debug\E2Print.Domain.pdb
+C:\Users\Kevin.Ma\Documents\E2Print\E2Print.Domain\obj\Debug\E2Print.Domain.csprojAssemblyReference.cache
+C:\Users\user\Google Drive\E2Print (1)\E2Print.Domain\bin\Debug\E2Print.Domain.dll
+C:\Users\user\Google Drive\E2Print (1)\E2Print.Domain\bin\Debug\E2Print.Domain.pdb
+C:\Users\user\Google Drive\E2Print (1)\E2Print.Domain\bin\Debug\Microsoft.Web.Infrastructure.dll
+C:\Users\user\Google Drive\E2Print (1)\E2Print.Domain\obj\Debug\E2Print.Domain.csprojAssemblyReference.cache
+C:\Users\user\Google Drive\E2Print (1)\E2Print.Domain\obj\Debug\E2Print.Domain.csproj.CoreCompileInputs.cache
+C:\Users\user\Google Drive\E2Print (1)\E2Print.Domain\obj\Debug\E2Print.Domain.csproj.CopyComplete
+C:\Users\user\Google Drive\E2Print (1)\E2Print.Domain\obj\Debug\E2Print.Domain.dll
+C:\Users\user\Google Drive\E2Print (1)\E2Print.Domain\obj\Debug\E2Print.Domain.pdb
+C:\Users\Kevin.Ma\Google Drive\E2Print\E2Print.Domain\bin\Debug\E2Print.Domain.dll
+C:\Users\Kevin.Ma\Google Drive\E2Print\E2Print.Domain\bin\Debug\E2Print.Domain.pdb
+C:\Users\Kevin.Ma\Google Drive\E2Print\E2Print.Domain\bin\Debug\Microsoft.Web.Infrastructure.dll
+C:\Users\Kevin.Ma\Google Drive\E2Print\E2Print.Domain\obj\Debug\E2Print.Domain.csprojAssemblyReference.cache
+C:\Users\Kevin.Ma\Google Drive\E2Print\E2Print.Domain\obj\Debug\E2Print.Domain.csproj.CopyComplete
+C:\Users\Kevin.Ma\Google Drive\E2Print\E2Print.Domain\obj\Debug\E2Print.Domain.dll
+C:\Users\Kevin.Ma\Google Drive\E2Print\E2Print.Domain\obj\Debug\E2Print.Domain.pdb

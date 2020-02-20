@@ -2,31 +2,167 @@
     ViewBag.Title = "E2 Print - AboutUs";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+    <header class="header" id="pageTop">
 
-@section pageMeta{
-    <meta name="desciption" content="Banners, flag printing & pull up banners,Business cards & letterheads,Calendars, posters,Book publishing & binding,,Booklets, brochures, catalogs & flyers,Bulk printing,Car stickers,Canvas,Large format Printing,Signage & coreflute sign boards,Invitations in all themes,Pet or Human personalize magazing,Website Design " />
-}
-@section PageScripts{
-    <script src="~/Scripts/Email.js"></script>
-}
+        <!-- Menu Zord -->
+        <nav class="nav-menuzord navbar-sticky">
+            <div class="container clearfix">
+                <div id="menuzord" class="menuzord">
+                    <a href="/Home" class="menuzord-brand">
+                        <img src="~/assets/img/logo1.png" style="height:54px;width:auto">
+                    </a>
 
-<div class="generalContent aboutUs">
-    <h2>About Us</h2>
-    <p>
-        <b>E2Print</b> is a proudly New Zealand owned company that specializes in the provision of total print solutions for organizations of all sizes and across all sectors. 
-        We offer a personalized service to meet our client’s needs and expectations. We’re open and happy to talk about budgeting and timeline options, and understand your needs as a business. 
-        We work to preserve and reflect the nature of your business in our products. Whether it’s something ambitious in a wide print format, or something as small as a flyer, we can help you promote your brand and grab the attention of the customers you want!
-    </p>
-    <div style="display:inline-block;width:400px; vertical-align:top;">
-        <b>We do:</b>  <br>** Banners, flag printing &amp; pull up banners  <br>** Book publishing &amp; binding  <br>** Booklets, brochures, catalogs &amp; flyers  <br>** Bulk printing  <br>** Business cards &amp; letterheads  <br>** Calendars, posters  <br>** Car stickers <br>** Canvas  <br>** Fine Art  <br>** Large format Printing <br>** Signage &amp; coreflute sign boards  <br>** Docket books &amp; invoice books  <br>** Invitations in all themes <br>** Pet or Human personalize magazing <br>** Website Design <br>  
-        <br />
-    </div>
-    <div style="display:inline-block; vertical-align:top;">
-        <b>Why choose us?</b> <br>- 100% Money back Guarantee if we cannot make you satisfy <br>- No job is too small  <br>- Our service &amp; product are competitive, you paid what you got!  <br>
-        <br />
-    </div>
-    <div>
-        <br>Everything at E2Print is done in-store, which means that we can pass the time and money saving on to our customers! We import our own paper, have our own designers, and own high-tech printing machinery.
-        Get in touch today to discuss what we can do for you! <br>
-    </div>
-</div>
+                    <div class="nav-item dropdown nav-item-left mr-0">
+                        <a href="javascript:void(0)" class="btn btn-xs btn-primary d-none d-lg-inline-block" data-toggle="dropdown"
+                           role="button" aria-haspopup="true" aria-expanded="false">
+                            <i class="fa fa-search mr-0" aria-hidden="true"></i>
+                        </a>
+
+                        <div class="dropdown-menu dropdown-menu-right rounded-0">
+                            <form class="" action="index.html" method="post">
+                                <div class="input-group input-group-sm">
+                                    <input type="text" class="form-control form-control-sm rounded-0" required="" placeholder="Search....">
+                                    <div class="input-group-append">
+                                        <button class="input-group-text border-0 rounded-0 btn bg-primary" type="submit">
+                                            <span class="text-white text-uppercase font-weight-bold">Search</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <ul class="menuzord-menu menuzord-right">
+                        <li class="">
+                            <a class="" href="/Home">Home</a>
+                        </li>
+
+                        <li class="">
+                            <a href="javascript:void(0)">Products</a>
+                            <div class="megamenu drop-up">
+                                <div class="megamenu-row">
+                                    @{int columnCount = 0;}
+                                    @foreach (E2Print.Domain.Entities.Category cat in (List<E2Print.Domain.Entities.Category>)ViewData["Categories"])
+                                    {
+                                        if (columnCount == 0 || columnCount == 4)
+                                        {
+                                            <div class="col3">
+                                                <ul class="list-unstyled">
+                                                    <li>@cat.Name</li>
+                                                    @foreach (E2Print.Domain.Entities.Category subCat in cat.SubCategories)
+                                                    {
+                                                        <li><a href="/Category/Detail/@subCat.Id">@subCat.Name</a></li>
+                                                    }
+                                                </ul>
+                                            </div>
+                                        }
+                                        else
+                                        {
+                                            <div class="col2">
+                                                <ul class="list-unstyled">
+                                                    <li>@cat.Name</li>
+                                                    @foreach (E2Print.Domain.Entities.Category subCat in cat.SubCategories)
+                                                    {
+                                                        <li><a href="/Category/Detail/@subCat.Id">@subCat.Name</a></li>
+                                                    }
+                                                </ul>
+                                            </div>
+                                        }
+                                        columnCount++;
+                                    }
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="active">
+                            <a href="/Home/AboutUs">About Us</a>
+                        </li>
+
+                        <li class="">
+                            <a href="/Home/ContactUs">Contact Us</a>
+                        </li>
+
+                        <li class="py-4">
+                            <form class="d-lg-none" action="index.html" method="post">
+                                <div class="input-group input-group-sm">
+                                    <input type="text" class="form-control form-control-sm rounded-0" required="" placeholder="Search....">
+                                    <div class="input-group-append">
+                                        <button class="input-group-text border-0 rounded-0 btn bg-primary" type="submit">
+                                            <span class="text-white text-uppercase font-weight-bold">Search</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+<div class="main-wrapper about-us">
+
+    <!-- ====================================
+    ———	PAGE TITLE
+    ===================================== -->
+    <section class="page-title">
+        <div class="page-title-img bg-img bg-overlay-darken" style="background-image: url(~/assets/img/pages/page-title-bg.jpg);">
+            <div class="container">
+                <div class="row align-items-center justify-content-center" style="height: 200px;">
+                    <div class="col-lg-6">
+                        <div class="page-title-content">
+                            <div class="title-border">
+                                <h2 class="text-uppercase text-white font-weight-bold">About us</h2>
+                            </div>
+                            <p class="text-white mb-0"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====================================
+    ———	ABOUT TITLE SECTION
+    ===================================== -->
+    <section class="py-8 py-md-10">
+        <div class="container">
+            <div class="text-left border-bottom pb-6 mb-7">
+                <p class="text-capitalize line-height-24 h4 mb-5" style="color:#212529">
+                    E2Creation is a proudly New Zealand owned company that specializes in the provision of total print solutions for organizations of all sizes and across all sectors. 
+                </p>
+                <p style="color:#212529">
+                    We offer a personalized service to meet our client’s needs and expectations. We’re open and happy to talk about budgeting and timeline options, and understand your needs as a business. We work to preserve and reflect the nature of your business in our products. Whether it’s something ambitious in a wide print format, or something as small as a flyer, we can help you promote your brand and grab the attention of the customers you want!
+                </p>
+                <p style="color:#212529">
+                    We do:
+                    * Banners, flag printing & pull up banners<br />
+                    * Book publishing & binding<br />
+                    * Booklets, brochures, catalogues & flyers<br />
+                    * Bulk printing<br />
+                    * Business cards & letterheads<br />
+                    * Calendars, posters<br />
+                    * Car stickers<br />
+                    * Canvas<br />
+                    * Fine Art<br />
+                    * Screen print<br />
+                    * Large format Printing<br />
+                    * Signage & corflute sign boards<br />
+                    * Docket books & invoice books<br />
+                    * Invitations in all themes<br />
+                    * Pet or Human personalize magazine<br />
+                    * Website Design<br />
+                </p>
+                <p style="color:#212529">
+                    Why choose us?
+                    - 100% Money back Guarantee if we cannot make you satisfy
+                    - No job is too small
+                    - Our service & product are competitive, you paid what you got!
+                </p>
+                <p style="color:#212529">
+                    Everything at E2Creation is done in-store, which means that we can pass the time and money saving on to our customers! We import our own paper, have our own designers, and own high-tech printing machinery. Get in touch today to discuss what we can do for you!
+                </p>
+            </div>
+        </div>
+    </section>
+
+</div><!-- element wrapper ends -->

@@ -9,10 +9,14 @@
         <EntityTypeShape EntityType="E2printModel.Role" Width="1.5" PointX="2.625" PointY="0.75" />
         <EntityTypeShape EntityType="E2printModel.Product" Width="1.5" PointX="5.25" PointY="1.25" />
         <EntityTypeShape EntityType="E2printModel.Category" Width="1.5" PointX="0.75" PointY="4.75" />
-        <EntityTypeShape EntityType="E2printModel.Photo" Width="1.5" PointX="3.375" PointY="4.75" />
+        <EntityTypeShape EntityType="E2printModel.Photo" Width="1.5" PointX="2.75" PointY="4.75" />
         <EntityTypeShape EntityType="E2printModel.Promotion" Width="1.5" PointX="5.375" PointY="4.75" />
         <EntityTypeShape EntityType="E2printModel.CustomerFeedback" Width="1.5" PointX="7.375" PointY="0.75" />
-        <EntityTypeShape EntityType="E2printModel.ProductAttribute" Width="1.5" PointX="7.5" PointY="4.75" />
+        <EntityTypeShape EntityType="E2printModel.ProductAttribute" Width="1.5" PointX="7.125" PointY="5" />
+        <EntityTypeShape EntityType="E2printModel.Tag" Width="1.5" PointX="9.375" PointY="5" />
+        <EntityTypeShape EntityType="E2printModel.TagLink" Width="1.5" PointX="9.5" PointY="1.875" />
+        <AssociationConnector Association="E2printModel.FK_TagLink_Product" />
+        <AssociationConnector Association="E2printModel.FK_TagLink_Tag" />
         </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

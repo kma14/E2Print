@@ -72,3 +72,193 @@ C:\ZHUA\E2Print\E2Print.WebUI\bin\E2Print.DAL.pdb
 C:\ZHUA\E2Print\E2Print.WebUI\obj\Debug\E2Print.WebUI.csprojResolveAssemblyReference.cache
 C:\ZHUA\E2Print\E2Print.WebUI\obj\Debug\E2Print.WebUI.dll
 C:\ZHUA\E2Print\E2Print.WebUI\obj\Debug\E2Print.WebUI.pdb
+C:\Users\Kevin.Ma\Documents\E2Print\E2Print.WebUI\obj\Debug\E2Print.WebUI.csprojAssemblyReference.cache
+C:\Users\Kevin.Ma\Documents\E2Print\E2Print.WebUI\obj\Debug\E2Print.WebUI.dll
+C:\Users\Kevin.Ma\Documents\E2Print\E2Print.WebUI\obj\Debug\E2Print.WebUI.pdb
+C:\Users\Kevin.Ma\Documents\E2Print\E2Print.WebUI\bin\E2Print.WebUI.dll.config
+C:\Users\Kevin.Ma\Documents\E2Print\E2Print.WebUI\bin\E2Print.WebUI.dll
+C:\Users\Kevin.Ma\Documents\E2Print\E2Print.WebUI\bin\E2Print.WebUI.pdb
+C:\Users\Kevin.Ma\Documents\E2Print\E2Print.WebUI\bin\E2Print.BL.dll
+C:\Users\Kevin.Ma\Documents\E2Print\E2Print.WebUI\bin\E2Print.Domain.dll
+C:\Users\Kevin.Ma\Documents\E2Print\E2Print.WebUI\bin\EntityFramework.dll
+C:\Users\Kevin.Ma\Documents\E2Print\E2Print.WebUI\bin\EntityFramework.SqlServer.dll
+C:\Users\Kevin.Ma\Documents\E2Print\E2Print.WebUI\bin\GridMvc.dll
+C:\Users\Kevin.Ma\Documents\E2Print\E2Print.WebUI\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Kevin.Ma\Documents\E2Print\E2Print.WebUI\bin\Moq.dll
+C:\Users\Kevin.Ma\Documents\E2Print\E2Print.WebUI\bin\Ninject.dll
+C:\Users\Kevin.Ma\Documents\E2Print\E2Print.WebUI\bin\Ninject.Web.Common.dll
+C:\Users\Kevin.Ma\Documents\E2Print\E2Print.WebUI\bin\Ninject.Web.Common.WebHost.dll
+C:\Users\Kevin.Ma\Documents\E2Print\E2Print.WebUI\bin\Ninject.Web.Mvc.dll
+C:\Users\Kevin.Ma\Documents\E2Print\E2Print.WebUI\bin\System.Web.Helpers.dll
+C:\Users\Kevin.Ma\Documents\E2Print\E2Print.WebUI\bin\System.Web.Mvc.dll
+C:\Users\Kevin.Ma\Documents\E2Print\E2Print.WebUI\bin\System.Web.Razor.dll
+C:\Users\Kevin.Ma\Documents\E2Print\E2Print.WebUI\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Kevin.Ma\Documents\E2Print\E2Print.WebUI\bin\System.Web.WebPages.dll
+C:\Users\Kevin.Ma\Documents\E2Print\E2Print.WebUI\bin\System.Web.WebPages.Razor.dll
+C:\Users\Kevin.Ma\Documents\E2Print\E2Print.WebUI\bin\WebActivatorEx.dll
+C:\Users\Kevin.Ma\Documents\E2Print\E2Print.WebUI\bin\E2Print.DAL.dll
+C:\Users\Kevin.Ma\Documents\E2Print\E2Print.WebUI\bin\E2Print.BL.pdb
+C:\Users\Kevin.Ma\Documents\E2Print\E2Print.WebUI\bin\E2Print.BL.dll.config
+C:\Users\Kevin.Ma\Documents\E2Print\E2Print.WebUI\bin\E2Print.Domain.pdb
+C:\Users\Kevin.Ma\Documents\E2Print\E2Print.WebUI\bin\EntityFramework.xml
+C:\Users\Kevin.Ma\Documents\E2Print\E2Print.WebUI\bin\EntityFramework.SqlServer.xml
+C:\Users\Kevin.Ma\Documents\E2Print\E2Print.WebUI\bin\Moq.xml
+C:\Users\Kevin.Ma\Documents\E2Print\E2Print.WebUI\bin\Ninject.xml
+C:\Users\Kevin.Ma\Documents\E2Print\E2Print.WebUI\bin\Ninject.Web.Common.xml
+C:\Users\Kevin.Ma\Documents\E2Print\E2Print.WebUI\bin\Ninject.Web.Common.WebHost.xml
+C:\Users\Kevin.Ma\Documents\E2Print\E2Print.WebUI\bin\Ninject.Web.Mvc.xml
+C:\Users\Kevin.Ma\Documents\E2Print\E2Print.WebUI\bin\System.Web.Helpers.xml
+C:\Users\Kevin.Ma\Documents\E2Print\E2Print.WebUI\bin\System.Web.Mvc.xml
+C:\Users\Kevin.Ma\Documents\E2Print\E2Print.WebUI\bin\System.Web.Razor.xml
+C:\Users\Kevin.Ma\Documents\E2Print\E2Print.WebUI\bin\System.Web.WebPages.xml
+C:\Users\Kevin.Ma\Documents\E2Print\E2Print.WebUI\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Kevin.Ma\Documents\E2Print\E2Print.WebUI\bin\System.Web.WebPages.Razor.xml
+C:\Users\Kevin.Ma\Documents\E2Print\E2Print.WebUI\bin\E2Print.DAL.pdb
+C:\Users\Kevin.Ma\Documents\E2Print\E2Print.WebUI\bin\E2Print.DAL.dll.config
+C:\Users\Kevin.Ma\Documents\E2Print\E2Print.WebUI\obj\Debug\E2Print.WebUI.csproj.CopyComplete
+C:\Users\Kevin.Ma\Documents\E2Print\E2Print.WebUI\bin\roslyn\csc.exe
+C:\Users\Kevin.Ma\Documents\E2Print\E2Print.WebUI\bin\roslyn\csc.exe.config
+C:\Users\Kevin.Ma\Documents\E2Print\E2Print.WebUI\bin\roslyn\csc.rsp
+C:\Users\Kevin.Ma\Documents\E2Print\E2Print.WebUI\bin\roslyn\csi.exe
+C:\Users\Kevin.Ma\Documents\E2Print\E2Print.WebUI\bin\roslyn\csi.exe.config
+C:\Users\Kevin.Ma\Documents\E2Print\E2Print.WebUI\bin\roslyn\csi.rsp
+C:\Users\Kevin.Ma\Documents\E2Print\E2Print.WebUI\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Kevin.Ma\Documents\E2Print\E2Print.WebUI\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Kevin.Ma\Documents\E2Print\E2Print.WebUI\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\Kevin.Ma\Documents\E2Print\E2Print.WebUI\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Kevin.Ma\Documents\E2Print\E2Print.WebUI\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\Kevin.Ma\Documents\E2Print\E2Print.WebUI\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Kevin.Ma\Documents\E2Print\E2Print.WebUI\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Kevin.Ma\Documents\E2Print\E2Print.WebUI\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\Kevin.Ma\Documents\E2Print\E2Print.WebUI\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\Kevin.Ma\Documents\E2Print\E2Print.WebUI\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\Kevin.Ma\Documents\E2Print\E2Print.WebUI\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Kevin.Ma\Documents\E2Print\E2Print.WebUI\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\Users\Kevin.Ma\Documents\E2Print\E2Print.WebUI\bin\roslyn\System.AppContext.dll
+C:\Users\Kevin.Ma\Documents\E2Print\E2Print.WebUI\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Kevin.Ma\Documents\E2Print\E2Print.WebUI\bin\roslyn\System.Console.dll
+C:\Users\Kevin.Ma\Documents\E2Print\E2Print.WebUI\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+C:\Users\Kevin.Ma\Documents\E2Print\E2Print.WebUI\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\Kevin.Ma\Documents\E2Print\E2Print.WebUI\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\Kevin.Ma\Documents\E2Print\E2Print.WebUI\bin\roslyn\System.Globalization.Calendars.dll
+C:\Users\Kevin.Ma\Documents\E2Print\E2Print.WebUI\bin\roslyn\System.IO.Compression.dll
+C:\Users\Kevin.Ma\Documents\E2Print\E2Print.WebUI\bin\roslyn\System.IO.Compression.ZipFile.dll
+C:\Users\Kevin.Ma\Documents\E2Print\E2Print.WebUI\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\Kevin.Ma\Documents\E2Print\E2Print.WebUI\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\Kevin.Ma\Documents\E2Print\E2Print.WebUI\bin\roslyn\System.Net.Http.dll
+C:\Users\Kevin.Ma\Documents\E2Print\E2Print.WebUI\bin\roslyn\System.Net.Sockets.dll
+C:\Users\Kevin.Ma\Documents\E2Print\E2Print.WebUI\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Kevin.Ma\Documents\E2Print\E2Print.WebUI\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Users\Kevin.Ma\Documents\E2Print\E2Print.WebUI\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\Kevin.Ma\Documents\E2Print\E2Print.WebUI\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\Kevin.Ma\Documents\E2Print\E2Print.WebUI\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\Kevin.Ma\Documents\E2Print\E2Print.WebUI\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\Kevin.Ma\Documents\E2Print\E2Print.WebUI\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\Kevin.Ma\Documents\E2Print\E2Print.WebUI\bin\roslyn\System.Threading.Tasks.Extensions.dll
+C:\Users\Kevin.Ma\Documents\E2Print\E2Print.WebUI\bin\roslyn\System.ValueTuple.dll
+C:\Users\Kevin.Ma\Documents\E2Print\E2Print.WebUI\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\Kevin.Ma\Documents\E2Print\E2Print.WebUI\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\Kevin.Ma\Documents\E2Print\E2Print.WebUI\bin\roslyn\System.Xml.XPath.dll
+C:\Users\Kevin.Ma\Documents\E2Print\E2Print.WebUI\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\Kevin.Ma\Documents\E2Print\E2Print.WebUI\bin\roslyn\vbc.exe
+C:\Users\Kevin.Ma\Documents\E2Print\E2Print.WebUI\bin\roslyn\vbc.exe.config
+C:\Users\Kevin.Ma\Documents\E2Print\E2Print.WebUI\bin\roslyn\vbc.rsp
+C:\Users\Kevin.Ma\Documents\E2Print\E2Print.WebUI\bin\roslyn\VBCSCompiler.exe
+C:\Users\Kevin.Ma\Documents\E2Print\E2Print.WebUI\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Kevin.Ma\Documents\E2Print\E2Print.WebUI\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Kevin.Ma\Documents\E2Print\E2Print.WebUI\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Kevin.Ma\Google Drive\E2Print\E2Print.WebUI\bin\E2Print.WebUI.dll.config
+C:\Users\Kevin.Ma\Google Drive\E2Print\E2Print.WebUI\bin\E2Print.WebUI.dll
+C:\Users\Kevin.Ma\Google Drive\E2Print\E2Print.WebUI\bin\E2Print.WebUI.pdb
+C:\Users\Kevin.Ma\Google Drive\E2Print\E2Print.WebUI\bin\roslyn\csc.exe
+C:\Users\Kevin.Ma\Google Drive\E2Print\E2Print.WebUI\bin\roslyn\csc.exe.config
+C:\Users\Kevin.Ma\Google Drive\E2Print\E2Print.WebUI\bin\roslyn\csc.rsp
+C:\Users\Kevin.Ma\Google Drive\E2Print\E2Print.WebUI\bin\roslyn\csi.exe
+C:\Users\Kevin.Ma\Google Drive\E2Print\E2Print.WebUI\bin\roslyn\csi.exe.config
+C:\Users\Kevin.Ma\Google Drive\E2Print\E2Print.WebUI\bin\roslyn\csi.rsp
+C:\Users\Kevin.Ma\Google Drive\E2Print\E2Print.WebUI\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Kevin.Ma\Google Drive\E2Print\E2Print.WebUI\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Kevin.Ma\Google Drive\E2Print\E2Print.WebUI\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\Kevin.Ma\Google Drive\E2Print\E2Print.WebUI\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Kevin.Ma\Google Drive\E2Print\E2Print.WebUI\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\Kevin.Ma\Google Drive\E2Print\E2Print.WebUI\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Kevin.Ma\Google Drive\E2Print\E2Print.WebUI\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Kevin.Ma\Google Drive\E2Print\E2Print.WebUI\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\Kevin.Ma\Google Drive\E2Print\E2Print.WebUI\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\Kevin.Ma\Google Drive\E2Print\E2Print.WebUI\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\Kevin.Ma\Google Drive\E2Print\E2Print.WebUI\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Kevin.Ma\Google Drive\E2Print\E2Print.WebUI\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\Users\Kevin.Ma\Google Drive\E2Print\E2Print.WebUI\bin\roslyn\System.AppContext.dll
+C:\Users\Kevin.Ma\Google Drive\E2Print\E2Print.WebUI\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Kevin.Ma\Google Drive\E2Print\E2Print.WebUI\bin\roslyn\System.Console.dll
+C:\Users\Kevin.Ma\Google Drive\E2Print\E2Print.WebUI\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+C:\Users\Kevin.Ma\Google Drive\E2Print\E2Print.WebUI\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\Kevin.Ma\Google Drive\E2Print\E2Print.WebUI\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\Kevin.Ma\Google Drive\E2Print\E2Print.WebUI\bin\roslyn\System.Globalization.Calendars.dll
+C:\Users\Kevin.Ma\Google Drive\E2Print\E2Print.WebUI\bin\roslyn\System.IO.Compression.dll
+C:\Users\Kevin.Ma\Google Drive\E2Print\E2Print.WebUI\bin\roslyn\System.IO.Compression.ZipFile.dll
+C:\Users\Kevin.Ma\Google Drive\E2Print\E2Print.WebUI\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\Kevin.Ma\Google Drive\E2Print\E2Print.WebUI\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\Kevin.Ma\Google Drive\E2Print\E2Print.WebUI\bin\roslyn\System.Net.Http.dll
+C:\Users\Kevin.Ma\Google Drive\E2Print\E2Print.WebUI\bin\roslyn\System.Net.Sockets.dll
+C:\Users\Kevin.Ma\Google Drive\E2Print\E2Print.WebUI\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Kevin.Ma\Google Drive\E2Print\E2Print.WebUI\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Users\Kevin.Ma\Google Drive\E2Print\E2Print.WebUI\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\Kevin.Ma\Google Drive\E2Print\E2Print.WebUI\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\Kevin.Ma\Google Drive\E2Print\E2Print.WebUI\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\Kevin.Ma\Google Drive\E2Print\E2Print.WebUI\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\Kevin.Ma\Google Drive\E2Print\E2Print.WebUI\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\Kevin.Ma\Google Drive\E2Print\E2Print.WebUI\bin\roslyn\System.Threading.Tasks.Extensions.dll
+C:\Users\Kevin.Ma\Google Drive\E2Print\E2Print.WebUI\bin\roslyn\System.ValueTuple.dll
+C:\Users\Kevin.Ma\Google Drive\E2Print\E2Print.WebUI\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\Kevin.Ma\Google Drive\E2Print\E2Print.WebUI\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\Kevin.Ma\Google Drive\E2Print\E2Print.WebUI\bin\roslyn\System.Xml.XPath.dll
+C:\Users\Kevin.Ma\Google Drive\E2Print\E2Print.WebUI\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\Kevin.Ma\Google Drive\E2Print\E2Print.WebUI\bin\roslyn\vbc.exe
+C:\Users\Kevin.Ma\Google Drive\E2Print\E2Print.WebUI\bin\roslyn\vbc.exe.config
+C:\Users\Kevin.Ma\Google Drive\E2Print\E2Print.WebUI\bin\roslyn\vbc.rsp
+C:\Users\Kevin.Ma\Google Drive\E2Print\E2Print.WebUI\bin\roslyn\VBCSCompiler.exe
+C:\Users\Kevin.Ma\Google Drive\E2Print\E2Print.WebUI\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Kevin.Ma\Google Drive\E2Print\E2Print.WebUI\bin\E2Print.BL.dll
+C:\Users\Kevin.Ma\Google Drive\E2Print\E2Print.WebUI\bin\E2Print.Domain.dll
+C:\Users\Kevin.Ma\Google Drive\E2Print\E2Print.WebUI\bin\EntityFramework.dll
+C:\Users\Kevin.Ma\Google Drive\E2Print\E2Print.WebUI\bin\EntityFramework.SqlServer.dll
+C:\Users\Kevin.Ma\Google Drive\E2Print\E2Print.WebUI\bin\GridMvc.dll
+C:\Users\Kevin.Ma\Google Drive\E2Print\E2Print.WebUI\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Kevin.Ma\Google Drive\E2Print\E2Print.WebUI\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Kevin.Ma\Google Drive\E2Print\E2Print.WebUI\bin\Moq.dll
+C:\Users\Kevin.Ma\Google Drive\E2Print\E2Print.WebUI\bin\Ninject.dll
+C:\Users\Kevin.Ma\Google Drive\E2Print\E2Print.WebUI\bin\Ninject.Web.Common.dll
+C:\Users\Kevin.Ma\Google Drive\E2Print\E2Print.WebUI\bin\Ninject.Web.Common.WebHost.dll
+C:\Users\Kevin.Ma\Google Drive\E2Print\E2Print.WebUI\bin\Ninject.Web.Mvc.dll
+C:\Users\Kevin.Ma\Google Drive\E2Print\E2Print.WebUI\bin\System.Web.Helpers.dll
+C:\Users\Kevin.Ma\Google Drive\E2Print\E2Print.WebUI\bin\System.Web.Mvc.dll
+C:\Users\Kevin.Ma\Google Drive\E2Print\E2Print.WebUI\bin\System.Web.Razor.dll
+C:\Users\Kevin.Ma\Google Drive\E2Print\E2Print.WebUI\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Kevin.Ma\Google Drive\E2Print\E2Print.WebUI\bin\System.Web.WebPages.dll
+C:\Users\Kevin.Ma\Google Drive\E2Print\E2Print.WebUI\bin\System.Web.WebPages.Razor.dll
+C:\Users\Kevin.Ma\Google Drive\E2Print\E2Print.WebUI\bin\WebActivatorEx.dll
+C:\Users\Kevin.Ma\Google Drive\E2Print\E2Print.WebUI\bin\E2Print.DAL.dll
+C:\Users\Kevin.Ma\Google Drive\E2Print\E2Print.WebUI\bin\E2Print.BL.pdb
+C:\Users\Kevin.Ma\Google Drive\E2Print\E2Print.WebUI\bin\E2Print.BL.dll.config
+C:\Users\Kevin.Ma\Google Drive\E2Print\E2Print.WebUI\bin\E2Print.Domain.pdb
+C:\Users\Kevin.Ma\Google Drive\E2Print\E2Print.WebUI\bin\EntityFramework.xml
+C:\Users\Kevin.Ma\Google Drive\E2Print\E2Print.WebUI\bin\EntityFramework.SqlServer.xml
+C:\Users\Kevin.Ma\Google Drive\E2Print\E2Print.WebUI\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Kevin.Ma\Google Drive\E2Print\E2Print.WebUI\bin\Moq.xml
+C:\Users\Kevin.Ma\Google Drive\E2Print\E2Print.WebUI\bin\Ninject.xml
+C:\Users\Kevin.Ma\Google Drive\E2Print\E2Print.WebUI\bin\Ninject.Web.Common.xml
+C:\Users\Kevin.Ma\Google Drive\E2Print\E2Print.WebUI\bin\Ninject.Web.Common.WebHost.xml
+C:\Users\Kevin.Ma\Google Drive\E2Print\E2Print.WebUI\bin\Ninject.Web.Mvc.xml
+C:\Users\Kevin.Ma\Google Drive\E2Print\E2Print.WebUI\bin\System.Web.Helpers.xml
+C:\Users\Kevin.Ma\Google Drive\E2Print\E2Print.WebUI\bin\System.Web.Mvc.xml
+C:\Users\Kevin.Ma\Google Drive\E2Print\E2Print.WebUI\bin\System.Web.Razor.xml
+C:\Users\Kevin.Ma\Google Drive\E2Print\E2Print.WebUI\bin\System.Web.WebPages.xml
+C:\Users\Kevin.Ma\Google Drive\E2Print\E2Print.WebUI\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Kevin.Ma\Google Drive\E2Print\E2Print.WebUI\bin\System.Web.WebPages.Razor.xml
+C:\Users\Kevin.Ma\Google Drive\E2Print\E2Print.WebUI\bin\E2Print.DAL.pdb
+C:\Users\Kevin.Ma\Google Drive\E2Print\E2Print.WebUI\bin\E2Print.DAL.dll.config
+C:\Users\Kevin.Ma\Google Drive\E2Print\E2Print.WebUI\obj\Debug\E2Print.WebUI.csprojAssemblyReference.cache
+C:\Users\Kevin.Ma\Google Drive\E2Print\E2Print.WebUI\obj\Debug\E2Print.WebUI.csproj.CopyComplete
+C:\Users\Kevin.Ma\Google Drive\E2Print\E2Print.WebUI\obj\Debug\E2Print.WebUI.dll
+C:\Users\Kevin.Ma\Google Drive\E2Print\E2Print.WebUI\obj\Debug\E2Print.WebUI.pdb

@@ -22,3 +22,29 @@ C:\ZHUA\E2Print\E2Print.DAL\bin\Debug\EntityFramework.SqlServer.xml
 C:\ZHUA\E2Print\E2Print.DAL\obj\Debug\E2Print.DAL.csprojResolveAssemblyReference.cache
 C:\ZHUA\E2Print\E2Print.DAL\obj\Debug\E2Print.DAL.dll
 C:\ZHUA\E2Print\E2Print.DAL\obj\Debug\E2Print.DAL.pdb
+C:\Users\Kevin.Ma\Documents\E2Print\E2Print.DAL\bin\Debug\E2Print.DAL.dll.config
+C:\Users\Kevin.Ma\Documents\E2Print\E2Print.DAL\bin\Debug\E2Print.DAL.dll
+C:\Users\Kevin.Ma\Documents\E2Print\E2Print.DAL\bin\Debug\E2Print.DAL.pdb
+C:\Users\Kevin.Ma\Documents\E2Print\E2Print.DAL\bin\Debug\E2Print.Domain.dll
+C:\Users\Kevin.Ma\Documents\E2Print\E2Print.DAL\bin\Debug\EntityFramework.dll
+C:\Users\Kevin.Ma\Documents\E2Print\E2Print.DAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Kevin.Ma\Documents\E2Print\E2Print.DAL\bin\Debug\E2Print.Domain.pdb
+C:\Users\Kevin.Ma\Documents\E2Print\E2Print.DAL\bin\Debug\EntityFramework.xml
+C:\Users\Kevin.Ma\Documents\E2Print\E2Print.DAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Kevin.Ma\Documents\E2Print\E2Print.DAL\obj\Debug\E2Print.DAL.csprojAssemblyReference.cache
+C:\Users\Kevin.Ma\Documents\E2Print\E2Print.DAL\obj\Debug\E2Print.DAL.csproj.CopyComplete
+C:\Users\Kevin.Ma\Documents\E2Print\E2Print.DAL\obj\Debug\E2Print.DAL.dll
+C:\Users\Kevin.Ma\Documents\E2Print\E2Print.DAL\obj\Debug\E2Print.DAL.pdb
+C:\Users\Kevin.Ma\Google Drive\E2Print\E2Print.DAL\bin\Debug\E2Print.DAL.dll.config
+C:\Users\Kevin.Ma\Google Drive\E2Print\E2Print.DAL\bin\Debug\E2Print.DAL.dll
+C:\Users\Kevin.Ma\Google Drive\E2Print\E2Print.DAL\bin\Debug\E2Print.DAL.pdb
+C:\Users\Kevin.Ma\Google Drive\E2Print\E2Print.DAL\bin\Debug\E2Print.Domain.dll
+C:\Users\Kevin.Ma\Google Drive\E2Print\E2Print.DAL\bin\Debug\EntityFramework.dll
+C:\Users\Kevin.Ma\Google Drive\E2Print\E2Print.DAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Kevin.Ma\Google Drive\E2Print\E2Print.DAL\bin\Debug\E2Print.Domain.pdb
+C:\Users\Kevin.Ma\Google Drive\E2Print\E2Print.DAL\bin\Debug\EntityFramework.xml
+C:\Users\Kevin.Ma\Google Drive\E2Print\E2Print.DAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Kevin.Ma\Google Drive\E2Print\E2Print.DAL\obj\Debug\E2Print.DAL.csprojAssemblyReference.cache
+C:\Users\Kevin.Ma\Google Drive\E2Print\E2Print.DAL\obj\Debug\E2Print.DAL.csproj.CopyComplete
+C:\Users\Kevin.Ma\Google Drive\E2Print\E2Print.DAL\obj\Debug\E2Print.DAL.dll
+C:\Users\Kevin.Ma\Google Drive\E2Print\E2Print.DAL\obj\Debug\E2Print.DAL.pdb

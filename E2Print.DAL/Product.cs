@@ -14,6 +14,11 @@ namespace E2Print.DAL
     
     public partial class Product
     {
+        public Product()
+        {
+            this.TagLinks = new HashSet<TagLink>();
+        }
+    
         public int Id { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
@@ -23,5 +28,7 @@ namespace E2Print.DAL
         public Nullable<int> BuyingQty { get; set; }
         public decimal Price { get; set; }
         public Nullable<int> CategoryId { get; set; }
+    
+        public virtual ICollection<TagLink> TagLinks { get; set; }
     }
 }

@@ -33,5 +33,7 @@ namespace E2Print.DAL
         public virtual DbSet<Promotion> Promotions { get; set; }
         public virtual DbSet<CustomerFeedback> CustomerFeedbacks { get; set; }
         public virtual DbSet<ProductAttribute> ProductAttributes { get; set; }
+        public virtual DbSet<Tag> Tags { get; set; }
+        public virtual DbSet<TagLink> TagLinks { get; set; }
     }
 }

@@ -23,17 +23,29 @@ namespace E2Print.WebUI.Controllers
         }
         public ActionResult Index()
         {
-            ViewBag.Title = "E2 Print - all kinds of printing";
+            //ViewBag.Title = "E2 Print - all kinds of printing";
 
-            HomeViewModel viewModel = new HomeViewModel();
-            viewModel.Categories = categoryRepository.GetAll();
-            viewModel.Promotions = promotionRepository.GetAll().Take(3).ToList();
+            //HomeViewModel viewModel = new HomeViewModel();
 
-            return View(viewModel);
+            //var roots = categoryRepository.GetAll().Where(c => c.ParentId == null);
+            //foreach(Category root in roots)
+            //{
+            //    root.SubCategories = categoryRepository.GetChildrenCategories(root.Id);
+            //}
+
+            //viewModel.Categories = roots.ToList();
+            //viewModel.Promotions = promotionRepository.GetAll().Take(3).ToList();
+
+            //return View(viewModel);
+            var cats = categoryRepository.GetRootCategories();
+            ViewData["Categories"] = cats;
+            return View();
         }
 
         public ActionResult AboutUs()
         {
+            var cats = categoryRepository.GetRootCategories();
+            ViewData["Categories"] = cats;
             return View();
         }
         public ActionResult Equipment()
@@ -42,6 +54,8 @@ namespace E2Print.WebUI.Controllers
         }
         public ActionResult ContactUs()
         {
+            var cats = categoryRepository.GetRootCategories();
+            ViewData["Categories"] = cats;
             return View();
         }
 

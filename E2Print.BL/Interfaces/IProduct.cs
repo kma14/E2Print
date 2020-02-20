@@ -15,7 +15,7 @@ namespace E2Print.BL.Interfaces
         int GetProductCount();
         List<Product> GetByCategoryId(int categoryId);
 
-        Product GetById();
+        Product GetById(int productId);
         Product SearchByAttributes(string name,string color,string material, string size, int quantity);
 
         Product Create(Product product);

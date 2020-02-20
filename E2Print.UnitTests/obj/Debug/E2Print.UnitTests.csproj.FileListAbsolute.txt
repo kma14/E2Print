@@ -74,3 +74,19 @@ C:\ZHUA\E2Print\E2Print.UnitTests\bin\Debug\System.Web.WebPages.Deployment.xml
 C:\ZHUA\E2Print\E2Print.UnitTests\obj\Debug\E2Print.UnitTests.csprojResolveAssemblyReference.cache
 C:\ZHUA\E2Print\E2Print.UnitTests\obj\Debug\E2Print.UnitTests.dll
 C:\ZHUA\E2Print\E2Print.UnitTests\obj\Debug\E2Print.UnitTests.pdb
+C:\Users\Kevin.Ma\Documents\E2Print\E2Print.UnitTests\bin\Debug\E2Print.UnitTests.dll.config
+C:\Users\Kevin.Ma\Documents\E2Print\E2Print.UnitTests\bin\Debug\E2Print.UnitTests.dll
+C:\Users\Kevin.Ma\Documents\E2Print\E2Print.UnitTests\bin\Debug\E2Print.UnitTests.pdb
+C:\Users\Kevin.Ma\Documents\E2Print\E2Print.UnitTests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\Kevin.Ma\Documents\E2Print\E2Print.UnitTests\obj\Debug\E2Print.UnitTests.csprojAssemblyReference.cache
+C:\Users\Kevin.Ma\Documents\E2Print\E2Print.UnitTests\obj\Debug\E2Print.UnitTests.csproj.CopyComplete
+C:\Users\Kevin.Ma\Documents\E2Print\E2Print.UnitTests\obj\Debug\E2Print.UnitTests.dll
+C:\Users\Kevin.Ma\Documents\E2Print\E2Print.UnitTests\obj\Debug\E2Print.UnitTests.pdb
+C:\Users\Kevin.Ma\Google Drive\E2Print\E2Print.UnitTests\bin\Debug\E2Print.UnitTests.dll.config
+C:\Users\Kevin.Ma\Google Drive\E2Print\E2Print.UnitTests\bin\Debug\E2Print.UnitTests.dll
+C:\Users\Kevin.Ma\Google Drive\E2Print\E2Print.UnitTests\bin\Debug\E2Print.UnitTests.pdb
+C:\Users\Kevin.Ma\Google Drive\E2Print\E2Print.UnitTests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\Kevin.Ma\Google Drive\E2Print\E2Print.UnitTests\obj\Debug\E2Print.UnitTests.csprojAssemblyReference.cache
+C:\Users\Kevin.Ma\Google Drive\E2Print\E2Print.UnitTests\obj\Debug\E2Print.UnitTests.csproj.CopyComplete
+C:\Users\Kevin.Ma\Google Drive\E2Print\E2Print.UnitTests\obj\Debug\E2Print.UnitTests.dll
+C:\Users\Kevin.Ma\Google Drive\E2Print\E2Print.UnitTests\obj\Debug\E2Print.UnitTests.pdb

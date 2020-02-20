@@ -1,0 +1,20 @@
+﻿.media-hoverable .media-object h3.transparent-content {
+    opacity: 0;
+}
+
+@media (min-width: 992px) {
+    .media-hoverable .media-object h3.transparent-content {
+        opacity: 0;
+    }
+}
+
+.media-overlay:hover .media-object h3.transparent-content {
+    opacity: 1;
+}
+
+@media (min-width: 992px) {
+    .media-hoverable:hover .media-object h3.transparent-content {
+        opacity: 1;
+    }
+}
+
