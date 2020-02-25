@@ -66,7 +66,101 @@
         </div>
     </div>
 
+    <header class="header" id="pageTop">
 
+        <!-- Menu Zord -->
+        <nav class="nav-menuzord nav-menuzord-transparent navbar-sticky">
+            <div class="container clearfix">
+                <div id="menuzord" class="menuzord">
+                    <a href="/Home" class="menuzord-logo-brand"></a>
+
+                    <div class="nav-item dropdown nav-item-left mr-0">
+                        <a href="javascript:void(0)" class="btn btn-xs btn-primary d-none d-lg-inline-block" data-toggle="dropdown" role="button" aria-haspopup="true"
+                           aria-expanded="false">
+                            <i class="fa fa-search mr-0" aria-hidden="true"></i>
+                        </a>
+
+                        <div class="dropdown-menu dropdown-menu-right rounded-0">
+                            <form class="" action="index.html" method="post">
+                                <div class="input-group input-group-sm">
+                                    <input type="text" class="form-control form-control-sm rounded-0" required="" placeholder="Search....">
+                                    <div class="input-group-append">
+                                        <button class="input-group-text border-0 rounded-0 btn bg-primary" type="submit">
+                                            <span class="text-white text-uppercase font-weight-bold">Search</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <ul class="menuzord-menu menuzord-right">
+                        <li class=" active ">
+                            <a class="" href="javascript:void(0)">Home</a>
+                        </li>
+
+                        <li class="">
+                            <a href="javascript:void(0)">Products</a>
+                            <div class="megamenu drop-up">
+                                <div class="megamenu-row">
+                                    @{int columnCount = 0;}
+                                    @foreach (E2Print.Domain.Entities.Category cat in (List<E2Print.Domain.Entities.Category>)ViewData["Categories"])
+                                    {
+                                        if (columnCount == 0 || columnCount == 4)
+                                        {
+                                            <div class="col3">
+                                                <ul class="list-unstyled">
+                                                    <li>@cat.Name</li>
+                                                    @foreach (E2Print.Domain.Entities.Category subCat in cat.SubCategories)
+                                                    {
+                                                        <li><a href="/Category/Detail/@subCat.Id">@subCat.Name</a></li>
+                                                    }
+                                                </ul>
+                                            </div>
+                                        }
+                                        else
+                                        {
+                                            <div class="col2">
+                                                <ul class="list-unstyled">
+                                                    <li>@cat.Name</li>
+                                                    @foreach (E2Print.Domain.Entities.Category subCat in cat.SubCategories)
+                                                    {
+                                                        <li><a href="/Category/Detail/@subCat.Id">@subCat.Name</a></li>
+                                                    }
+                                                </ul>
+                                            </div>
+                                        }
+                                        columnCount++;
+                                    }
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="">
+                            <a href="/Home/AboutUs">About Us</a>
+                        </li>
+
+                        <li class="">
+                            <a href="/Home/ContactUs">Contact Us</a>
+                        </li>
+
+                        <li class="py-4">
+                            <form class="d-lg-none" action="index.html" method="post">
+                                <div class="input-group input-group-sm">
+                                    <input type="text" class="form-control form-control-sm rounded-0" required="" placeholder="Search....">
+                                    <div class="input-group-append">
+                                        <button class="input-group-text border-0 rounded-0 btn bg-primary" type="submit">
+                                            <span class="text-white text-uppercase font-weight-bold">Search</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
 
     @RenderBody()
 
@@ -76,7 +170,7 @@
                 <div class="row">
                     <div class="col-md-6 col-lg-3 mb-7 mb-lg-0">
                         <a class="d-inline-block" href="/Home">
-                            <img  src="~/assets/img/logo2.png" style="width:180px;margin-bottom:6px;">
+                            <img src="~/assets/img/logo2.png" style="width:180px;margin-bottom:6px;">
                         </a>
                         <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute</p>
                     </div>
@@ -86,8 +180,10 @@
                             <h6>Contact us</h6>
                         </div>
 
-                        <p>Mon - Fri 9:30 to 5:30 <br />
-                        Sat & Sun by appointment</p>
+                        <p>
+                            Mon - Fri 9:30 to 5:30 <br />
+                            Sat & Sun by appointment
+                        </p>
                         <ul class="list-unstyled mb-0">
                             <li class="media mb-2">
                                 <div class="mr-3">
@@ -103,7 +199,7 @@
                                 </div>
                                 <div class="media-body">
                                     <a href="tel:88657524332">
-                                        0800-511-888, 
+                                        0800-511-888,
                                         (09) 525 5585
                                     </a>
                                 </div>
