@@ -3,6 +3,7 @@
 <head>
     <!-- SITE TITTLE -->
     <meta charset="utf-8">
+    @RenderSection("pageMeta", false)
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title>E2 Print</title>
@@ -66,8 +67,7 @@
         </div>
     </div>
 
-    <header class="header" id="pageTop">
-
+    <header class="header" id="pageTop" style="height:150px;">
         <!-- Menu Zord -->
         <nav class="nav-menuzord nav-menuzord-transparent navbar-sticky">
             <div class="container clearfix">
@@ -103,35 +103,7 @@
                             <a href="javascript:void(0)">Products</a>
                             <div class="megamenu drop-up">
                                 <div class="megamenu-row">
-                                    @{int columnCount = 0;}
-                                    @foreach (E2Print.Domain.Entities.Category cat in (List<E2Print.Domain.Entities.Category>)ViewData["Categories"])
-                                    {
-                                        if (columnCount == 0 || columnCount == 4)
-                                        {
-                                            <div class="col3">
-                                                <ul class="list-unstyled">
-                                                    <li>@cat.Name</li>
-                                                    @foreach (E2Print.Domain.Entities.Category subCat in cat.SubCategories)
-                                                    {
-                                                        <li><a href="/Category/Detail/@subCat.Id">@subCat.Name</a></li>
-                                                    }
-                                                </ul>
-                                            </div>
-                                        }
-                                        else
-                                        {
-                                            <div class="col2">
-                                                <ul class="list-unstyled">
-                                                    <li>@cat.Name</li>
-                                                    @foreach (E2Print.Domain.Entities.Category subCat in cat.SubCategories)
-                                                    {
-                                                        <li><a href="/Category/Detail/@subCat.Id">@subCat.Name</a></li>
-                                                    }
-                                                </ul>
-                                            </div>
-                                        }
-                                        columnCount++;
-                                    }
+                                    @{Html.RenderAction("AllCategories", "Category"); }
                                 </div>
                             </div>
                         </li>

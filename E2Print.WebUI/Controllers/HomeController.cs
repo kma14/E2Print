@@ -37,15 +37,11 @@ namespace E2Print.WebUI.Controllers
             //viewModel.Promotions = promotionRepository.GetAll().Take(3).ToList();
 
             //return View(viewModel);
-            var cats = categoryRepository.GetRootCategories();
-            ViewData["Categories"] = cats;
             return View();
         }
 
         public ActionResult AboutUs()
         {
-            var cats = categoryRepository.GetRootCategories();
-            ViewData["Categories"] = cats;
             return View();
         }
         public ActionResult Equipment()
@@ -54,8 +50,6 @@ namespace E2Print.WebUI.Controllers
         }
         public ActionResult ContactUs()
         {
-            var cats = categoryRepository.GetRootCategories();
-            ViewData["Categories"] = cats;
             return View();
         }
 

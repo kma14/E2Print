@@ -163,6 +163,12 @@ namespace E2Print.WebUI.Controllers
             }
         }
 
+        [ChildActionOnly]
+        public ActionResult AllCategories(string customerId)
+        {
+            var cats = categoryRepository.GetRootCategories();
+            return PartialView("_AllCategories", cats);
+        }
 
         [Authorize(Roles = "Admin")]
         public ActionResult Categories()
@@ -268,7 +274,6 @@ namespace E2Print.WebUI.Controllers
             };
 
             return View(viewModel);
-            return View();
         }
 
         [HttpPost]

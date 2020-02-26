@@ -1,147 +1,14 @@
 ﻿
+@model E2Print.WebUI.Models.CategoryAndProductsViewModel
+
 @{
-    ViewBag.Title = "Detail";
+    ViewBag.Title = Model.Category.Name;
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<!-- ====================================
-——— HEADER
-===================================== -->
+@section pageMeta{
+    <meta name="desciption" content="@Model.Category.Description" />
+}
 
-<header class="header" id="pageTop">
-
-    <!-- Menu Zord -->
-    <nav class="nav-menuzord navbar-sticky">
-        <div class="container clearfix">
-            <div id="menuzord" class="menuzord">
-                <a href="/Home" class="menuzord-brand">
-                    <img src="~/assets/img/logo1.png" style="height:54px;width:auto">
-                </a>
-
-                <div class="nav-item dropdown nav-item-left mr-0">
-                    <a href="javascript:void(0)" class="btn btn-xs btn-primary d-none d-lg-inline-block" data-toggle="dropdown"
-                       role="button" aria-haspopup="true" aria-expanded="false">
-                        <i class="fa fa-search mr-0" aria-hidden="true"></i>
-                    </a>
-
-                    <div class="dropdown-menu dropdown-menu-right rounded-0">
-                        <form class="" action="index.html" method="post">
-                            <div class="input-group input-group-sm">
-                                <input type="text" class="form-control form-control-sm rounded-0" required="" placeholder="Search....">
-                                <div class="input-group-append">
-                                    <button class="input-group-text border-0 rounded-0 btn bg-primary" type="submit">
-                                        <span class="text-white text-uppercase font-weight-bold">Search</span>
-                                    </button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-
-                <ul class="menuzord-menu menuzord-right">
-                    <li class=" active ">
-                        <a class="" href="javascript:void(0)">Home</a>
-                    </li>
-
-                    <li class="">
-                        <a href="javascript:void(0)">Products</a>
-                        <div class="megamenu drop-up">
-                            <div class="megamenu-row">
-                                <div class="col2">
-                                    <ul class="list-unstyled">
-                                        <li>Expo Display</li>
-                                        <li class="">
-                                            <a href="/Category/Detail/2029">Custom Printed Event Canopy</a>
-                                        </li>
-                                        <li class="">
-                                            <a href="">Custom Printed Tent with Canopy + Sidewalls</a>
-                                        </li>
-                                        <li class="">
-                                            <a href="">Straight Tension Fabric Display</a>
-                                        </li>
-                                        <li class="">
-                                            <a href="">Flag</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="col3">
-                                    <ul class="list-unstyled">
-                                        <li>Customized Print</li>
-                                        <li class=""><a href="">Calendars</a></li>
-                                        <li class=""><a href="">Car Magnet</a></li>
-                                        <li class=""><a href="">Car Number Plate Frame</a></li>
-                                        <li class=""><a href="">Car Wrap</a></li>
-                                        <li class=""><a href="">Clothes & Caps Print</a></li>
-                                        <li class=""><a href="">Custome Sticker</a></li>
-                                        <li class=""><a href="">Magazine in all Theme</a></li>
-                                        <li class=""><a href="">USB Flash Drives</a></li>
-                                        <li class=""><a href="">Window Vision</a></li>
-                                    </ul>
-                                </div>
-                                <div class="col3">
-                                    <ul class="list-unstyled">
-                                        <li>Small Format Print</li>
-                                        <li class=""><a href="">Booklets</a></li>
-                                        <li class=""><a href="">Brochure</a></li>
-                                        <li class=""><a href="">Business Cards</a></li>
-                                        <li class=""><a href="">Envelopes - Printed</a></li>
-                                        <li class=""><a href="">Flyers</a></li>
-                                        <li class=""><a href="">Invitation in all Theme</a></li>
-                                        <li class=""><a href="">Magnets - printed</a></li>
-                                        <li class=""><a href="">Notepads</a></li>
-                                        <li class=""><a href="">Sticky label</a></li>
-                                    </ul>
-                                </div>
-                                <div class="col2">
-                                    <ul class="list-unstyled">
-                                        <li>Wide Format Print</li>
-                                        <li class=""><a href="">3D Letters / CNC Router</a></li>
-                                        <li class=""><a href="">ACM Board / Outdoor Sign</a></li>
-                                        <li class=""><a href="">Acrylic Range</a></li>
-                                        <li class=""><a href="">Canvas Prints</a></li>
-                                        <li class=""><a href="">Corflute Signs</a></li>
-                                        <li class=""><a href="">Foam Board / PVC Rigid Board</a></li>
-                                        <li class=""><a href="">Foot Path Sign</a></li>
-                                        <li class=""><a href="">&nbsp;</a></li>
-                                    </ul>
-                                </div>
-                                <div class="col2">
-                                    <ul class="list-unstyled">
-                                        <li>&nbsp;</li>
-                                        <li class=""><a href="">Mesh Banner / Fence Wrap</a></li>
-                                        <li class=""><a href="">Permanent Vinyl print</a></li>
-                                        <li class=""><a href="">Posters</a></li>
-                                        <li class=""><a href="">Roll up Banner</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-
-                    <li class="">
-                        <a href="javascript:void(0)">About Us</a>
-                    </li>
-
-                    <li class="">
-                        <a href="javascript:void(0)">Contact Us</a>
-                    </li>
-
-                    <li class="py-4">
-                        <form class="d-lg-none" action="index.html" method="post">
-                            <div class="input-group input-group-sm">
-                                <input type="text" class="form-control form-control-sm rounded-0" required="" placeholder="Search....">
-                                <div class="input-group-append">
-                                    <button class="input-group-text border-0 rounded-0 btn bg-primary" type="submit">
-                                        <span class="text-white text-uppercase font-weight-bold">Search</span>
-                                    </button>
-                                </div>
-                            </div>
-                        </form>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-</header>
 <div class="main-wrapper single-package-right-sidebar">
 
     <!-- ====================================
@@ -150,15 +17,9 @@
     <section class="page-title">
         <div class="page-title-img bg-img bg-overlay-darken" style="background-image: url(../../assets/img/pages/page-title-bg13.jpg);">
             <div class="container">
-                <div class="row align-items-center justify-content-center" style="height: 200px;">
-                    <div class="col-lg-6">
-                        <div class="page-title-content">
-                            <div class="">
-                                <h2 class="text-uppercase text-white font-weight-bold">Product Name</h2>
-                            </div>
-                            <p class="text-white mb-0">Product short description blah blah blah </p>
-                        </div>
-                    </div>
+                <div class="row align-items-center justify-content-center" style="height: 150px;">
+                    <input type="hidden" id="products" value="@Json.Encode(Model.Products)" />
+                    <input type="hidden" id="onsaleDiscount" value="@Model.Discount" />
                 </div>
             </div>
         </div>
@@ -169,6 +30,15 @@
     ===================================== -->
     <section class="py-10">
         <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="page-title-content">
+                        <div class="">
+                            <h2 class="text-uppercase mb-6">@Model.Category.Name</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div class="row">
                 <div class="col-md-5 col-lg-4 order-2">
                     <form class="" action="index.html" method="GET">
@@ -191,9 +61,10 @@
                                                         Product Size
                                                     </button>
                                                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                                        <a class="dropdown-item" href="#">S</a>
-                                                        <a class="dropdown-item" href="#">M</a>
-                                                        <a class="dropdown-item" href="#">L</a>
+                                                        @foreach (var size in Model.Sizes)
+                                                        {
+                                                            <a class="dropdown-item" href="#">@size</a>
+                                                        }
                                                     </div>
                                                 </div>
                                             </div>
@@ -211,9 +82,10 @@
                                                     Product Color
                                                 </button>
                                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                                    <a class="dropdown-item" href="#">Blue</a>
-                                                    <a class="dropdown-item" href="#">Red</a>
-                                                    <a class="dropdown-item" href="#">Yellow</a>
+                                                    @foreach (var color in Model.Colors)
+                                                    {
+                                                        <a class="dropdown-item" href="#">@color</a>
+                                                    }
                                                 </div>
                                             </div>
                                         </div>
@@ -230,9 +102,10 @@
                                                         Product Material
                                                     </button>
                                                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                                        <a class="dropdown-item" href="#">Wood</a>
-                                                        <a class="dropdown-item" href="#">Metal</a>
-                                                        <a class="dropdown-item" href="#">Diamond</a>
+                                                        @foreach (var mate in Model.Materials)
+                                                        {
+                                                            <a class="dropdown-item" href="#">@mate</a>
+                                                        }
                                                     </div>
                                                 </div>
                                             </div>
@@ -250,9 +123,10 @@
                                                         Buying Quantity
                                                     </button>
                                                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                                        <a class="dropdown-item" href="#">100</a>
-                                                        <a class="dropdown-item" href="#">200</a>
-                                                        <a class="dropdown-item" href="#">500</a>
+                                                        @foreach (var pack in Model.Packs)
+                                                        {
+                                                            <a class="dropdown-item" href="#">@pack</a>
+                                                        }
                                                     </div>
                                                 </div>
                                             </div>
@@ -282,192 +156,11 @@
                             <img src="~/assets/img/packages/package-slider-05.jpg" alt="image">
                         </div>
                     </div>
-                    <div class="mt-8">
+                    <div class="mt-6">
                         <h2 class="text-uppercase mb-5">Description</h2>
-                        <p class="mb-6">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-                            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                            aliquip commodo consequat. Duis aute irure dolor in reprehenderit
+                        <p class="mb-6 text-black">
+                            @Model.Category.Description
                         </p>
-
-                        <div class="mb-5">
-                            <div class="row">
-                                <div class="col-lg-6">
-                                    <ul class="list-unstyled mb-0">
-                                        <li class="media">
-                                            <div class="text-gray-color mr-2">
-                                                <i class="fa fa-dot-circle-o" aria-hidden="true"></i>
-                                            </div>
-                                            <div class="media-body">
-                                                <p>Cras tincidunt mi a sodales pulvinar.</p>
-                                            </div>
-                                        </li>
-
-                                        <li class="media">
-                                            <div class="text-gray-color mr-2">
-                                                <i class="fa fa-dot-circle-o" aria-hidden="true"></i>
-                                            </div>
-                                            <div class="media-body">
-                                                <p>Mauris in libero sodales ultrices purus</p>
-                                            </div>
-                                        </li>
-
-                                        <li class="media">
-                                            <div class="text-gray-color mr-2">
-                                                <i class="fa fa-dot-circle-o" aria-hidden="true"></i>
-                                            </div>
-                                            <div class="media-body">
-                                                <p>Quisque vulputate enim eu fringilla.</p>
-                                            </div>
-                                        </li>
-
-                                        <li class="media">
-                                            <div class="text-gray-color mr-2">
-                                                <i class="fa fa-dot-circle-o" aria-hidden="true"></i>
-                                            </div>
-                                            <div class="media-body">
-                                                <p>Eleifend mi vel nisl lobortis nec tincidunt</p>
-                                            </div>
-                                        </li>
-
-                                        <li class="media">
-                                            <div class="text-gray-color mr-2">
-                                                <i class="fa fa-dot-circle-o" aria-hidden="true"></i>
-                                            </div>
-                                            <div class="media-body">
-                                                <p>Mauris in libero sodales ultrices purus</p>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-
-                                <div class="col-lg-6">
-                                    <ul class="list-unstyled mb-0">
-                                        <li class="media">
-                                            <div class="text-gray-color mr-2">
-                                                <i class="fa fa-dot-circle-o" aria-hidden="true"></i>
-                                            </div>
-                                            <div class="media-body">
-                                                <p>Praesent nec nisl iaculis, pulvinar nunc.</p>
-                                            </div>
-                                        </li>
-
-                                        <li class="media">
-                                            <div class="text-gray-color mr-2">
-                                                <i class="fa fa-dot-circle-o" aria-hidden="true"></i>
-                                            </div>
-                                            <div class="media-body">
-                                                <p>Sed at erat lacinia, condimentum eros non</p>
-                                            </div>
-                                        </li>
-
-                                        <li class="media">
-                                            <div class="text-gray-color mr-2">
-                                                <i class="fa fa-dot-circle-o" aria-hidden="true"></i>
-                                            </div>
-                                            <div class="media-body">
-                                                <p>Mauris in libero sodales ultrices purus at</p>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-    </section>
-
-    <!-- ====================================
-    ———	PACKAGES LIKE SECTION
-    ===================================== -->
-    <section class="pb-10">
-        <div class="container">
-            <div class="text-uppercase mb-4">
-                <h2 class="mb-0">you may also like</h2>
-            </div>
-            <div class="row">
-                <div class="col-md-6 col-lg-4 mb-5 mb-lg-0">
-                    <div class="card card-bg">
-                        <a href="single-package-right-sidebar.html" class="position-relative">
-                            <img class="card-img-top" src="~/assets/img/home/deal/deal-01.jpg" alt="Card image cap">
-                            <div class="card-img-overlay card-hover-overlay rounded-top d-flex flex-column">
-                                <div class="badge badge-primary badge-rounded-circle">
-                                    <span class="d-block">
-                                        45%<br>off
-                                    </span>
-                                </div>
-                            </div>
-                        </a>
-
-                        <div class="card-body">
-                            <h5>
-                                <a href="single-package-right-sidebar.html" class="card-title text-uppercase">France / Paris</a>
-                            </h5>
-
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div>
-                                    <p class="mb-0 text-capitalize">Start from</p>
-                                    <h3 class="text-primary">$299</h3>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-4 mb-5 mb-lg-0">
-                    <div class="card card-bg">
-                        <a href="single-package-right-sidebar.html" class="position-relative">
-                            <img class="card-img-top" src="~/assets/img/home/deal/deal-02.jpg" alt="Card image cap">
-                            <div class="card-img-overlay card-hover-overlay rounded-top d-flex flex-column">
-                                <div class="badge badge-primary badge-rounded-circle">
-                                    <span class="d-block">
-                                        50%<br>off
-                                    </span>
-                                </div>
-                            </div>
-                        </a>
-
-                        <div class="card-body">
-                            <h5>
-                                <a href="single-package-right-sidebar.html" class="card-title text-uppercase">Australia / Canberra</a>
-                            </h5>
-
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div>
-                                    <p class="mb-0 text-capitalize">Start from</p>
-                                    <h3 class="text-primary">$299</h3>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-4">
-                    <div class="card card-bg">
-                        <a href="single-package-right-sidebar.html" class="position-relative">
-                            <img class="card-img-top" src="~/assets/img/home/deal/deal-03.jpg" alt="Card image cap">
-                            <div class="card-img-overlay card-hover-overlay rounded-top d-flex flex-column">
-                                <div class="badge badge-primary badge-rounded-circle">
-                                    <span class="d-block">
-                                        40%<br>off
-                                    </span>
-                                </div>
-                            </div>
-                        </a>
-
-                        <div class="card-body">
-                            <h5>
-                                <a href="single-package-right-sidebar.html" class="card-title text-uppercase">Jarmani / Berlin</a>
-                            </h5>
-
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div>
-                                    <p class="mb-0 text-capitalize">Start from</p>
-                                    <h3 class="text-primary">$299</h3>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>

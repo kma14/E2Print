@@ -1,0 +1,32 @@
+﻿
+@model  List<E2Print.Domain.Entities.Category>
+
+@{int columnCount = 0;}
+@foreach (E2Print.Domain.Entities.Category cat in Model)
+{
+    if (columnCount == 0 || columnCount == 4)
+    {
+        <div class="col3">
+            <ul class="list-unstyled">
+                <li>@cat.Name</li>
+                @foreach (E2Print.Domain.Entities.Category subCat in cat.SubCategories)
+                {
+                    <li><a href="/Category/Detail/@subCat.Id">@subCat.Name</a></li>
+                }
+            </ul>
+        </div>
+    }
+    else
+    {
+        <div class="col2">
+            <ul class="list-unstyled">
+                <li>@cat.Name</li>
+                @foreach (E2Print.Domain.Entities.Category subCat in cat.SubCategories)
+                {
+                    <li><a href="/Category/Detail/@subCat.Id">@subCat.Name</a></li>
+                }
+            </ul>
+        </div>
+    }
+    columnCount++;
+}
