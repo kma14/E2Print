@@ -1260,6 +1260,7 @@
     <Content Include="Scripts\jquery-ui-1.11.4.js" />
     <Content Include="Scripts\jquery-ui-1.11.4.min.js" />
     <Content Include="Scripts\jQuery-File-Upload-9.9.3\jqueyFileUpload.js" />
+    <Content Include="Scripts\jquery.form.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\npm.js" />
     <Content Include="Scripts\photo.js" />

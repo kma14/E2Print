@@ -98,71 +98,6 @@ namespace E2Print.WebUI.Controllers
             return PartialView(cateNavs);
         }
 
-        [HttpPost]
-        public JsonResult CreateCategory(Category category)
-        {
-            try
-            {
-                if (!ModelState.IsValid)
-                {
-                    return Json(new
-                    {
-                        Result = "ERROR",
-                        Message = "Form is not valid! " + "Please correct it and try again."
-                    });
-                }
-
-                var newRole = categoryRepository.Create(category);
-                return Json(new { Result = "OK", Record = newRole });
-            }
-            catch (Exception ex)
-            {
-                return Json(new { Result = "ERROR", Message = ex.Message });
-            }
-        }
-
-        [HttpPost]
-        public JsonResult UpdateCategory(Category category)
-        {
-            try
-            {
-                if (!ModelState.IsValid)
-                {
-                    return Json(new
-                    {
-                        Result = "ERROR",
-                        Message = "Form is not valid! " + "Please correct it and try again."
-                    });
-                }
-                categoryRepository.Update(category);
-                return Json(new { Result = "OK" });
-            }
-            catch (Exception ex)
-            {
-                return Json(new { Result = "ERROR", Message = ex.Message });
-            }
-        }
-        [HttpPost]
-        public JsonResult DeleteCategory(int categoryId)
-        {
-            try
-            {
-                
-                var products = productRepository.GetAll().Where(c => c.Category.Id == categoryId);
-                foreach(Product product in products){
-                    product.Category=null;
-                    productRepository.Update(product);
-                }
-
-                categoryRepository.Delete(categoryId);
-                return Json(new { Result = "OK" });
-            }
-            catch (Exception ex)
-            {
-                return Json(new { Result = "ERROR", Message = ex.Message });
-            }
-        }
-
         [ChildActionOnly]
         public ActionResult NavigationMenu()
         {
@@ -221,16 +156,55 @@ namespace E2Print.WebUI.Controllers
             var cats = categoryRepository.GetRootCategories();
             ViewData["Categories"] = cats;
             var category = categoryRepository.GetById(categoryId);
+            Regex reg = new Regex(@"^.*" + category.Id + "_[0-9]$");
+            string path = Server.MapPath("~/Content/Images/Items/");
+            var photos = Directory.GetFiles(path).Where(f => reg.IsMatch(Path.GetFileNameWithoutExtension(f))).Select(c => "/Content/Images/Items/" + Path.GetFileName(c));
+
             CategoryViewModel model = new CategoryViewModel()
             {
                 Id = category.Id,
                 ParentId = category.ParentId,
                 Name = category.Name,
-                Description = category.Description
+                Description = category.Description,
+                Photos = photos.ToList()
             };
             return View(model);
         }
 
+        [HttpPost]
+        public JsonResult UploadPhoto(HttpPostedFileBase photo, string newPhotoName)
+        {
+            try
+            {
+                string path = Server.MapPath("~/Content/Images/Items/");
+                if (photo != null && photo.ContentLength > 0)
+                {
+                    string fileName = Path.Combine(path, newPhotoName);
+                    photo.SaveAs(fileName);
+                }
+            }
+            catch (Exception ex)
+            {
+                return Json(new { Result = "ERROR", Message = ex.Message });
+            }
+            return Json(new { Result = "OK", Message = "New photo added:" + newPhotoName });
+        }
+
+        [HttpPost]
+        public JsonResult DeletePhoto(string photoName)
+        {
+            try
+            {
+                string path = Server.MapPath("~/Content/Images/Items/");
+                string fileName = Path.Combine(path, photoName);
+                System.IO.File.Delete(fileName);
+            }
+            catch (Exception ex)
+            {
+                return Json(new { Result = "ERROR", Message = ex.Message });
+            }
+            return Json(new { Result = "OK", Message = photoName + " deleted" });
+        }
 
         [HttpPost]
         public ActionResult Update(CategoryViewModel model)
@@ -285,20 +259,6 @@ namespace E2Print.WebUI.Controllers
                 string path = Server.MapPath("~/Content/Images/Items/");
                 var photos = Directory.GetFiles(path).Where(f => reg.IsMatch(Path.GetFileNameWithoutExtension(f))).Select(c => "/Content/Images/Items/" + Path.GetFileName(c));
                 return Json(new { Result = "OK", Message = photos.Count() > 0 ? photos.ToList() : new List<string> { "" } });
-            }
-            catch (Exception ex)
-            {
-                return Json(new { Result = "ERROR", Message = ex.Message });
-            }
-        }
-
-        [HttpPost]
-        public JsonResult DeletePhoto(string fileUrl)
-        {
-            try
-            {
-                categoryRepository.DeletePhoto(fileUrl);
-                return Json(new { Result = "OK", Message = "Photo Deleted" });
             }
             catch (Exception ex)
             {
