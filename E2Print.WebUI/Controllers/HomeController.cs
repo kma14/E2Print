@@ -37,11 +37,13 @@ namespace E2Print.WebUI.Controllers
             //viewModel.Promotions = promotionRepository.GetAll().Take(3).ToList();
 
             //return View(viewModel);
+            ViewData["Page"] = "Home";
             return View();
         }
 
         public ActionResult AboutUs()
         {
+            ViewData["Page"] = "About";
             return View();
         }
         public ActionResult Equipment()
@@ -50,6 +52,7 @@ namespace E2Print.WebUI.Controllers
         }
         public ActionResult ContactUs()
         {
+            ViewData["Page"] = "Contact";
             return View();
         }
 

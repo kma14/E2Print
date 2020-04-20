@@ -240,3 +240,6 @@ Zhua.Website/App_Data/Tags/
 Zhua.Website/Content/Tags/
 Zhua.Website/Content/Images/Barcode/
 Zhua.Website/App_Data/UpdateParcelStatusFiles/
+*.jpg
+*.png
+*.jpeg

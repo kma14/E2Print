@@ -164,7 +164,7 @@ namespace E2Print.WebUI.Controllers
         }
 
         [ChildActionOnly]
-        public ActionResult AllCategories(string customerId)
+        public ActionResult NavigationMenu()
         {
             var cats = categoryRepository.GetRootCategories();
             return PartialView("_AllCategories", cats);

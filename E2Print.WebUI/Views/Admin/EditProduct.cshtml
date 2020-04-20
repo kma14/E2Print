@@ -41,19 +41,19 @@
                                         <select class="form-control select2" name="CategoryId">
                                             @foreach (E2Print.Domain.Entities.Category cat in (List<E2Print.Domain.Entities.Category>)ViewData["Categories"])
                                             {
-                                            <optgroup label="@cat.Name">
-                                                @foreach (E2Print.Domain.Entities.Category subCat in cat.SubCategories)
-                                                {
-                                                    if (subCat.Id == Model.CategoryId)
+                                                <optgroup label="@cat.Name">
+                                                    @foreach (E2Print.Domain.Entities.Category subCat in cat.SubCategories)
                                                     {
-                                                        <option value="@subCat.Id" selected>@subCat.Name</option>
+                                                        if (subCat.Id == Model.CategoryId)
+                                                        {
+                                                            <option value="@subCat.Id" selected>@subCat.Name</option>
+                                                        }
+                                                        else
+                                                        {
+                                                            <option value="@subCat.Id">@subCat.Name</option>
+                                                        }
                                                     }
-                                                    else
-                                                    {
-                                                        <option value="@subCat.Id">@subCat.Name</option>
-                                                    }
-                                                }
-                                            </optgroup>
+                                                </optgroup>
                                             }
                                         </select>
                                     </div>

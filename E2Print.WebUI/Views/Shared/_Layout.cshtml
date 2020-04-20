@@ -95,24 +95,24 @@
                     </div>
 
                     <ul class="menuzord-menu menuzord-right">
-                        <li class=" active ">
-                            <a class="" href="javascript:void(0)">Home</a>
+                        <li class="@( (string)ViewData["Page"] == "Home"?"active":"" )">
+                            <a class="" href="/Home">Home</a>
                         </li>
 
                         <li class="">
                             <a href="javascript:void(0)">Products</a>
                             <div class="megamenu drop-up">
                                 <div class="megamenu-row">
-                                    @{Html.RenderAction("AllCategories", "Category"); }
+                                    @{Html.RenderAction("NavigationMenu", "Category"); }
                                 </div>
                             </div>
                         </li>
 
-                        <li class="">
+                        <li class="@( (string)ViewData["Page"] == "About"?"active":"" )">
                             <a href="/Home/AboutUs">About Us</a>
                         </li>
 
-                        <li class="">
+                        <li class="@( (string)ViewData["Page"] == "Contact"?"active":"" )">
                             <a href="/Home/ContactUs">Contact Us</a>
                         </li>
 
