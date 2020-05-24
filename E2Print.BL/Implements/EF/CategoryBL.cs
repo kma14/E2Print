@@ -76,6 +76,11 @@ namespace E2Print.BL.Implements.EF
             return ModelMapping.MapCategory(e2printEntities.Categories.Where(c => e2printEntities.Categories.Where(i => i.ParentId != null).Where(i => i.ParentId == c.Id).Count()==0)).ToList();
         }
 
+        public List<Domain.Entities.Category> Search(string cateName)
+        {
+            return ModelMapping.MapCategory(e2printEntities.Categories.Where(c => c.Name.Contains(cateName) && c.ParentId!=null)).ToList();
+        }
+
         public List<string> GetAttributeList(List<Domain.Entities.Product> products,Func<Domain.Entities.Product,string> keySelector)
         {
             return products.GroupBy(keySelector).Select(grp => grp.Key).ToList<string>();

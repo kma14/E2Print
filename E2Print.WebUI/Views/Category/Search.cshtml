@@ -1,0 +1,62 @@
+﻿
+@{
+    ViewBag.Title = "SearchResult";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using E2Print.Domain.Entities;
+@model  List<Category>
+
+<div class="main-wrapper about-us">
+
+    <!-- ====================================
+    ———	PAGE TITLE
+    ===================================== -->
+    <section class="page-title">
+        <div class="page-title-img bg-img bg-overlay-darken" style="background-image: url(assets/img/pages/page-title-bg5.jpg);">
+            <div class="container">
+                <div class="row align-items-center justify-content-center" style="height: 200px;">
+                    <div class="col-lg-6">
+                        <div class="page-title-content">
+                            <div class="title-border">
+                                <h2 class="text-uppercase text-white font-weight-bold">Search Result</h2>
+                            </div>
+                            <p class="text-white mb-0"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====================================
+    ———	ABOUT TITLE SECTION
+    ===================================== -->
+    <section class="py-9 py-md-10">
+        <div class="container">
+            <div class="row">
+
+                @foreach (Category c in Model)
+                {
+                    <div class="col-md-6 col-lg-4">
+
+                        <div class="card card-transparent mb-7">
+                            <a href="/Category/Detail/@c.Id" class="position-relative">
+                                <img class="card-img-top rounded" src=@Href("~/Content/Images/Items/"+@c.Id+"_0.jpg")
+                                     alt="Card image cap">
+                                <div class="card-img-overlay card-hover-overlay rounded"></div>
+                            </a>
+
+                            <div class="card-body py-6">
+                                <h3 class="mb-4">
+                                    <a href="/Category/Detail/@c.Id">@c.Name</a>
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+
+                }
+            </div>
+        </div>
+    </section>
+
+</div><!-- element wrapper ends -->

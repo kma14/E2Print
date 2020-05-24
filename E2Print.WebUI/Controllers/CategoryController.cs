@@ -250,6 +250,12 @@ namespace E2Print.WebUI.Controllers
             return View(viewModel);
         }
 
+        public ActionResult Search(string cateName)
+        {
+            List<Category> categories = categoryRepository.Search(cateName);
+            return View(categories);
+        }
+
         [HttpPost]
         public JsonResult GetCategoryPhoto(int categoryId)
         {

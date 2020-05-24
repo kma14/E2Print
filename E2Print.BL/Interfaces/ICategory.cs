@@ -15,6 +15,8 @@ namespace E2Print.BL.Interfaces
         List<Category> GetLeafCategories();
         List<Category> GetChildrenCategories(int categoryId);
 
+        List<Category> Search(string cateName);
+
         Category Create(Category category);
 
         void Delete(int categoryId);

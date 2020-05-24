@@ -703,7 +703,7 @@
     var mapOptions = {
       zoom: 14,
       scrollwheel: false,
-      center: new google.maps.LatLng(40.697488, -73.979681),
+      center: new google.maps.LatLng(-36.904500, 174.809360),
       styles: styles
 
     };

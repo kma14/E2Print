@@ -44,3 +44,20 @@ C:\Users\Kevin.Ma\Google Drive\E2Print\E2Print.BL\obj\Release\E2Print.BL.csprojA
 C:\Users\Kevin.Ma\Google Drive\E2Print\E2Print.BL\obj\Release\E2Print.BL.csproj.CopyComplete
 C:\Users\Kevin.Ma\Google Drive\E2Print\E2Print.BL\obj\Release\E2Print.BL.dll
 C:\Users\Kevin.Ma\Google Drive\E2Print\E2Print.BL\obj\Release\E2Print.BL.pdb
+C:\E2Print\E2Print.BL\bin\Release\E2Print.BL.dll.config
+C:\E2Print\E2Print.BL\bin\Release\E2Print.BL.dll
+C:\E2Print\E2Print.BL\bin\Release\E2Print.BL.pdb
+C:\E2Print\E2Print.BL\bin\Release\E2Print.DAL.dll
+C:\E2Print\E2Print.BL\bin\Release\E2Print.Domain.dll
+C:\E2Print\E2Print.BL\bin\Release\EntityFramework.dll
+C:\E2Print\E2Print.BL\bin\Release\EntityFramework.SqlServer.dll
+C:\E2Print\E2Print.BL\bin\Release\E2Print.DAL.pdb
+C:\E2Print\E2Print.BL\bin\Release\E2Print.DAL.dll.config
+C:\E2Print\E2Print.BL\bin\Release\E2Print.Domain.pdb
+C:\E2Print\E2Print.BL\bin\Release\EntityFramework.xml
+C:\E2Print\E2Print.BL\bin\Release\EntityFramework.SqlServer.xml
+C:\E2Print\E2Print.BL\obj\Release\E2Print.BL.csprojAssemblyReference.cache
+C:\E2Print\E2Print.BL\obj\Release\E2Print.BL.csproj.CoreCompileInputs.cache
+C:\E2Print\E2Print.BL\obj\Release\E2Print.BL.csproj.CopyComplete
+C:\E2Print\E2Print.BL\obj\Release\E2Print.BL.dll
+C:\E2Print\E2Print.BL\obj\Release\E2Print.BL.pdb
