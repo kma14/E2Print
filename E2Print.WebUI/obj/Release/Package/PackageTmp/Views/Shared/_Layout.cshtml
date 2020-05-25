@@ -81,16 +81,17 @@
                         </a>
 
                         <div class="dropdown-menu dropdown-menu-right rounded-0">
-                            <form class="" action="index.html" method="post">
+                            @using (Html.BeginForm("Search", "Category", FormMethod.Post))
+                            {
                                 <div class="input-group input-group-sm">
-                                    <input type="text" class="form-control form-control-sm rounded-0" required="" placeholder="Search....">
+                                    <input name="cateName" type="text" class="form-control form-control-sm rounded-0" required="" placeholder="Search....">
                                     <div class="input-group-append">
                                         <button class="input-group-text border-0 rounded-0 btn bg-primary" type="submit">
                                             <span class="text-white text-uppercase font-weight-bold">Search</span>
                                         </button>
                                     </div>
                                 </div>
-                            </form>
+                            }
                         </div>
                     </div>
 
@@ -193,31 +194,11 @@
         <div class="copyright py-6">
             <div class="container">
                 <div class="row align-items-center">
-                    <div class="col-md-6 order-1 order-md-0">
-                        <p class="mb-0 mb-md-0 text-md-left">
+                    <div class="col-md-12 order-1 order-md-0">
+                        <p class="mb-0 mb-md-0 text-md-center">
                             Copyright &copy; 2019 All Rights Reserved by
                             <a href="http://www.e2print.co.nz/" target="_blank">E2 Creation.</a>
                         </p>
-                    </div>
-
-                    <div class="col-md-6">
-                        <ul class="list-inline text-capitalize d-flex align-items-center justify-content-md-end justify-content-center mb-md-0">
-                            <li class="mr-3">
-                                <a href="setting.html">Privacy policy</a>
-                            </li>
-
-                            <li class="mr-3">
-                                <a href="about-us.html">About us</a>
-                            </li>
-
-                            <li class="mr-3">
-                                <a href="contact.html">Support</a>
-                            </li>
-
-                            <li class="">
-                                <a href="blog-single-right-sidebar.html">Blog</a>
-                            </li>
-                        </ul>
                     </div>
                 </div>
             </div>
