@@ -61,3 +61,20 @@ C:\E2Print\E2Print.BL\obj\Release\E2Print.BL.csproj.CoreCompileInputs.cache
 C:\E2Print\E2Print.BL\obj\Release\E2Print.BL.csproj.CopyComplete
 C:\E2Print\E2Print.BL\obj\Release\E2Print.BL.dll
 C:\E2Print\E2Print.BL\obj\Release\E2Print.BL.pdb
+F:\Zhua Ltd Projects\E2Print\E2Print.BL\bin\Release\E2Print.BL.dll.config
+F:\Zhua Ltd Projects\E2Print\E2Print.BL\bin\Release\E2Print.BL.dll
+F:\Zhua Ltd Projects\E2Print\E2Print.BL\bin\Release\E2Print.BL.pdb
+F:\Zhua Ltd Projects\E2Print\E2Print.BL\bin\Release\E2Print.DAL.dll
+F:\Zhua Ltd Projects\E2Print\E2Print.BL\bin\Release\E2Print.Domain.dll
+F:\Zhua Ltd Projects\E2Print\E2Print.BL\bin\Release\EntityFramework.dll
+F:\Zhua Ltd Projects\E2Print\E2Print.BL\bin\Release\EntityFramework.SqlServer.dll
+F:\Zhua Ltd Projects\E2Print\E2Print.BL\bin\Release\E2Print.DAL.pdb
+F:\Zhua Ltd Projects\E2Print\E2Print.BL\bin\Release\E2Print.DAL.dll.config
+F:\Zhua Ltd Projects\E2Print\E2Print.BL\bin\Release\E2Print.Domain.pdb
+F:\Zhua Ltd Projects\E2Print\E2Print.BL\bin\Release\EntityFramework.xml
+F:\Zhua Ltd Projects\E2Print\E2Print.BL\bin\Release\EntityFramework.SqlServer.xml
+F:\Zhua Ltd Projects\E2Print\E2Print.BL\obj\Release\E2Print.BL.csprojAssemblyReference.cache
+F:\Zhua Ltd Projects\E2Print\E2Print.BL\obj\Release\E2Print.BL.csproj.CoreCompileInputs.cache
+F:\Zhua Ltd Projects\E2Print\E2Print.BL\obj\Release\E2Print.BL.csproj.CopyComplete
+F:\Zhua Ltd Projects\E2Print\E2Print.BL\obj\Release\E2Print.BL.dll
+F:\Zhua Ltd Projects\E2Print\E2Print.BL\obj\Release\E2Print.BL.pdb

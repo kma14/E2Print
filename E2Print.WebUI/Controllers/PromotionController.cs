@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.Mvc;
 using E2Print.BL.Interfaces;
@@ -13,109 +15,97 @@ namespace E2Print.WebUI.Controllers
     {
         ICategory categoryRepository;
         IPromotion promotionRepository;
-        public PromotionController(IPromotion promotionRepository, ICategory categoryRepository)
+        ITag tagRepo;
+        public PromotionController(IPromotion promotionRepository, ICategory categoryRepository, ITag tagRepo)
         {
             this.promotionRepository = promotionRepository;
             this.categoryRepository = categoryRepository;
-        }
-        // GET: Promotion
-        public ActionResult ManagePromotion()
-        {
-            return View();
+            this.tagRepo = tagRepo;
         }
 
-        public ActionResult SpecialOffers()
+        [Authorize(Roles = "Admin")]
+        public ActionResult Promotions()
         {
-            return View(promotionRepository.GetAll());
+            var promotions = promotionRepository.GetAll();
+            return View(promotions);
         }
 
+        [Authorize(Roles = "Admin")]
+        public ActionResult NewPromotion()
+        {
+            ViewData["PromotionTags"] = tagRepo.GetByType("Promotion");
+            Promotion promotion = new Promotion();
+            return View(promotion);
+        }
+
+        [Authorize(Roles = "Admin")]
+        public ActionResult EditPromotion(int promotionId)
+        {
+            ViewData["PromotionTags"] = tagRepo.GetByType("Promotion");
+            var promotion = promotionRepository.GetById(promotionId);
+            return View(promotion);
+        }
+
+        /* ================= Post actions ======================= */
+        [HttpPost]
+        public ActionResult Create(Promotion model)
+        {
+            try
+            {
+                model.StartDate = new DateTime(2020, 01, 01);
+                model.EndDate = new DateTime(2030, 01, 01);
+                model.Id = promotionRepository.CreatePromotion(model).Id;
+                return RedirectToAction("Promotions", "Promotion", model);
+            }
+            catch (Exception ex)
+            {
+                return RedirectToAction("NewPromotion", "Promotion", model);
+            }
+        }
+
+        [HttpPost]
+        public ActionResult Update(Promotion model)
+        {
+            try
+            {
+                model.StartDate = new DateTime(2020, 01, 01);
+                model.EndDate = new DateTime(2030, 01, 01);
+                promotionRepository.UpdatePromotion(model);
+                ViewData["CurrentPromotion"] = model.Id;
+                return RedirectToAction("Promotions", "Promotion", model);
+            }
+            catch (Exception ex)
+            {
+                return RedirectToAction("EditPromotion", "Promotion", model);
+            }
+        }
         /* ================= ajax actions ======================= */
+
         [HttpPost]
-        public JsonResult GetAllPromotions(int jtStartIndex, int jtPageSize)
+        public JsonResult UploadPhoto(HttpPostedFileBase photo, string newPhotoName)
         {
             try
             {
-                var promotions = promotionRepository.GetAll();
-                int promotionCount = promotions.Count();
-                var pagePromotions = promotions.Skip(jtStartIndex).Take(jtPageSize);
-                List<PromotionViewModel> promotionViewModes=new List<PromotionViewModel> ();
-                foreach (Promotion p in pagePromotions)
+                string path = Server.MapPath("~/Content/Images/Promotions/");
+                if (photo != null && photo.ContentLength > 0)
                 {
-                    promotionViewModes.Add(new PromotionViewModel
-                    {
-                        Id = p.Id,
-                        ItemId = p.ItemId,
-                        ItemName =  categoryRepository.GetById(p.ItemId).Name,
-                        Title = p.Title,
-                        Description = p.Description,
-                        StartDate = p.StartDate,
-                        EndDate = p.EndDate,
-                        Comment = p.Comment,
-                        DiscountAmount = p.DiscountAmount,
-                        PromotionPrice = p.PromotionPrice
-                    });
+                    string fileName = Path.Combine(path, newPhotoName);
+                    photo.SaveAs(fileName);
                 }
-                return Json(new { Result = "OK", Records = promotionViewModes, TotalRecordCount = promotionCount });
             }
             catch (Exception ex)
             {
                 return Json(new { Result = "ERROR", Message = ex.Message });
             }
+            return Json(new { Result = "OK", Message = "New photo added:" + newPhotoName });
         }
 
         [HttpPost]
-        public JsonResult CreatePromotion(Promotion promotion)
+        public JsonResult DeletePromotion(int id)
         {
             try
             {
-                if (!ModelState.IsValid)
-                {
-                    return Json(new
-                    {
-                        Result = "ERROR",
-                        Message = "Form is not valid! " + "Please correct it and try again."
-                    });
-                }
-
-                var newRole = promotionRepository.CreatePromotion(promotion);
-                return Json(new { Result = "OK", Record = newRole });
-            }
-            catch (Exception ex)
-            {
-                return Json(new { Result = "ERROR", Message = ex.Message });
-            }
-        }
-
-
-
-        [HttpPost]
-        public JsonResult UpdatePromotion(Promotion promotion)
-        {
-            try
-            {
-                if (!ModelState.IsValid)
-                {
-                    return Json(new
-                    {
-                        Result = "ERROR",
-                        Message = "Form is not valid! " + "Please correct it and try again."
-                    });
-                }
-                promotionRepository.UpdatePromotion(promotion);
-                return Json(new { Result = "OK" });
-            }
-            catch (Exception ex)
-            {
-                return Json(new { Result = "ERROR", Message = ex.Message });
-            }
-        }
-
-        [HttpPost]
-        public JsonResult DeletePromotion(Promotion promotion)
-        {
-            try
-            {
-                promotionRepository.DeletePromotion(promotion.Id);
+                promotionRepository.DeletePromotion(id);
                 return Json(new { Result = "OK" });
             }
             catch (Exception ex)

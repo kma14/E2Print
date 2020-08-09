@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using E2Print.Domain.Entities;
@@ -46,6 +47,17 @@ namespace E2Print.BL.Implements.EF
             userRole.RoleName = role.RoleName;
             userRole.Discount = role.Discount;
             return userRole;
+        }
+
+        public static E2Print.Domain.Entities.Tag MapTag(DAL.Tag dalTag)
+        {
+            var tag = new Domain.Entities.Tag();
+            tag.Id = dalTag.Id;
+            tag.Type = dalTag.Type;
+            tag.Name = dalTag.Name;
+            tag.Description = dalTag.Description;
+            tag.CreatedOn = dalTag.CreatedOn;
+            return tag;
         }
 
         public static E2Print.Domain.Entities.Product MapProduct(E2Print.DAL.Product dalProduct,bool lazyLoading=false)
@@ -115,17 +127,20 @@ namespace E2Print.BL.Implements.EF
 
         public static E2Print.Domain.Entities.Promotion MapPromotion(E2Print.DAL.Promotion dalPromotion)
         {
-            E2Print.Domain.Entities.Promotion customerFeedback = new Domain.Entities.Promotion();
-            customerFeedback.Id = dalPromotion.Id;
-            customerFeedback.ItemId = dalPromotion.ItemId;
-            customerFeedback.Title = dalPromotion.Title;
-            customerFeedback.Description = dalPromotion.Description;
-            customerFeedback.StartDate = dalPromotion.StartDate;
-            customerFeedback.EndDate = dalPromotion.EndDate;
-            customerFeedback.Comment = dalPromotion.Comment;
-            customerFeedback.DiscountAmount = dalPromotion.DiscountAmount;
-            customerFeedback.PromotionPrice = dalPromotion.PromotionPrice;
-            return customerFeedback;
+            E2Print.Domain.Entities.Promotion promotion = new Domain.Entities.Promotion();
+            promotion.Id = dalPromotion.Id;
+            promotion.ItemId = dalPromotion.ItemId;
+            promotion.Title = dalPromotion.Title;
+            promotion.Description = dalPromotion.Description;
+            promotion.StartDate = dalPromotion.StartDate;
+            promotion.EndDate = dalPromotion.EndDate;
+            promotion.Comment = dalPromotion.Comment;
+            promotion.DiscountAmount = dalPromotion.DiscountAmount;
+            promotion.PromotionPrice = dalPromotion.PromotionPrice;
+            promotion.PromotionGroup = dalPromotion.PromotionGroup;
+            promotion.PromotionLink = dalPromotion.PromotionLink;
+
+            return promotion;
         }
 
         public static IEnumerable<E2Print.Domain.Entities.Promotion> MapPromotion(IEnumerable<E2Print.DAL.Promotion> dalPromotions)

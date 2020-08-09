@@ -15,11 +15,13 @@ namespace E2Print.WebUI.Controllers
         ICategory categoryRepository;
         IProduct productRepository;
         IPromotion promotionRepository;
-        public HomeController(ICategory categoryRepository, IProduct productRepository,IPromotion promotionRepository)
+        ITag tagRepo;
+        public HomeController(ICategory categoryRepository, IProduct productRepository,IPromotion promotionRepository, ITag tagRepo)
         {
             this.categoryRepository = categoryRepository;
             this.productRepository = productRepository;
             this.promotionRepository = promotionRepository;
+            this.tagRepo = tagRepo;
         }
         public ActionResult Index()
         {
@@ -37,8 +39,10 @@ namespace E2Print.WebUI.Controllers
             //viewModel.Promotions = promotionRepository.GetAll().Take(3).ToList();
 
             //return View(viewModel);
+            ViewData["PromotionTags"] = tagRepo.GetByType("Promotion");
+            var model = promotionRepository.GetAll();
             ViewData["Page"] = "Home";
-            return View();
+            return View(model);
         }
 
         public ActionResult AboutUs()

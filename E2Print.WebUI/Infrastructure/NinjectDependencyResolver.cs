@@ -44,6 +44,7 @@ namespace E2Print.WebUI.Infrastructure
             kernel.Bind<IPromotion>().To<PromotionBL>();
             kernel.Bind<IFeedback>().To<FeedbackBL>();
             kernel.Bind<IProductAttribute>().To<ProductAttributeBL>();
+            kernel.Bind<ITag>().To<TagBL>();
         }
     }
 }

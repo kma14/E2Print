@@ -24,6 +24,8 @@ namespace E2Print.BL.Implements.EF
             dalPromotion.Comment = newPromotion.Comment;
             dalPromotion.DiscountAmount = newPromotion.DiscountAmount;
             dalPromotion.PromotionPrice = newPromotion.PromotionPrice;
+            dalPromotion.PromotionGroup = newPromotion.PromotionGroup;
+            dalPromotion.PromotionLink = newPromotion.PromotionLink;
 
             e2printEntities.Promotions.Add(dalPromotion);
             try
@@ -66,6 +68,8 @@ namespace E2Print.BL.Implements.EF
             dalPromotion.Comment = promotion.Comment;
             dalPromotion.DiscountAmount = promotion.DiscountAmount;
             dalPromotion.PromotionPrice = promotion.PromotionPrice;
+            dalPromotion.PromotionGroup = promotion.PromotionGroup;
+            dalPromotion.PromotionLink = promotion.PromotionLink;
             e2printEntities.SaveChanges();
         }
 

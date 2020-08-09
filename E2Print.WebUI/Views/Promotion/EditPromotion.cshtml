@@ -1,0 +1,238 @@
+﻿
+@{
+    ViewBag.Title = "Edit Promotion";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+@model  E2Print.Domain.Entities.Promotion
+
+@section styles{
+    <style>
+        .progress {
+            border-radius: 0px;
+            background-color: #f0f0f0;
+            height: 18px;
+        }
+
+        .progress-bar {
+            height: 18px;
+            background-color: #0da9ef;
+            margin-bottom:10px;
+        }
+
+        input#file {
+            display: none;
+        }
+
+        img.currentPhoto {
+            cursor: pointer !important;
+        }
+
+        .photoList {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+            .photoList > li {
+                text-wrap: none;
+                overflow: visible;
+                padding: 7px 10px;
+                background-color: #ffffff;
+                cursor: pointer;
+                width:100%;
+            }
+
+                .photoList > li:hover .deletePhoto {
+                    display: inline-block;
+                }
+
+                .photoList > li.currentPhoto {
+                    background-color: #495561;
+                    color:#000000;
+                }
+
+        .deletePhoto {
+            float:right;
+            margin-right:1em;
+        }
+
+            .deletePhoto:hover {
+                color: red;
+            }
+        .newPhoto{
+            font-weight:bold;
+        }
+    </style>
+}
+
+<!-- start page title -->
+<div class="row">
+    <div class="col-12">
+        <div class="page-title-box">
+            <div class="page-title-right">
+                <ol class="breadcrumb m-0">
+                    <li class="breadcrumb-item"><a href="/Admin">Admin</a></li>
+                    <li class="breadcrumb-item"><a href="/Promotion/Promotions">Promotions</a></li>
+                    <li class="breadcrumb-item active">Edit Promotion</li>
+                </ol>
+            </div>
+            <h4 class="page-title">Edit Promotion "@Model.Title", Id @Model.Id</h4>
+        </div>
+    </div>
+</div>
+<!-- end page title -->
+
+<div class="row">
+    <div class="col-12">
+        <div class="card-box">
+
+            <div class="row">
+                <div class="col-12">
+                    <div class="p-2">
+                        <div class="form-group row">
+                            <label class="col-sm-2 col-form-label" for="simpleinput">Photo(s)</label>
+                            <div class="col-sm-10">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <img class="currentProductPhoto" style="width:100%;border:1px solid #808080" src="@Url.Content("/Content/Images/Promotions/" + Model.Id.ToString() + "_0.jpg")" onerror="this.onerror=null;this.src='../Content/Images/Items/default.jpg'" alt="Promotion">
+                                        <div class="progress" style="width:100%">
+                                            <div class="progress-bar"></div>
+                                            <div class="percent">0%</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 .no-padding">
+                                        <ul class="photoList">
+                                            <li class="currentPhoto photo" data-url="@("/Content/Images/Promotions/" + Model.Id.ToString() + "_0.jpg")">
+                                                <span class="photoName">@(Model.Id.ToString() + "_0.jpg")</span>
+                                            </li>
+                                            <li class="newPhoto">Update photo</li>
+                                        </ul>
+                                        @using (Html.BeginForm("UploadPhoto", "Promotion", FormMethod.Post, new { enctype = "multipart/form-data", @class = "uploadPhotoForm" }))
+                                        {
+                                            <input type="hidden" name="promotionId" class="promotionId" value=@(Model.Id) />
+                                            <input type="hidden" name="newPhotoName" class="newPhotoName" value=@(Model.Id.ToString() + "_0.jpg") />
+                                            <input type="file" name="photo" class="photo_FileUpload" style="display: none;" />
+                                        }
+                                        <div class="status"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        @using (Html.BeginForm("Update", "Promotion", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                        {
+                            <div class="form-group row">
+                                <input type="hidden" name="Id" value="@Model.Id" />
+                                <label class="col-sm-2 col-form-label">Promotion group</label>
+                                <div class="col-sm-10">
+                                    <select class="form-control select2" name="PromotionGroup">
+                                        @foreach (E2Print.Domain.Entities.Tag tag in (List<E2Print.Domain.Entities.Tag>)ViewData["PromotionTags"])
+                                        {
+                                            if (Model.PromotionGroup != null && tag.Name == Model.PromotionGroup)
+                                            {
+                                                <option value="@tag.Name" selected>@tag.Name</option>
+                                            }
+                                            else
+                                            {
+                                                <option value="@tag.Name">@tag.Name</option>
+                                            }
+                                        }
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-2 col-form-label" for="simpleinput">Title</label>
+                                <div class="col-sm-10">
+                                    <input type="text" name="Title" id="Name" class="form-control" value="@Model.Title">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-2 col-form-label" for="Description">Description</label>
+                                <div class="col-sm-10">
+                                    <textarea class="form-control" name="Description" id="Description" rows="5">@Model.Description</textarea>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <button type="submit" class="btn btn-primary">Update Promotion</button>
+                            </div>
+                        }
+                    </div>
+                </div>
+
+            </div>
+            <!-- end row -->
+
+        </div> <!-- end card-box -->
+    </div><!-- end col -->
+</div>
+<!-- end row -->
+
+
+
+@section scripts
+{
+    <script src="~/Scripts/jquery.form.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            //upload photo
+            var form = $('.uploadPhotoForm');
+            var bar = $('.progress-bar');
+            var percent = $('.percent');
+            var status = $('.status');
+            form.ajaxForm({
+                beforeSend: function () {
+                    status.empty();
+                    var percentVal = '0%';
+                    bar.width(percentVal);
+                    percent.html(percentVal);
+                },
+                uploadProgress: function (event, position, total, percentComplete) {
+                    var percentVal = percentComplete + '%';
+                    bar.width(percentVal);
+                    percent.html(percentVal);
+                },
+                complete: function (xhr) {
+                    //status.html(xhr.responseText);
+                    $('li.currentPhoto').click();
+                }
+            });
+
+            $('.photo_FileUpload').change(function () {
+                form.submit();
+            });
+        });
+
+        //selecet photo
+        $(document).on('click', '.photo', function () {
+            var img = $('img');
+            var url = $(this).data('url');
+            refreshPhoto(img, url)
+        });
+
+        //add new photo
+        $(document).on('click', '.newPhoto', function (e) {
+            $('.photo_FileUpload').click();
+        });
+
+        //delete photo
+        $(document).on('click', '.deletePhoto', function (e) {
+            var photoName = $(this).siblings('span.photoName').text();
+            var url = $(this).data('url');
+            var li = $(this).closest('li');
+            var postData = {
+                photoName: photoName
+            };
+            $.post(url, postData, function (e) {
+                if (e.Result === 'OK') {
+                    li.remove();
+                    var img = $('img');
+                    refreshPhoto(img, '');
+                }
+            });
+        });
+
+        function refreshPhoto(img, url) {
+            d = new Date();
+            img.attr("src", url + '?' + d.getTime());
+        }
+    </script>
+}

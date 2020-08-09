@@ -1,6 +1,9 @@
 ﻿@{
     ViewBag.Title = "Home Page";
 }
+@using E2Print.Domain.Entities;
+@model  List<Promotion>
+
 <div class="main-wrapper home-main">
     <!-- ====================================
     ———	BANNER SECTION
@@ -11,16 +14,6 @@
         <!-- START REVOLUTION SLIDER 5.4.8.1 fullwidth mode -->
         <div id="rev_slider_12_1" class="rev_slider fullwidthabanner" style="display:none;" data-version="5.4.8.1">
             <ul>
-                <!-- SLIDE  -->
-                <li data-index="rs-32" data-transition="slideleft" data-slotamount="default" data-hideafterloop="0"
-                    data-hideslideonmobile="off" data-easein="default" data-easeout="default" data-masterspeed="default"
-                    data-thumb="assets/img/home/slider/slider-00.jpg" data-delay="6000" data-rotate="0" data-saveperformance="off"
-                    data-title="Slide" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6=""
-                    data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
-                    <!-- MAIN IMAGE -->
-                    <img src="assets/img/home/slider/slider-00.jpg" alt="" data-bgposition="center center" data-bgfit="cover"
-                         data-bgrepeat="no-repeat" class="rev-slidebg" data-no-retina style="width: 100% !important">
-                </li>
                 <li data-index="rs-33" data-transition="slideleft" data-slotamount="default" data-hideafterloop="0"
                     data-hideslideonmobile="off" data-easein="default" data-easeout="default" data-masterspeed="default"
                     data-thumb="assets/img/home/slider/slider-01.jpg" data-delay="6000" data-rotate="0" data-saveperformance="off"
@@ -180,8 +173,8 @@
             </div>
 
             @*<div class="text-center mt-7">
-                <a href="packages-grid.html" class="btn btn-sm btn-outline-secondary text-uppercase">View all</a>
-            </div>*@
+                    <a href="packages-grid.html" class="btn btn-sm btn-outline-secondary text-uppercase">View all</a>
+                </div>*@
         </div>
     </section>
 
@@ -208,7 +201,7 @@
                     </div>
                     <h2 class="counter-value mb-2">&nbsp;</h2>
                     <span style="color:white;">Customised project proposal by our professional designer and finalisation of the quotation</span>>
-</div>
+                </div>
 
                 <div class="col-6 col-md-3">
                     <div>
@@ -216,15 +209,15 @@
                     </div>
                     <h2 class="counter-value mb-2">&nbsp;</h2>
                     <span style="color:white;">Installation by the people with site safety license</span>
-</div>
+                </div>
 
                 <div class="col-6 col-md-3">
                     <div>
                         <img src="~/assets/img/home/4steps-04.png" style="width:50%;left:-25%" />
                     </div>
-                    <h2 class="counter-value mb-2" >&nbsp;</h2>
+                    <h2 class="counter-value mb-2">&nbsp;</h2>
                     <span style="color:white;">You will have a total care customer experience with professional post service</span>
-</div>
+                </div>
             </div>
         </div>
     </section>
@@ -244,177 +237,26 @@
             </div>
 
             <div id="filters" class="button-group">
-                <button class="button " data-filter=".customized">Customized</button>
-                <button class="button" data-filter=".expo">Expo Display</button>
-                <button class="button" data-filter=".small">Small format</button>
-                <button class="button" data-filter=".wide">Wide format</button>
+                @foreach (E2Print.Domain.Entities.Tag tag in (List<E2Print.Domain.Entities.Tag>)ViewData["PromotionTags"])
+                {
+                    <button class="button " data-filter=@("."+tag.Name.ToLower())>@tag.Name</button>
+                }
             </div>
 
             <div class="row grid">
-                <div class="col-md-6 col-lg-4 element-item customized">
-                    <div class="media media-hoverable justify-content-center mb-2 mb-md-4 mb-lg-6">
-                        <a href="single-package-fullwidth.html" class="media-content">
-                            <img class="media-img" src="assets/img/home/packages/custom-1.jpg" alt="Generic placeholder image">
-                            <div class="media-object">
-                                <h3 class="text-uppercase mb-0 transparent-content">Calendar</h3>
-                            </div>
-                        </a>
+                @foreach (Promotion promotion in Model)
+                {
+                    <div class="col-md-6 col-lg-4 element-item @promotion.PromotionGroup.ToLower()">
+                        <div class="media media-hoverable justify-content-center mb-2 mb-md-4 mb-lg-6">
+                            <a href="single-package-fullwidth.html" class="media-content">
+                                <img class="media-img" src=@("/Content/Images/Promotions/" + promotion.Id.ToString() + "_0.jpg") alt="Generic placeholder image">
+                                <div class="media-object">
+                                    <h3 class="text-uppercase mb-0 transparent-content">@promotion.Title</h3>
+                                </div>
+                            </a>
+                        </div>
                     </div>
-                </div>
-
-                <div class="col-md-6 col-lg-4 element-item customized">
-                    <div class="media media-hoverable justify-content-center mb-2 mb-md-4 mb-lg-6">
-                        <a href="single-package-fullwidth.html" class="media-content">
-                            <img class="media-img" src="assets/img/home/packages/custom-2.jpg" alt="Generic placeholder image">
-                            <div class="media-object">
-                                <h3 class="text-uppercase mb-0 transparent-content">Car Magnet</h3>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-4 element-item customized">
-                    <div class="media media-hoverable justify-content-center mb-2 mb-md-4 mb-lg-6">
-                        <a href="single-package-fullwidth.html" class="media-content">
-                            <img class="media-img" src="assets/img/home/packages/custom-3.jpg" alt="Generic placeholder image">
-                            <div class="media-object">
-                                <h3 class="text-uppercase mb-0 transparent-content">Car Wrap</h3>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-4 element-item customized">
-                    <div class="media media-hoverable justify-content-center mb-2 mb-md-4 mb-lg-6">
-                        <a href="single-package-fullwidth.html" class="media-content">
-                            <img class="media-img" src="assets/img/home/packages/custom-4.jpg" alt="Generic placeholder image">
-                            <div class="media-object">
-                                <h3 class="text-uppercase mb-0 transparent-content">Clothes Print</h3>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-4 element-item customized">
-                    <div class="media media-hoverable justify-content-center mb-2 mb-md-4 mb-lg-6">
-                        <a href="single-package-fullwidth.html" class="media-content">
-                            <img class="media-img" src="assets/img/home/packages/custom-5.jpg" alt="Generic placeholder image">
-                            <div class="media-object">
-                                <h3 class="text-uppercase mb-0 transparent-content">Magazine</h3>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-4 element-item customized">
-                    <div class="media media-hoverable justify-content-center mb-2 mb-md-4 mb-lg-6">
-                        <a href="single-package-fullwidth.html" class="media-content">
-                            <img class="media-img" src="assets/img/home/packages/custom-6.jpg" alt="Generic placeholder image">
-                            <div class="media-object">
-                                <h3 class="text-uppercase mb-0 transparent-content">Window Sign</h3>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-4 element-item expo">
-                    <div class="media media-hoverable justify-content-center mb-2 mb-md-4 mb-lg-6">
-                        <a href="single-package-fullwidth.html" class="media-content">
-                            <img class="media-img" src="assets/img/home/packages/expo-1.jpg" alt="Generic placeholder image">
-                            <div class="media-object">
-                                <h3 class="text-uppercase mb-0 transparent-content">Event canopy</h3>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-4 element-item expo">
-                    <div class="media media-hoverable justify-content-center mb-2 mb-md-4 mb-lg-6">
-                        <a href="single-package-fullwidth.html" class="media-content">
-                            <img class="media-img" src="assets/img/home/packages/expo-2.jpg" alt="Generic placeholder image">
-                            <div class="media-object">
-                                <h3 class="text-uppercase mb-0 transparent-content">Tent With canopy sidewalls</h3>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-4 element-item expo">
-                    <div class="media media-hoverable justify-content-center mb-2 mb-md-4 mb-lg-6">
-                        <a href="single-package-fullwidth.html" class="media-content">
-                            <img class="media-img" src="assets/img/home/packages/expo-3.jpg" alt="Generic placeholder image">
-                            <div class="media-object">
-                                <h3 class="text-uppercase mb-0 transparent-content">Flag</h3>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-4 element-item small">
-                    <div class="media media-hoverable justify-content-center mb-2 mb-md-4 mb-lg-6">
-                        <a href="single-package-fullwidth.html" class="media-content">
-                            <img class="media-img" src="assets/img/home/packages/small-1.jpg" alt="Generic placeholder image">
-                            <div class="media-object">
-                                <h3 class="text-uppercase mb-0 transparent-content">Envelope</h3>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-4 element-item small">
-                    <div class="media media-hoverable justify-content-center mb-2 mb-md-4 mb-lg-6">
-                        <a href="single-package-fullwidth.html" class="media-content">
-                            <img class="media-img" src="assets/img/home/packages/small-2.jpg" alt="Generic placeholder image">
-                            <div class="media-object">
-                                <h3 class="text-uppercase mb-0 transparent-content">Notepad</h3>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-4 element-item small">
-                    <div class="media media-hoverable justify-content-center mb-2 mb-md-4 mb-lg-6">
-                        <a href="single-package-fullwidth.html" class="media-content">
-                            <img class="media-img" src="assets/img/home/packages/small-3.jpg" alt="Generic placeholder image">
-                            <div class="media-object">
-                                <h3 class="text-uppercase mb-0 transparent-content">Sticky label</h3>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-4 element-item wide">
-                    <div class="media media-hoverable justify-content-center mb-2 mb-md-4 mb-lg-6">
-                        <a href="single-package-fullwidth.html" class="media-content">
-                            <img class="media-img" src="assets/img/home/packages/wide-1.jpg" alt="Generic placeholder image">
-                            <div class="media-object">
-                                <h3 class="text-uppercase mb-0 transparent-content">3D letter</h3>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-4 element-item wide">
-                    <div class="media media-hoverable justify-content-center mb-2 mb-md-4 mb-lg-6">
-                        <a href="single-package-fullwidth.html" class="media-content">
-                            <img class="media-img" src="assets/img/home/packages/wide-2.jpg" alt="Generic placeholder image">
-                            <div class="media-object">
-                                <h3 class="text-uppercase mb-0 transparent-content">Canvas print</h3>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-4 element-item wide">
-                    <div class="media media-hoverable justify-content-center mb-2 mb-md-4 mb-lg-6">
-                        <a href="single-package-fullwidth.html" class="media-content">
-                            <img class="media-img" src="assets/img/home/packages/wide-3.jpg" alt="Generic placeholder image">
-                            <div class="media-object">
-                                <h3 class="text-uppercase mb-0 transparent-content">Roll up Banner</h3>
-                            </div>
-                        </a>
-                    </div>
-                </div>
+                }
             </div>
         </div>
     </section>

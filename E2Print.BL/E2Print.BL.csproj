@@ -59,6 +59,7 @@
     <Compile Include="Implements\EF\ProductAttributeBL.cs" />
     <Compile Include="Implements\EF\ProductBL.cs" />
     <Compile Include="Implements\EF\PromotionBL.cs" />
+    <Compile Include="Implements\EF\TagBL.cs" />
     <Compile Include="Implements\EF\RoleBL.cs" />
     <Compile Include="Interfaces\ICategory.cs" />
     <Compile Include="Interfaces\ICustomer.cs" />
@@ -66,6 +67,7 @@
     <Compile Include="Interfaces\IProduct.cs" />
     <Compile Include="Interfaces\IProductAttribute.cs" />
     <Compile Include="Interfaces\IPromotion.cs" />
+    <Compile Include="Interfaces\ITag.cs" />
     <Compile Include="Interfaces\IUserRole.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

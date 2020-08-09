@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace E2Print.Domain.Entities
 {
-    public class Category
+    public class Tag
     {
-        public int Id { get; set; }
+        public Guid Id { get; set; }
+        public string Type { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
-        public int? ParentId { get; set; }
 
-        public List<Category> SubCategories { get; set; }
+        public DateTime CreatedOn { get; set; }
     }
 }

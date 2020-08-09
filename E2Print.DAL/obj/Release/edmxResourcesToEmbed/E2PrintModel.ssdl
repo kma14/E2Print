@@ -80,6 +80,8 @@
     <Property Name="Title" Type="nvarchar" MaxLength="50" />
     <Property Name="Description" Type="nvarchar" MaxLength="200" />
     <Property Name="Comment" Type="nvarchar" MaxLength="200" />
+    <Property Name="PromotionGroup" Type="nvarchar" MaxLength="50" />
+    <Property Name="PromotionLink" Type="nvarchar" MaxLength="200" />
   </EntityType>
   <EntityType Name="Role">
     <Key>
@@ -97,7 +99,7 @@
     <Property Name="CreatedOn" Type="datetime" Nullable="false" />
     <Property Name="Type" Type="varchar" MaxLength="500" Nullable="false" />
     <Property Name="Name" Type="varchar" MaxLength="500" Nullable="false" />
-    <Property Name="Description" Type="varchar(max)" Nullable="false" />
+    <Property Name="Description" Type="varchar(max)" />
   </EntityType>
   <EntityType Name="TagLink">
     <Key>

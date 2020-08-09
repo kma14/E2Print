@@ -132,24 +132,6 @@ namespace E2Print.WebUI.Controllers
             return View(model);
         }
 
-        [HttpPost]
-        public ActionResult Create(CategoryViewModel model)
-        {
-            try
-            {
-                Category newCategory = new Category();
-                newCategory.ParentId = model.ParentId==null?0: model.ParentId.Value;
-                newCategory.Name = model.Name;
-                newCategory.Description = model.Description;
-                model.Id = categoryRepository.Create(newCategory).Id;
-                return RedirectToAction("Categories", "Category", model);
-            }
-            catch (Exception ex)
-            {
-                return RedirectToAction("NewCategory", "Category", model);
-            }
-        }
-
         [Authorize(Roles = "Admin")]
         public ActionResult EditCategory(int categoryId)
         {
@@ -204,6 +186,24 @@ namespace E2Print.WebUI.Controllers
                 return Json(new { Result = "ERROR", Message = ex.Message });
             }
             return Json(new { Result = "OK", Message = photoName + " deleted" });
+        }
+
+        [HttpPost]
+        public ActionResult Create(CategoryViewModel model)
+        {
+            try
+            {
+                Category newCategory = new Category();
+                newCategory.ParentId = model.ParentId == null ? 0 : model.ParentId.Value;
+                newCategory.Name = model.Name;
+                newCategory.Description = model.Description;
+                model.Id = categoryRepository.Create(newCategory).Id;
+                return RedirectToAction("Categories", "Category", model);
+            }
+            catch (Exception ex)
+            {
+                return RedirectToAction("NewCategory", "Category", model);
+            }
         }
 
         [HttpPost]
@@ -265,6 +265,28 @@ namespace E2Print.WebUI.Controllers
                 string path = Server.MapPath("~/Content/Images/Items/");
                 var photos = Directory.GetFiles(path).Where(f => reg.IsMatch(Path.GetFileNameWithoutExtension(f))).Select(c => "/Content/Images/Items/" + Path.GetFileName(c));
                 return Json(new { Result = "OK", Message = photos.Count() > 0 ? photos.ToList() : new List<string> { "" } });
+            }
+            catch (Exception ex)
+            {
+                return Json(new { Result = "ERROR", Message = ex.Message });
+            }
+        }
+
+        [HttpPost]
+        public JsonResult DeleteCategory(int categoryId)
+        {
+            try
+            {
+
+                var products = productRepository.GetAll().Where(c => c.Category.Id == categoryId);
+                foreach (Product product in products)
+                {
+                    product.Category = null;
+                    productRepository.Update(product);
+                }
+
+                categoryRepository.Delete(categoryId);
+                return Json(new { Result = "OK" });
             }
             catch (Exception ex)
             {

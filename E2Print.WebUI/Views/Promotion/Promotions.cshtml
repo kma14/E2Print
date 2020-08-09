@@ -1,0 +1,93 @@
+﻿
+@{
+    ViewBag.Title = "All Promotions";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+@using E2Print.Domain.Entities;
+
+@model  List<Promotion>
+
+@section styles{
+    <style>
+        div#allCategories {
+        }
+    </style>
+}
+<!-- start page title -->
+<div class="row">
+    <div class="col-12">
+        <div class="page-title-box">
+            <div class="page-title-right">
+                <ol class="breadcrumb m-0">
+                    <li class="breadcrumb-item"><a href="/Admin">Admin</a></li>
+                    <li class="breadcrumb-item active">Promotions</li>
+                </ol>
+            </div>
+            <h4 class="page-title">Promotions</h4>
+        </div>
+    </div>
+</div>
+<!-- end page title -->
+
+<div class="row" id="allCategories">
+    <div class="col-12">
+        <div class="card-box table-responsive">
+            <table id="datatable" class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th width="160px">Promotion Group</th>
+                        <th>Link</th>
+                        <th>Description</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (Promotion promotion in Model)
+                    {
+                    <tr>
+                        <td>@(promotion.Id)</td>
+                        <td>@(promotion.PromotionGroup)</td>
+                        <td>@promotion.Title</td>
+                        <td>@promotion.Description</td>
+                        <td>@Html.ActionLink("Edit", "EditPromotion", "Promotion", new { promotionid = promotion.Id }, null)</td>
+                        <td><a href="" class="deleteItem" data-url="@Url.Action("DeletePromotion", "Promotion")" data-promotionid="@(promotion.Id)">Delete</a></td>
+                    </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div> <!-- end row -->
+
+
+
+@section scripts
+{
+    <!-- Required datatable js -->
+    <script src="~/Backend/plugins/datatables/jquery.dataTables.min.js"></script>
+    <script src="~/Backend/plugins/datatables/dataTables.bootstrap4.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).on('click', 'a.deleteItem', function (e) {
+            e.preventDefault();
+            var result = confirm("Deleting promotion, this can NOT be undone.");
+            if (result) {
+                var id = $(this).data('promotionid');
+                var url = $(this).data('url');
+                var li = $(this).closest('tr');
+                var postData = {
+                    id: id
+                };
+                $.post(url, postData, function (e) {
+                    if (e.Result === 'OK') {
+                        li.remove();
+                        alert('Promotion ' + id + ' deleted');
+                    }
+                });
+            }
+        });
+
+    </script>
+}

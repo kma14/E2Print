@@ -1,0 +1,91 @@
+﻿
+@{
+    ViewBag.Title = "All Tags";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+@using E2Print.Domain.Entities;
+
+@model  List<Tag>
+
+@section styles{
+    <style>
+        div#allCategories {
+        }
+    </style>
+}
+<!-- start page title -->
+<div class="row">
+    <div class="col-12">
+        <div class="page-title-box">
+            <div class="page-title-right">
+                <ol class="breadcrumb m-0">
+                    <li class="breadcrumb-item"><a href="/Admin">Admin</a></li>
+                    <li class="breadcrumb-item active">Tags</li>
+                </ol>
+            </div>
+            <h4 class="page-title">Tags</h4>
+        </div>
+    </div>
+</div>
+<!-- end page title -->
+
+<div class="row" id="allCategories">
+    <div class="col-12">
+        <div class="card-box table-responsive">
+            <table id="datatable" class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th width="160px">Type</th>
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (Tag tag in Model)
+                    {
+                        <tr>
+                            <td>@(tag.Type)</td>
+                            <td>@tag.Name</td>
+                            <td>@tag.Description</td>
+                            <td>@Html.ActionLink("Edit", "EditTag", "Tag", new { tagid = tag.Id }, null)</td>
+                            <td><a href="" class="deleteItem" data-url="@Url.Action("DeleteTag", "Tag")" data-tagid="@(tag.Id)">Delete</a></td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div> <!-- end row -->
+
+
+
+@section scripts
+{
+    <!-- Required datatable js -->
+    <script src="~/Backend/plugins/datatables/jquery.dataTables.min.js"></script>
+    <script src="~/Backend/plugins/datatables/dataTables.bootstrap4.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).on('click', 'a.deleteItem', function (e) {
+            e.preventDefault();
+            var result = confirm("Deleting tag, this can NOT be undone.");
+            if (result) {
+                var id = $(this).data('tagid');
+                var url = $(this).data('url');
+                var li = $(this).closest('tr');
+                var postData = {
+                    id: id
+                };
+                $.post(url, postData, function (e) {
+                    if (e.Result === 'OK') {
+                        li.remove();
+                        alert('Tag deleted');
+                    }
+                });
+            }
+        });
+
+    </script>
+}

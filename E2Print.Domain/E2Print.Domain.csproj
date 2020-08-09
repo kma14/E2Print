@@ -56,6 +56,7 @@
     <Compile Include="Entities\Promotion.cs" />
     <Compile Include="Entities\Result.cs" />
     <Compile Include="Entities\UserGroup.cs" />
+    <Compile Include="Entities\Tag.cs" />
     <Compile Include="Entities\UserRole.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -64,6 +64,8 @@
     <EntitySetMapping Name="Promotions">
       <EntityTypeMapping TypeName="E2printModel.Promotion">
         <MappingFragment StoreEntitySet="Promotion">
+          <ScalarProperty Name="PromotionLink" ColumnName="PromotionLink" />
+          <ScalarProperty Name="PromotionGroup" ColumnName="PromotionGroup" />
           <ScalarProperty Name="Comment" ColumnName="Comment" />
           <ScalarProperty Name="Description" ColumnName="Description" />
           <ScalarProperty Name="Title" ColumnName="Title" />

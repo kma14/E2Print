@@ -16,6 +16,10 @@ namespace E2Print.Domain.Entities
         public Nullable<decimal> PromotionPrice { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }
+
+        public string PromotionGroup { get; set; }
+
+        public string PromotionLink { get; set; }
         public string Comment { get; set; }
     }
 }

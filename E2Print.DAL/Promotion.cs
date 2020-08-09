@@ -23,5 +23,7 @@ namespace E2Print.DAL
         public string Title { get; set; }
         public string Description { get; set; }
         public string Comment { get; set; }
+        public string PromotionGroup { get; set; }
+        public string PromotionLink { get; set; }
     }
 }
